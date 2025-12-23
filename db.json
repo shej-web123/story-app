@@ -66,6 +66,13 @@
       "joinDate": "2024-04-05T11:45:00.000Z",
       "status": "active",
       "id": 6
+    },
+    {
+      "email": "nhatminhthcslt@gmail.com",
+      "password": "$2a$10$Mk1W72W3yB/bVmiajpl79eYBvASTYHcIHuE0yLD2dsusJKiBvOv/e",
+      "name": "Nguyễn Nhật Minh",
+      "role": "user",
+      "id": 7
     }
   ],
   "categories": [
@@ -172,6 +179,34 @@
       "viewCount": 4500,
       "rating": 4.2,
       "createdAt": "2024-03-01T23:00:00.000Z"
+    },
+    {
+      "title": "Vừa Chơi Đã Có Tài Khoản Vương Giả",
+      "author": "Đang cập nhật",
+      "categoryId": 1,
+      "status": "Ongoing",
+      "description": "Truyện tranh Vừa Chơi Đã Có Tài Khoản Vương Giả được cập nhật nhanh và đầy đủ nhất tại . Bạn đọc đừng quên để lại bình luận và chia sẻ, ủng hộ ra các chương mới nhất của truyện Vừa Chơi Đã Có Tài Khoản Vương Giả.",
+      "coverUrl": "https://otruyenapi.com/uploads/comics/vua-choi-da-co-tai-khoan-vuong-gia-thumb.jpg",
+      "createdAt": "2025-12-23T16:40:30.440Z",
+      "source": "otruyen",
+      "type": "comic",
+      "slug": "vua-choi-da-co-tai-khoan-vuong-gia",
+      "externalId": "6591216810dc9c0a7e2e56f1",
+      "id": 4
+    },
+    {
+      "title": "Vì Bị Coi Là Kẻ Ăn Bám, Tôi Quyết Định Chuyển Đến Đế Quốc Để Thăng Tiến Sự Nghiệp.",
+      "author": "Unknown",
+      "categoryId": 1,
+      "status": "Ongoing",
+      "description": "Truyện tranh Vì Bị Coi Là Kẻ Ăn Bám, Tôi Quyết Định Chuyển Đến Đế Quốc Để Thăng Tiến Sự Nghiệp. được cập nhật nhanh và đầy đủ nhất tại . Bạn đọc đừng quên để lại bình luận và chia sẻ, ủng hộ ra các chương mới nhất của truyện Vì Bị Coi Là Kẻ Ăn Bám, Tôi Quyết Định Chuyển Đến Đế Quốc Để Thăng Tiến Sự Nghiệp..",
+      "coverUrl": "https://otruyenapi.com/uploads/comics/vi-bi-coi-la-ke-an-bam-toi-quyet-dinh-chuyen-den-de-quoc-de-thang-tien-su-nghiep-thumb.jpg",
+      "createdAt": "2025-12-23T16:54:03.790Z",
+      "source": "otruyen",
+      "type": "comic",
+      "slug": "vi-bi-coi-la-ke-an-bam-toi-quyet-dinh-chuyen-den-de-quoc-de-thang-tien-su-nghiep",
+      "externalId": "6874fae054ddf1823a5e7f51",
+      "id": 5
     }
   ],
   "comments": [
