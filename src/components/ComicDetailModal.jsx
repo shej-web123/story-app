@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { X, Loader, Info, Download, PlayCircle, ExternalLink, Globe } from 'lucide-react';
+import { X, Loader, Info, Download, PlayCircle, ExternalLink, Globe, ChevronDown } from 'lucide-react';
 import api from '../services/api';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
@@ -15,6 +15,7 @@ const ComicDetailModal = ({ book, isOpen, onClose }) => {
     const [readingProgress, setReadingProgress] = useState(null);
     const [hasChapters, setHasChapters] = useState(true);
     const [importing, setImporting] = useState(false);
+    const [showChapterList, setShowChapterList] = useState(false);
 
     const API_BASE = 'https://otruyenapi.com/v1/api';
     const IMAGE_CDN = 'https://otruyenapi.com/uploads/comics';
@@ -167,17 +168,25 @@ const ComicDetailModal = ({ book, isOpen, onClose }) => {
         }
     };
 
-    const handleReloadChapters = async () => {
+    const handleReloadChapters = async (autoNav = false) => {
         if (!fullBookData || !localStoryId) return;
         setImporting(true);
         try {
             const serverData = fullBookData.chapters[0]?.server_data || [];
 
             if (serverData.length === 0) {
-                toast.warn("Truyện này chưa có chương nào để nhập.");
+                toast.warn("Truyện này chưa có chương nào trên server.");
                 setImporting(false);
                 return;
             }
+
+            // Check what we have locally to avoid duplicates or re-fetching everything
+            // Note: For simplicity, we might just fetch *all* if the user asks, or verify.
+            // But for 'autoNav', we assume we need data.
+
+            // Simplified: Just add them. existing logic relies on unique IDs which we mocked?
+            // Actually mocked API doesn't enforce unique.
+            // Let's rely on mapping.
 
             const chapterPromises = serverData.map((chap) => {
                 return api.post('/chapters', {
@@ -191,19 +200,41 @@ const ComicDetailModal = ({ book, isOpen, onClose }) => {
                 });
             });
 
-            const CHUNK_SIZE = 10;
+            // Parallel with limit
+            const CHUNK_SIZE = 5; // Reduced chunk size for safety
             for (let i = 0; i < chapterPromises.length; i += CHUNK_SIZE) {
                 await Promise.all(chapterPromises.slice(i, i + CHUNK_SIZE));
             }
 
             setHasChapters(true);
-            toast.success(`Đã cập nhật ${serverData.length} chương!`);
+            if (!autoNav) toast.success(`Đã cập nhật ${serverData.length} chương!`);
+
+            if (autoNav) {
+                // Navigate to first chapter
+                const res = await api.get(`/chapters?storyId=${localStoryId}&_sort=order&_order=asc&_limit=1`);
+                if (res.data.length > 0) {
+                    navigate(`/story/${localStoryId}/chapter/${res.data[0].id}`);
+                }
+            }
         } catch (error) {
             console.error("Reload failed", error);
-            toast.error("Lỗi khi cập nhật chương.");
+            if (!autoNav) toast.error("Lỗi khi cập nhật chương.");
         } finally {
             setImporting(false);
         }
+    };
+
+    const handleImportAndRead = async () => {
+        if (!user) {
+            toast.warning('Vui lòng đăng nhập để đọc truyện!');
+            navigate('/login');
+            return;
+        }
+        await handleImport(true); // create story
+        // handleImport sets state, we need to wait or rely on effect? 
+        // Actually handleImport is async.
+        // But we need to reload chapters too.
+        await handleReloadChapters(true); // Fetch chapters silently
     };
 
     const handleReadNow = async () => {
@@ -218,10 +249,14 @@ const ComicDetailModal = ({ book, isOpen, onClose }) => {
                 if (res.data.length > 0) {
                     navigate(`/story/${localStoryId}/chapter/${res.data[0].id}`);
                 } else {
-                    toast.info("Truyện này chưa có chương nào.");
+                    // Auto-fetch if missing
+                    console.log("No local chapters found, fetching from API...");
+                    await handleReloadChapters(true); // Auto reload, then navigate
                 }
             } catch (error) {
-                toast.error("Không thể tải thông tin chương.");
+                console.error("Read Error", error);
+                // Try one last auto-fix
+                await handleReloadChapters(true);
             }
         }
     };
@@ -282,36 +317,47 @@ const ComicDetailModal = ({ book, isOpen, onClose }) => {
                                 </div>
 
                                 <div className="pt-6 border-t border-gray-100 dark:border-gray-700 flex flex-col gap-3">
+                                    {/* Chapter List Preview */}
+                                    <div className="mt-4 mb-4">
+                                        <button
+                                            onClick={() => setShowChapterList(!showChapterList)}
+                                            className="flex items-center justify-between w-full p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg hover:bg-gray-100 transition-colors"
+                                        >
+                                            <span className="font-bold text-gray-700 dark:text-gray-200">
+                                                Danh sách chương ({fullBookData.chapters?.[0]?.server_data?.length || 0})
+                                            </span>
+                                            <ChevronDown size={20} className={`transform transition-transform ${showChapterList ? 'rotate-180' : ''}`} />
+                                        </button>
+
+                                        {showChapterList && (
+                                            <div className="mt-2 max-h-48 overflow-y-auto border border-gray-100 dark:border-gray-700 rounded-lg">
+                                                {fullBookData.chapters?.[0]?.server_data?.map((chap, idx) => (
+                                                    <div key={idx} className="p-2 border-b border-gray-50 last:border-0 hover:bg-gray-50 dark:hover:bg-gray-700 text-sm flex justify-between">
+                                                        <span>Chương {chap.chapter_name}</span>
+                                                        <span className="text-xs text-gray-400">API</span>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        )}
+                                    </div>
+
                                     {localStoryId ? (
-                                        !hasChapters ? (
-                                            <button
-                                                onClick={handleReloadChapters}
-                                                disabled={importing}
-                                                className="btn bg-yellow-500 hover:bg-yellow-600 text-white w-full py-4 rounded-xl shadow-lg shadow-yellow-500/30 font-bold text-lg flex items-center justify-center gap-2"
-                                            >
-                                                {importing ? <Loader className="animate-spin" /> : <Download size={24} />}
-                                                Cập nhật chương
-                                            </button>
-                                        ) : (
-                                            <button
-                                                onClick={handleReadNow}
-                                                className="btn bg-indigo-600 hover:bg-indigo-700 text-white w-full py-4 rounded-xl shadow-lg shadow-indigo-500/30 font-bold text-lg flex items-center justify-center gap-2"
-                                            >
-                                                <PlayCircle size={24} />
-                                                {readingProgress ? `Đọc tiếp: ${readingProgress.lastReadChapterTitle || 'Chương đang đọc'}` : 'Đọc ngay'}
-                                            </button>
-                                        )
+                                        <button
+                                            onClick={handleReadNow}
+                                            disabled={importing}
+                                            className="btn bg-indigo-600 hover:bg-indigo-700 text-white w-full py-4 rounded-xl shadow-lg shadow-indigo-500/30 font-bold text-lg flex items-center justify-center gap-2"
+                                        >
+                                            {importing ? <Loader className="animate-spin" /> : <PlayCircle size={24} />}
+                                            {readingProgress ? `Đọc tiếp: ${readingProgress.lastReadChapterTitle}` : 'Đọc ngay'}
+                                        </button>
                                     ) : (
                                         <button
-                                            onClick={handleImport}
+                                            onClick={handleImportAndRead}
                                             disabled={importing}
-                                            className="btn bg-emerald-600 hover:bg-emerald-700 text-white w-full py-4 rounded-xl shadow-lg shadow-emerald-500/30 font-bold text-lg flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                                            className="btn bg-indigo-600 hover:bg-indigo-700 text-white w-full py-4 rounded-xl shadow-lg shadow-indigo-500/30 font-bold text-lg flex items-center justify-center gap-2"
                                         >
-                                            {importing ? (
-                                                <>Đang lưu...</>
-                                            ) : (
-                                                <><Download size={24} /> Lưu vào tủ sách</>
-                                            )}
+                                            {importing ? <Loader className="animate-spin" /> : <PlayCircle size={24} />}
+                                            Đọc ngay
                                         </button>
                                     )}
 

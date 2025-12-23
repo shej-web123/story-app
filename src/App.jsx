@@ -35,7 +35,7 @@ function App() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/admin/login" element={<AdminLogin />} />
                 <Route path="/register" element={<Register />} />
-                <Route path="/register" element={<Register />} />
+
 
                 {/* Client Routes */}
                 <Route element={<ClientLayout />}>

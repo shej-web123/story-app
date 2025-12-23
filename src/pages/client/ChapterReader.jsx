@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import api from '../../services/api';
+import CommentSection from '../../components/CommentSection';
 import axios from 'axios';
 import { ArrowLeft, Settings, ChevronLeft, ChevronRight, List, Home, Image as ImageIcon, Type } from 'lucide-react';
-import CommentSection from '../../components/CommentSection';
 
 const ChapterReader = () => {
     const { storyId, chapterId } = useParams();
@@ -32,6 +32,10 @@ const ChapterReader = () => {
     }, [fontSize, fontFamily, theme]);
 
     useEffect(() => {
+        // Reset state for new chapter
+        setComicImages([]);
+        setChapter(null);
+        setLoadingImages(false);
         fetchData();
         window.scrollTo(0, 0);
     }, [storyId, chapterId]);
@@ -299,9 +303,12 @@ const ChapterReader = () => {
                             className={`prose max-w-none leading-loose transition-all duration-300 ${fontFamily} ${theme === 'dark' ? 'prose-invert' : ''}`}
                             style={{ fontSize: `${fontSize}px` }}
                         >
-                            {chapter.content.split('\n').map((paragraph, idx) => (
+                            {(chapter.content || '').split('\n').map((paragraph, idx) => (
                                 paragraph.trim() && <p key={idx}>{paragraph}</p>
                             ))}
+                            {(!chapter.content || !chapter.content.trim()) && (
+                                <p className="italic text-gray-500 text-center">Nội dung chương trống...</p>
+                            )}
                         </div>
                     )
                 }
@@ -310,7 +317,8 @@ const ChapterReader = () => {
                 <div className="mt-12 pt-8 border-t border-gray-100 dark:border-gray-800">
                     <CommentSection storyId={story.id} chapterId={chapter.id} />
                 </div>
-            </main >
+
+            </main>
 
             {/* Footer Navigation */}
             < footer className={`border-t py-6 mt-auto transition-colors duration-300 ${theme === 'dark' ? 'bg-[#1a1a1a] border-gray-800' :
