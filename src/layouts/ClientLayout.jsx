@@ -1,7 +1,7 @@
 import { Outlet, Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { useState, useEffect } from 'react';
-import { Menu, X, Home, BookOpen, Clock, User, LogOut, Moon, Sun, LayoutDashboard, TrendingUp, Smile, Zap, Heart, Ghost, CloudRain, Book, PenTool, List, Globe } from 'lucide-react';
+import { Menu, X, Home, BookOpen, Clock, User, LogOut, Moon, Sun, LayoutDashboard, TrendingUp, Smile, Zap, Heart, Ghost, CloudRain, Book, PenTool, List, Globe, Bell } from 'lucide-react';
 import api from '../services/api';
 
 const ClientLayout = () => {
@@ -17,6 +17,9 @@ const ClientLayout = () => {
         }
         return false;
     });
+    const [notifications, setNotifications] = useState([]);
+    const [showNotifications, setShowNotifications] = useState(false);
+    const [unreadCount, setUnreadCount] = useState(0);
 
     useEffect(() => {
         if (isDark) {
@@ -31,7 +34,20 @@ const ClientLayout = () => {
     useEffect(() => {
         fetchCategories();
         fetchTrendingStories();
+        fetchTrendingStories();
     }, []);
+
+    useEffect(() => {
+        if (user) {
+            fetchNotifications();
+            // Poll for notifications every 30s
+            const interval = setInterval(fetchNotifications, 30000);
+            return () => clearInterval(interval);
+        } else {
+            setNotifications([]);
+            setUnreadCount(0);
+        }
+    }, [user]);
 
     // Close sidebar on route change
     useEffect(() => {
@@ -56,6 +72,30 @@ const ClientLayout = () => {
         } catch (error) {
             console.error("Failed to fetch trending stories");
         }
+    };
+
+    const fetchNotifications = async () => {
+        if (!user) return;
+        try {
+            const res = await api.get(`/notifications?userId=${user.id}&_sort=createdAt&_order=desc`);
+            setNotifications(res.data);
+            setUnreadCount(res.data.filter(n => !n.isRead).length);
+        } catch (error) {
+            console.error("Failed to fetch notifications");
+        }
+    };
+
+    const handleNotificationClick = async (notif) => {
+        if (!notif.isRead) {
+            try {
+                await api.patch(`/notifications/${notif.id}`, { isRead: true });
+                setNotifications(prev => prev.map(n => n.id === notif.id ? { ...n, isRead: true } : n));
+                setUnreadCount(prev => Math.max(0, prev - 1));
+            } catch (error) {
+                console.error("Failed to mark notification as read");
+            }
+        }
+        setShowNotifications(false);
     };
 
     const toggleTheme = () => setIsDark(!isDark);
@@ -99,6 +139,9 @@ const ClientLayout = () => {
                                 </Link>
                                 <Link to="/write" className="flex items-center gap-3 px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 hover:text-indigo-600 dark:hover:text-indigo-400 rounded-xl transition-colors font-medium">
                                     <PenTool size={20} /> Viết truyện
+                                </Link>
+                                <Link to="/history" className="flex items-center gap-3 px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 hover:text-indigo-600 dark:hover:text-indigo-400 rounded-xl transition-colors font-medium">
+                                    <Clock size={20} /> Lịch sử đọc
                                 </Link>
                                 {user && user.role === 'admin' && (
                                     <Link to="/admin" className="flex items-center gap-3 px-4 py-3 text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-900/20 hover:bg-indigo-100 dark:hover:bg-indigo-900/40 rounded-xl transition-colors font-medium">
@@ -180,6 +223,60 @@ const ClientLayout = () => {
                     <nav className="flex items-center gap-2 sm:gap-4">
                         <Link to="/" className="hidden md:block text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium transition-colors">Trang chủ</Link>
                         <Link to="/write" className="hidden md:block text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium transition-colors">Viết truyện</Link>
+
+                        {/* Notifications */}
+                        {user && (
+                            <div className="relative">
+                                <button
+                                    onClick={() => setShowNotifications(!showNotifications)}
+                                    className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 transition-colors relative"
+                                    title="Thông báo"
+                                >
+                                    <Bell size={20} />
+                                    {unreadCount > 0 && (
+                                        <span className="absolute top-0 right-0 w-4 h-4 bg-red-500 text-white text-xs font-bold rounded-full flex items-center justify-center">
+                                            {unreadCount > 9 ? '9+' : unreadCount}
+                                        </span>
+                                    )}
+                                </button>
+
+                                {showNotifications && (
+                                    <div className="absolute top-full right-0 mt-2 w-80 bg-white dark:bg-gray-800 rounded-xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden z-50 animate-fade-in-up">
+                                        <div className="p-3 border-b border-gray-100 dark:border-gray-700 flex justify-between items-center bg-gray-50 dark:bg-gray-700/50">
+                                            <h3 className="font-bold text-gray-800 dark:text-gray-200">Thông báo</h3>
+                                            {unreadCount > 0 && <span className="text-xs text-indigo-600 dark:text-indigo-400 font-medium">{unreadCount} chưa đọc</span>}
+                                        </div>
+                                        <div className="max-h-[60vh] overflow-y-auto">
+                                            {notifications.length === 0 ? (
+                                                <div className="p-8 text-center text-gray-500 dark:text-gray-400">
+                                                    <Bell className="w-8 h-8 mx-auto mb-2 opacity-20" />
+                                                    <p className="text-sm">Không có thông báo nào</p>
+                                                </div>
+                                            ) : (
+                                                <div className="divide-y divide-gray-100 dark:divide-gray-700/50">
+                                                    {notifications.map(notif => (
+                                                        <Link
+                                                            key={notif.id}
+                                                            to={notif.link}
+                                                            onClick={() => handleNotificationClick(notif)}
+                                                            className={`block p-4 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors ${!notif.isRead ? 'bg-indigo-50/50 dark:bg-indigo-900/10' : ''}`}
+                                                        >
+                                                            <div className="flex gap-3">
+                                                                <div className={`mt-1 w-2 h-2 rounded-full flex-shrink-0 ${!notif.isRead ? 'bg-indigo-600' : 'bg-transparent'}`}></div>
+                                                                <div>
+                                                                    <p className="text-sm text-gray-800 dark:text-gray-200 line-clamp-2">{notif.message}</p>
+                                                                    <p className="text-xs text-gray-400 mt-1">{new Date(notif.createdAt).toLocaleString('vi-VN')}</p>
+                                                                </div>
+                                                            </div>
+                                                        </Link>
+                                                    ))}
+                                                </div>
+                                            )}
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
+                        )}
 
                         <button
                             onClick={toggleTheme}

@@ -1,11 +1,14 @@
 import { useState, useEffect } from 'react';
+import { useAuth } from '../../context/AuthContext';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import api from '../../services/api';
 import axios from 'axios';
 import { ArrowLeft, Settings, ChevronLeft, ChevronRight, List, Home, Image as ImageIcon, Type } from 'lucide-react';
+import CommentSection from '../../components/CommentSection';
 
 const ChapterReader = () => {
     const { storyId, chapterId } = useParams();
+    const { user } = useAuth();
     const navigate = useNavigate();
     const [chapter, setChapter] = useState(null);
     const [story, setStory] = useState(null);
@@ -78,7 +81,8 @@ const ChapterReader = () => {
         }
     };
 
-    const addToHistory = (storyData, chapterData) => {
+    const addToHistory = async (storyData, chapterData) => {
+        // 1. Local Storage (always)
         const history = JSON.parse(localStorage.getItem('readingHistory') || '[]');
         const newEntry = {
             ...storyData,
@@ -88,6 +92,35 @@ const ChapterReader = () => {
         };
         const newHistory = [newEntry, ...history.filter(s => s.id !== storyData.id)].slice(0, 10);
         localStorage.setItem('readingHistory', JSON.stringify(newHistory));
+
+        // 2. Database (if logged in)
+        if (user) {
+            try {
+                // Check if entry exists
+                const res = await api.get(`/reading_history?userId=${user.id}&storyId=${storyData.id}`);
+                const existing = res.data[0];
+
+                if (existing) {
+                    await api.patch(`/reading_history/${existing.id}`, {
+                        chapterId: chapterData.id,
+                        chapterTitle: chapterData.title,
+                        lastReadAt: new Date().toISOString()
+                    });
+                } else {
+                    await api.post('/reading_history', {
+                        userId: user.id,
+                        storyId: storyData.id,
+                        storyTitle: storyData.title,
+                        storyCover: storyData.coverUrl || storyData.cover,
+                        chapterId: chapterData.id,
+                        chapterTitle: chapterData.title,
+                        lastReadAt: new Date().toISOString()
+                    });
+                }
+            } catch (error) {
+                console.error("Failed to sync reading history", error);
+            }
+        }
     };
 
     const navigateChapter = (direction) => {
@@ -272,6 +305,11 @@ const ChapterReader = () => {
                         </div>
                     )
                 }
+
+                {/* Chapter Comments */}
+                <div className="mt-12 pt-8 border-t border-gray-100 dark:border-gray-800">
+                    <CommentSection storyId={story.id} chapterId={chapter.id} />
+                </div>
             </main >
 
             {/* Footer Navigation */}

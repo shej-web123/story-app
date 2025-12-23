@@ -1,21 +1,56 @@
-import { Outlet, Link, useLocation, Navigate } from 'react-router-dom';
+
+import { useState, useEffect } from 'react';
+import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { LayoutDashboard, BookOpen, Users, FolderTree, LogOut, Home, Bell, Search, Menu } from 'lucide-react';
+import { LayoutDashboard, BookOpen, Layers, Users, LogOut, Menu, X, Flag, Home, Bell, Search } from 'lucide-react';
+import api from '../services/api';
 import clsx from 'clsx';
 
 const AdminLayout = () => {
     const { user, logout } = useAuth();
     const location = useLocation();
+    const navigate = useNavigate();
+    const [pendingReportsCount, setPendingReportsCount] = useState(0);
 
     if (!user || user.role !== 'admin') {
         return <Navigate to="/" replace />;
     }
 
+    useEffect(() => {
+        // Initial fetch
+        const checkReports = async () => {
+            try {
+                // Assuming we want to count 'pending' reports
+                const res = await api.get('/reports?status=pending');
+                setPendingReportsCount(res.data.length);
+            } catch (error) {
+                console.error("Failed to fetch pending reports count", error);
+            }
+        };
+
+        checkReports();
+
+        // Optional: Poll every 30 seconds
+        const interval = setInterval(checkReports, 30000);
+        return () => clearInterval(interval);
+    }, []);
+
+    const handleLogout = () => {
+        logout();
+        navigate('/login');
+    };
+
     const navItems = [
         { path: '/admin', label: 'Tổng quan', icon: LayoutDashboard },
         { path: '/admin/stories', label: 'Quản lý Truyện', icon: BookOpen },
-        { path: '/admin/categories', label: 'Quản lý Danh mục', icon: FolderTree },
+        { path: '/admin/categories', label: 'Quản lý Thể loại', icon: Layers },
         { path: '/admin/users', label: 'Quản lý Tài khoản', icon: Users },
+        {
+            path: '/admin/reports',
+            label: 'Báo cáo & Kiểm duyệt',
+            icon: Flag,
+            badge: pendingReportsCount > 0 ? pendingReportsCount : null
+        },
     ];
 
     return (
@@ -36,22 +71,23 @@ const AdminLayout = () => {
                 <nav className="flex-1 p-6 space-y-2 overflow-y-auto">
                     <div className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4 px-2">Menu chính</div>
                     {navItems.map((item) => {
-                        const Icon = item.icon;
                         const isActive = location.pathname === item.path;
                         return (
                             <Link
                                 key={item.path}
                                 to={item.path}
-                                className={clsx(
-                                    "flex items-center gap-3 px-4 py-3.5 rounded-xl transition-all duration-200 group",
-                                    isActive
-                                        ? "bg-indigo-50 text-indigo-600 font-semibold shadow-sm"
-                                        : "text-gray-500 hover:bg-gray-50 hover:text-indigo-600"
-                                )}
+                                className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${isActive
+                                        ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-500/30'
+                                        : 'text-gray-500 hover:bg-gray-50 hover:text-indigo-600'
+                                    }`}
                             >
-                                <Icon size={20} className={clsx("transition-colors", isActive ? "text-indigo-600" : "text-gray-400 group-hover:text-indigo-600")} />
-                                <span>{item.label}</span>
-                                {isActive && <div className="ml-auto w-1.5 h-1.5 rounded-full bg-indigo-600"></div>}
+                                <item.icon size={20} className={clsx("transition-colors", isActive ? "text-white" : "text-gray-400 group-hover:text-indigo-600")} />
+                                <span className="font-medium">{item.label}</span>
+                                {item.badge && (
+                                    <span className="ml-auto bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded-full animate-pulse">
+                                        {item.badge}
+                                    </span>
+                                )}
                             </Link>
                         );
                     })}

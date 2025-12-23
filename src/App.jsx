@@ -16,48 +16,55 @@ import Profile from './pages/client/Profile'
 import WriteStory from './pages/client/WriteStory'
 import ChapterReader from './pages/client/ChapterReader'
 import ExternalLibrary from './pages/client/ExternalLibrary'
+import History from './pages/client/History';
+import NotFound from './pages/client/NotFound'
 
 // Admin Pages
 import AdminDashboard from './pages/admin/Dashboard'
 import StoryManager from './pages/admin/StoryManager'
 import CategoryManager from './pages/admin/CategoryManager'
 import UserManager from './pages/admin/UserManager'
+import ReportsManager from './pages/admin/ReportsManager';
+import AdminLogin from './pages/admin/AdminLogin';
 
 function App() {
     return (
         <AuthProvider>
             <Routes>
-                {/* Public Routes */}
+                {/* Auth Routes */}
                 <Route path="/login" element={<Login />} />
+                <Route path="/admin/login" element={<AdminLogin />} />
+                <Route path="/register" element={<Register />} />
                 <Route path="/register" element={<Register />} />
 
                 {/* Client Routes */}
                 <Route element={<ClientLayout />}>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/story/:id" element={<StoryDetail />} />
+                    <Route index element={<Home />} />
+                    <Route path="/story/:storyId" element={<StoryDetail />} />
                     <Route path="/library" element={<Library />} />
                     <Route path="/external-library" element={<ExternalLibrary />} />
-                    <Route path="/profile" element={<Profile />} />
+                    <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
                     <Route path="/write" element={<WriteStory />} />
+                    <Route path="/history" element={<History />} />
                 </Route>
 
                 {/* Standalone Routes (Reader) */}
                 <Route path="/story/:storyId/chapter/:chapterId" element={<ChapterReader />} />
 
                 {/* Admin Routes */}
-                <Route element={<ProtectedRoute allowedRoles={['admin']} />}>
-                    <Route path="/admin" element={<AdminLayout />}>
-                        <Route index element={<AdminDashboard />} />
-                        <Route path="stories" element={<StoryManager />} />
-                        <Route path="categories" element={<CategoryManager />} />
-                        <Route path="users" element={<UserManager />} />
-                    </Route>
+                <Route path="/admin" element={<ProtectedRoute allowedRoles={['admin']}><AdminLayout /></ProtectedRoute>}>
+                    {/* Note: In real app better to separate AdminGuard */}
+                    <Route index element={<AdminDashboard />} />
+                    <Route path="stories" element={<StoryManager />} />
+                    <Route path="categories" element={<CategoryManager />} />
+                    <Route path="users" element={<UserManager />} />
+                    <Route path="reports" element={<ReportsManager />} />
                 </Route>
 
-                <Route path="*" element={<Navigate to="/" replace />} />
+                <Route path="*" element={<NotFound />} />
             </Routes>
         </AuthProvider>
-    )
+    );
 }
 
 export default App

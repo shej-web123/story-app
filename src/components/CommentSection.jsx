@@ -2,9 +2,20 @@ import { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import api from '../services/api';
 import { toast } from 'react-toastify';
-import { Trash2, Edit2, Save, X, MessageCircle, MessageSquare, Reply } from 'lucide-react';
+import { Trash2, Edit2, Save, X, MessageCircle, MessageSquare, Reply, Flag, AlertTriangle } from 'lucide-react';
 
-const CommentSection = ({ storyId }) => {
+const BAD_WORDS = ['cmn', 'đm', 'vcl', 'đéo', 'ngu', 'chó', 'dm', 'con mẹ', 'chết', 'giết'];
+
+const filterContent = (text) => {
+    let filtered = text;
+    BAD_WORDS.forEach(word => {
+        const regex = new RegExp(word, 'gi');
+        filtered = filtered.replace(regex, '***');
+    });
+    return filtered;
+};
+
+const CommentSection = ({ storyId, chapterId = null }) => {
     const { user } = useAuth();
     const [comments, setComments] = useState([]);
     const [newComment, setNewComment] = useState('');
@@ -16,15 +27,25 @@ const CommentSection = ({ storyId }) => {
     const [replyContent, setReplyContent] = useState('');
     const [submittingReply, setSubmittingReply] = useState(false);
 
+    // Reporting State
+    const [reportModal, setReportModal] = useState({ open: false, targetType: null, targetId: null, targetUserId: null });
+    const [reportReason, setReportReason] = useState('');
+
     useEffect(() => {
         fetchComments();
-    }, [storyId]);
+    }, [storyId, chapterId]);
 
     const fetchComments = async () => {
         setLoading(true);
         try {
             const response = await api.get(`/comments?storyId=${storyId}&_sort=createdAt&_order=desc&_embed=replies`);
-            setComments(response.data);
+            // Client-side filtering:
+            // If chapterId provided -> show only that chapter's comments
+            // If NO chapterId -> show only general story comments (where chapterId is null/undefined)
+            const filteredComments = response.data.filter(c =>
+                chapterId ? c.chapterId === parseInt(chapterId) : !c.chapterId
+            );
+            setComments(filteredComments);
         } catch (error) {
             console.error('Failed to fetch comments:', error);
             toast.error('Không thể tải bình luận');
@@ -50,7 +71,8 @@ const CommentSection = ({ storyId }) => {
                 storyId: parseInt(storyId),
                 userId: user.id,
                 userName: user.name,
-                content: newComment.trim(),
+                content: filterContent(newComment.trim()),
+                chapterId: chapterId ? parseInt(chapterId) : null,
                 createdAt: new Date().toISOString(),
                 updatedAt: new Date().toISOString()
             };
@@ -83,12 +105,31 @@ const CommentSection = ({ storyId }) => {
                 commentId: commentId,
                 userId: user.id,
                 userName: user.name,
-                content: replyContent.trim(),
+                content: filterContent(replyContent.trim()),
                 createdAt: new Date().toISOString(),
                 updatedAt: new Date().toISOString()
             };
 
             const response = await api.post('/replies', replyData);
+
+            // Create notification if replying to someone else
+            const parentComment = comments.find(c => c.id === commentId);
+            if (parentComment && parentComment.userId !== user.id) {
+                try {
+                    await api.post('/notifications', {
+                        userId: parentComment.userId, // Receiver
+                        triggerUserId: user.id, // Sender
+                        triggerUserName: user.name,
+                        type: 'reply',
+                        message: `${user.name} đã trả lời bình luận của bạn`,
+                        link: `/story/${storyId}`, // Simple link for now
+                        isRead: false,
+                        createdAt: new Date().toISOString()
+                    });
+                } catch (notifError) {
+                    console.error('Failed to create notification:', notifError);
+                }
+            }
 
             // Update UI by adding new reply to the specific comment
             setComments(comments.map(c => {
@@ -197,8 +238,76 @@ const CommentSection = ({ storyId }) => {
         return date.toLocaleDateString('vi-VN');
     };
 
+    const handleReport = async () => {
+        if (!reportReason.trim()) return toast.warning('Vui lòng nhập lý do báo cáo');
+
+        try {
+            await api.post('/reports', {
+                reporterId: user.id,
+                reporterName: user.name,
+                targetType: reportModal.targetType,
+                targetId: reportModal.targetId,
+                targetUserId: reportModal.targetUserId,
+                reason: reportReason,
+                status: 'pending',
+                createdAt: new Date().toISOString()
+            });
+            toast.success('Đã gửi báo cáo cho Admin');
+            setReportModal({ open: false, targetType: null, targetId: null, targetUserId: null });
+            setReportReason('');
+        } catch (error) {
+            toast.error('Gửi báo cáo thất bại');
+        }
+    };
+
+    const openReportModal = (type, item) => {
+        if (!user) return toast.warning('Cần đăng nhập để báo cáo');
+        setReportModal({
+            open: true,
+            targetType: type,
+            targetId: item.id,
+            targetUserId: item.userId
+        });
+    };
+
     return (
         <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 mt-8">
+            {/* Report Modal */}
+            {reportModal.open && (
+                <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+                    <div className="bg-white dark:bg-gray-800 rounded-xl p-6 w-full max-w-md animate-fade-in-up">
+                        <div className="flex items-center gap-3 mb-4 text-red-600">
+                            <AlertTriangle size={24} />
+                            <h3 className="text-xl font-bold">Báo cáo vi phạm</h3>
+                        </div>
+                        <p className="mb-4 text-gray-600 dark:text-gray-300">
+                            Bạn đang báo cáo {reportModal.targetType === 'comment' ? 'bình luận' : 'câu trả lời'} này. Hãy cho chúng tôi biết lý do:
+                        </p>
+                        <textarea
+                            value={reportReason}
+                            onChange={(e) => setReportReason(e.target.value)}
+                            className="w-full p-3 border rounded-lg mb-4 bg-gray-50 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                            placeholder="Ví dụ: Ngôn từ đả kích, spam, ..."
+                            rows={3}
+                        />
+                        <div className="flex justify-end gap-2">
+                            <button
+                                onClick={() => setReportModal({ open: false, targetType: null, targetId: null, targetUserId: null })}
+                                className="px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg"
+                            >
+                                Hủy
+                            </button>
+                            <button
+                                onClick={handleReport}
+                                className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 font-medium"
+                            >
+                                Gửi báo cáo
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
+
             <div className="flex items-center gap-2 mb-6">
                 <MessageCircle className="text-indigo-600 dark:text-indigo-400" size={24} />
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
@@ -316,9 +425,16 @@ const CommentSection = ({ storyId }) => {
                             <div className="mt-2 ml-2 flex items-center gap-4">
                                 <button
                                     onClick={() => setReplyingId(replyingId === comment.id ? null : comment.id)}
-                                    className="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center gap-1"
+                                    className="flex items-center gap-1 text-gray-500 hover:text-indigo-600 transition-colors"
                                 >
-                                    <Reply size={14} /> Phản hồi
+                                    <Reply size={14} /> Trả lời
+                                </button>
+                                <button
+                                    onClick={() => openReportModal('comment', comment)}
+                                    className="flex items-center gap-1 text-gray-400 hover:text-red-500 transition-colors"
+                                    title="Báo cáo"
+                                >
+                                    <Flag size={14} />
                                 </button>
                             </div>
 
@@ -371,13 +487,20 @@ const CommentSection = ({ storyId }) => {
                                                     {reply.content}
                                                 </p>
                                             </div>
-                                            {user && user.id === reply.userId && (
+                                            {user && user.id === reply.userId ? (
                                                 <button
                                                     onClick={() => handleDeleteReply(comment.id, reply.id)}
-                                                    className="text-gray-400 hover:text-red-500 p-1"
-                                                    title="Xóa"
+                                                    className="flex items-center gap-1 text-gray-400 hover:text-red-600 transition-colors"
                                                 >
-                                                    <Trash2 size={14} />
+                                                    <Trash2 size={14} /> Xóa
+                                                </button>
+                                            ) : (
+                                                <button
+                                                    onClick={() => openReportModal('reply', reply)}
+                                                    className="flex items-center gap-1 text-gray-400 hover:text-red-500 transition-colors ml-auto"
+                                                    title="Báo cáo"
+                                                >
+                                                    <Flag size={14} />
                                                 </button>
                                             )}
                                         </div>

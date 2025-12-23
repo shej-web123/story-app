@@ -43,6 +43,11 @@ export const AuthProvider = ({ children }) => {
             const response = await api.post('/login', { email, password });
             const { accessToken, user } = response.data;
 
+            if (user.isBanned) {
+                toast.error('Tài khoản của bạn đã bị khóa do vi phạm quy định.');
+                return false;
+            }
+
             localStorage.setItem('accessToken', accessToken);
             localStorage.setItem('user', JSON.stringify(user));
             setUser(user);
