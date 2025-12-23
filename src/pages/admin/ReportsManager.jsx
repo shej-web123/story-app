@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import api from '../../services/api';
 import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
 import { AlertTriangle, Check, X, Shield, Trash2, UserX, MessageSquare, ArrowUpRight } from 'lucide-react';
 
 const ReportsManager = () => {
@@ -113,14 +114,14 @@ const ReportsManager = () => {
                                 <div className="mb-4">
                                     <div className="flex justify-between items-end mb-2">
                                         <span className="text-xs font-semibold text-gray-400 uppercase">Nội dung vi phạm</span>
-                                        <a
-                                            href={`/stories/${report.storyId}`}
+                                        <Link
+                                            to={`/story/${report.storyId}`}
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className="text-xs font-medium text-indigo-600 hover:text-indigo-800 flex items-center gap-1 hover:underline"
                                         >
                                             Xem trong truyện <ArrowUpRight size={12} />
-                                        </a>
+                                        </Link>
                                     </div>
                                     <div className="bg-white p-4 rounded-xl border-2 border-dashed border-gray-200 text-gray-800 relative group-hover:border-red-200 transition-colors">
                                         "{report.targetContent || 'Nội dung không khả dụng'}"

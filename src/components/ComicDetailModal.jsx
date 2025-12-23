@@ -61,8 +61,22 @@ const ComicDetailModal = ({ book, isOpen, onClose }) => {
                 setHasChapters(chapRes.data.length > 0);
 
                 // Check reading history
+                let progress = null;
+                // 1. Local (Fast)
                 const history = JSON.parse(localStorage.getItem('readingHistory') || '[]');
-                const progress = history.find(h => h.id == storyId); // Loose equality for ID
+                progress = history.find(h => h.id == storyId);
+
+                // 2. API (Reliable)
+                if (user) {
+                    try {
+                        const histRes = await api.get(`/reading_history?userId=${user.id}&storyId=${storyId}`);
+                        if (histRes.data.length > 0) {
+                            progress = histRes.data[0];
+                        }
+                    } catch (e) {
+                        console.error("Failed to sync history", e);
+                    }
+                }
 
                 if (progress) {
                     setReadingProgress(progress);
@@ -180,15 +194,25 @@ const ComicDetailModal = ({ book, isOpen, onClose }) => {
                 return;
             }
 
-            // Check what we have locally to avoid duplicates or re-fetching everything
-            // Note: For simplicity, we might just fetch *all* if the user asks, or verify.
-            // But for 'autoNav', we assume we need data.
+            // Check existing chapters to avoid duplicates
+            const existingChaptersRes = await api.get(`/chapters?storyId=${localStoryId}`);
+            const existingExternalIds = new Set(existingChaptersRes.data.map(c => c.externalId));
 
-            // Simplified: Just add them. existing logic relies on unique IDs which we mocked?
-            // Actually mocked API doesn't enforce unique.
-            // Let's rely on mapping.
+            const newChapters = serverData.filter(chap => !existingExternalIds.has(chap.chapter_api_data));
 
-            const chapterPromises = serverData.map((chap) => {
+            if (newChapters.length === 0) {
+                if (!autoNav) toast.info("Đã cập nhật: Không có chương mới.");
+                setHasChapters(true);
+                if (autoNav) {
+                    // Check navigation
+                    const res = await api.get(`/chapters?storyId=${localStoryId}&_sort=order&_order=asc&_limit=1`);
+                    if (res.data.length > 0) navigate(`/story/${localStoryId}/chapter/${res.data[0].id}`);
+                }
+                setImporting(false);
+                return;
+            }
+
+            const chapterPromises = newChapters.map((chap) => {
                 return api.post('/chapters', {
                     storyId: localStoryId,
                     title: `Chương ${chap.chapter_name}: ${chap.chapter_title || ''}`,
@@ -201,13 +225,12 @@ const ComicDetailModal = ({ book, isOpen, onClose }) => {
             });
 
             // Parallel with limit
-            const CHUNK_SIZE = 5; // Reduced chunk size for safety
+            const CHUNK_SIZE = 5;
             for (let i = 0; i < chapterPromises.length; i += CHUNK_SIZE) {
                 await Promise.all(chapterPromises.slice(i, i + CHUNK_SIZE));
             }
 
-            setHasChapters(true);
-            if (!autoNav) toast.success(`Đã cập nhật ${serverData.length} chương!`);
+            if (!autoNav) toast.success(`Đã thêm ${newChapters.length} chương mới!`);
 
             if (autoNav) {
                 // Navigate to first chapter

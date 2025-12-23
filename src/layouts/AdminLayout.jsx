@@ -16,24 +16,43 @@ const AdminLayout = () => {
         return <Navigate to="/" replace />;
     }
 
+    const [notifications, setNotifications] = useState([]);
+    const [showNotifications, setShowNotifications] = useState(false);
+    const unreadNotificationsCount = notifications.filter(n => !n.isRead).length;
+
     useEffect(() => {
-        // Initial fetch
-        const checkReports = async () => {
+        const fetchData = async () => {
             try {
-                // Assuming we want to count 'pending' reports
-                const res = await api.get('/reports?status=pending');
-                setPendingReportsCount(res.data.length);
+                // Fetch pending reports count
+                const reportsRes = await api.get('/reports?status=pending');
+                setPendingReportsCount(reportsRes.data.length);
+
+                // Fetch notifications for admin
+                if (user) {
+                    const notifRes = await api.get(`/notifications?userId=${user.id}&_sort=createdAt&_order=desc&_limit=10`);
+                    setNotifications(notifRes.data);
+                }
             } catch (error) {
-                console.error("Failed to fetch pending reports count", error);
+                console.error("Failed to fetch admin data", error);
             }
         };
 
-        checkReports();
-
-        // Optional: Poll every 30 seconds
-        const interval = setInterval(checkReports, 30000);
+        fetchData();
+        const interval = setInterval(fetchData, 30000);
         return () => clearInterval(interval);
-    }, []);
+    }, [user]);
+
+    const markAllAsRead = async () => {
+        const unreadIds = notifications.filter(n => !n.isRead).map(n => n.id);
+        // Optimistic update
+        setNotifications(notifications.map(n => ({ ...n, isRead: true })));
+
+        try {
+            await Promise.all(unreadIds.map(id => api.patch(`/notifications/${id}`, { isRead: true })));
+        } catch (error) {
+            console.error("Failed to mark notifications read", error);
+        }
+    };
 
     const handleLogout = () => {
         logout();
@@ -77,8 +96,8 @@ const AdminLayout = () => {
                                 key={item.path}
                                 to={item.path}
                                 className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${isActive
-                                        ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-500/30'
-                                        : 'text-gray-500 hover:bg-gray-50 hover:text-indigo-600'
+                                    ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-500/30'
+                                    : 'text-gray-500 hover:bg-gray-50 hover:text-indigo-600'
                                     }`}
                             >
                                 <item.icon size={20} className={clsx("transition-colors", isActive ? "text-white" : "text-gray-400 group-hover:text-indigo-600")} />
@@ -140,10 +159,50 @@ const AdminLayout = () => {
                             />
                         </div>
 
-                        <button className="relative p-2 text-gray-400 hover:text-indigo-600 transition-colors rounded-full hover:bg-gray-100">
-                            <Bell size={20} />
-                            <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 rounded-full border-2 border-white"></span>
-                        </button>
+                        <div className="relative">
+                            <button
+                                onClick={() => setShowNotifications(!showNotifications)}
+                                className="relative p-2 text-gray-400 hover:text-indigo-600 transition-colors rounded-full hover:bg-gray-100"
+                            >
+                                <Bell size={20} />
+                                {unreadNotificationsCount > 0 && (
+                                    <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 rounded-full border-2 border-white"></span>
+                                )}
+                            </button>
+
+                            {showNotifications && (
+                                <div className="absolute right-0 mt-2 w-80 bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden z-50 animate-fade-in-up">
+                                    <div className="p-4 border-b border-gray-50 flex justify-between items-center">
+                                        <h3 className="font-bold text-gray-800">Thông báo</h3>
+                                        <button onClick={markAllAsRead} className="text-xs text-indigo-600 hover:underline">Đã xem hết</button>
+                                    </div>
+                                    <div className="max-h-96 overflow-y-auto">
+                                        {notifications.length > 0 ? (
+                                            notifications.map(notif => (
+                                                <Link
+                                                    key={notif.id}
+                                                    to={notif.link}
+                                                    onClick={() => setShowNotifications(false)}
+                                                    className={`block p-4 border-b border-gray-50 hover:bg-gray-50 transition-colors ${!notif.isRead ? 'bg-indigo-50/50' : ''}`}
+                                                >
+                                                    <div className="flex gap-3">
+                                                        <div className={`mt-1 w-2 h-2 rounded-full flex-shrink-0 ${!notif.isRead ? 'bg-indigo-600' : 'bg-transparent'}`}></div>
+                                                        <div>
+                                                            <p className="text-sm text-gray-800 font-medium line-clamp-2">{notif.message}</p>
+                                                            <p className="text-xs text-gray-500 mt-1">{new Date(notif.createdAt).toLocaleDateString('vi-VN')}</p>
+                                                        </div>
+                                                    </div>
+                                                </Link>
+                                            ))
+                                        ) : (
+                                            <div className="p-8 text-center text-gray-500 text-sm">
+                                                Không có thông báo mới
+                                            </div>
+                                        )}
+                                    </div>
+                                </div>
+                            )}
+                        </div>
                     </div>
                 </header>
 

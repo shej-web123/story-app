@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { useForm } from 'react-hook-form';
 import { User, Mail, Lock, Save, Camera, Clock, Award } from 'lucide-react';
@@ -26,7 +27,7 @@ const Profile = () => {
 
     const [readingHistory, setReadingHistory] = useState([]);
 
-    useState(() => {
+    useEffect(() => {
         const history = JSON.parse(localStorage.getItem('readingHistory') || '[]');
         setReadingHistory(history);
     }, []);
@@ -158,12 +159,12 @@ const Profile = () => {
                                                     </div>
                                                 </div>
                                                 <div className="flex items-center">
-                                                    <a
-                                                        href={`/story/${item.id}/chapter/${item.lastReadChapterId}`}
+                                                    <Link
+                                                        to={`/story/${item.id}/chapter/${item.lastReadChapterId}`}
                                                         className="px-4 py-2 bg-white dark:bg-gray-600 text-indigo-600 dark:text-indigo-300 rounded-lg text-sm font-medium shadow-sm border border-gray-200 dark:border-gray-500 hover:bg-indigo-50 dark:hover:bg-gray-500 transition-colors"
                                                     >
                                                         Đọc tiếp
-                                                    </a>
+                                                    </Link>
                                                 </div>
                                             </div>
                                         ))}

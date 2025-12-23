@@ -17,6 +17,7 @@ const StoryDetail = () => {
   const [relatedStories, setRelatedStories] = useState([]);
   const [readingProgress, setReadingProgress] = useState(null);
   const [isSaved, setIsSaved] = useState(false);
+  const [favoriteId, setFavoriteId] = useState(null);
 
   useEffect(() => {
     fetchStory();
@@ -24,13 +25,26 @@ const StoryDetail = () => {
     checkReadingProgress();
     checkIfSaved();
     window.scrollTo(0, 0);
-  }, [id]);
+  }, [id, user]);
 
-  const checkReadingProgress = () => {
-    const history = JSON.parse(localStorage.getItem('readingHistory') || '[]');
-    const progress = history.find(h => h.id === Number(id) || h.id === String(id)); // Check both number and string ID
-    if (progress) {
-      setReadingProgress(progress);
+  const checkReadingProgress = async () => {
+    // 1. Check LocalStorage (Fast check)
+    const localHistory = JSON.parse(localStorage.getItem('readingHistory') || '[]');
+    const localProgress = localHistory.find(h => h.id === Number(id) || h.id === String(id));
+    if (localProgress) {
+      setReadingProgress(localProgress);
+    }
+
+    // 2. Check API if logged in (Source of Truth)
+    if (user) {
+      try {
+        const res = await api.get(`/reading_history?userId=${user.id}&storyId=${id}`);
+        if (res.data.length > 0) {
+          setReadingProgress(res.data[0]);
+        }
+      } catch (error) {
+        console.error("Failed to sync reading progress", error);
+      }
     }
   };
 
@@ -74,28 +88,27 @@ const StoryDetail = () => {
     }
   };
 
-  const handlePostComment = (e) => {
-    e.preventDefault();
-    if (!newComment.trim()) return;
-    const comment = {
-      id: comments.length + 1,
-      user: 'Bạn',
-      content: newComment,
-      time: 'Vừa xong',
-      likes: 0
-    };
-    setComments([comment, ...comments]);
-    setNewComment('');
+  const checkIfSaved = async () => {
+    if (!user) {
+      setIsSaved(false);
+      setFavoriteId(null);
+      return;
+    }
+    try {
+      const res = await api.get(`/favorites?userId=${user.id}&storyId=${id}`);
+      if (res.data.length > 0) {
+        setIsSaved(true);
+        setFavoriteId(res.data[0].id);
+      } else {
+        setIsSaved(false);
+        setFavoriteId(null);
+      }
+    } catch (error) {
+      console.error("Failed to check favorites", error);
+    }
   };
 
-  const checkIfSaved = () => {
-    const savedStories = JSON.parse(localStorage.getItem('savedStories') || '[]');
-    const isStorySaved = savedStories.some(s => s.id === Number(id) || s.id === String(id));
-    setIsSaved(isStorySaved);
-  };
-
-  const handleSaveStory = () => {
-    // Check if user is logged in
+  const handleSaveStory = async () => {
     if (!user) {
       toast.warning('Đăng nhập để lưu truyện vào tủ sách!');
       navigate('/login');
@@ -103,26 +116,25 @@ const StoryDetail = () => {
     }
 
     try {
-      const savedStories = JSON.parse(localStorage.getItem('savedStories') || '[]');
-
-      if (isSaved) {
-        // Remove from saved
-        const updated = savedStories.filter(s => s.id !== Number(id) && s.id !== String(id));
-        localStorage.setItem('savedStories', JSON.stringify(updated));
+      if (isSaved && favoriteId) {
+        // Remove from favorites
+        await api.delete(`/favorites/${favoriteId}`);
         setIsSaved(false);
+        setFavoriteId(null);
         toast.info('Đã xóa khỏi tủ sách');
       } else {
-        // Add to saved
+        // Add to favorites
         const storyToSave = {
-          id: story.id,
+          userId: user.id,
+          storyId: Number(id),
           title: story.title,
           coverUrl: story.coverUrl,
           author: story.author,
           savedAt: new Date().toISOString()
         };
-        savedStories.unshift(storyToSave);
-        localStorage.setItem('savedStories', JSON.stringify(savedStories));
+        const res = await api.post('/favorites', storyToSave);
         setIsSaved(true);
+        setFavoriteId(res.data.id);
         toast.success('Đã thêm vào tủ sách!');
       }
     } catch (error) {

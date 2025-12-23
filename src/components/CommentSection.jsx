@@ -242,7 +242,7 @@ const CommentSection = ({ storyId, chapterId = null }) => {
         if (!reportReason.trim()) return toast.warning('Vui lòng nhập lý do báo cáo');
 
         try {
-            await api.post('/reports', {
+            const reportData = {
                 reporterId: user.id,
                 reporterName: user.name,
                 targetType: reportModal.targetType,
@@ -251,7 +251,32 @@ const CommentSection = ({ storyId, chapterId = null }) => {
                 reason: reportReason,
                 status: 'pending',
                 createdAt: new Date().toISOString()
-            });
+            };
+
+            await api.post('/reports', reportData);
+
+            // Notify all admins
+            try {
+                const adminsRes = await api.get('/users?role=admin');
+                const admins = adminsRes.data;
+
+                const notificationPromises = admins.map(admin =>
+                    api.post('/notifications', {
+                        userId: admin.id,
+                        triggerUserId: user.id,
+                        triggerUserName: user.name,
+                        type: 'report',
+                        message: `${user.name} đã báo cáo một ${reportModal.targetType === 'comment' ? 'bình luận' : 'câu trả lời'}`,
+                        link: '/admin/reports',
+                        isRead: false,
+                        createdAt: new Date().toISOString()
+                    })
+                );
+                await Promise.all(notificationPromises);
+            } catch (notifError) {
+                console.error('Failed to notify admins:', notifError);
+            }
+
             toast.success('Đã gửi báo cáo cho Admin');
             setReportModal({ open: false, targetType: null, targetId: null, targetUserId: null });
             setReportReason('');
