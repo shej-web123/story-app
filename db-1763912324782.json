@@ -1,0 +1,57 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "admin@example.com",
+      "password": "admin",
+      "name": "Admin User",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "email": "user@example.com",
+      "password": "user",
+      "name": "Normal User",
+      "role": "user"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Action",
+      "description": "Action packed stories"
+    },
+    {
+      "id": 2,
+      "name": "Romance",
+      "description": "Love stories"
+    },
+    {
+      "id": 3,
+      "name": "Fantasy",
+      "description": "Magic and dragons"
+    }
+  ],
+  "stories": [
+    {
+      "id": 1,
+      "title": "The Beginning",
+      "description": "A story about the start of everything.",
+      "categoryId": 3,
+      "author": "John Doe",
+      "status": "Ongoing",
+      "coverUrl": "https://placehold.co/300x400",
+      "content": "Once upon a time..."
+    },
+    {
+      "id": 2,
+      "title": "Love in the Air",
+      "description": "A romantic tale.",
+      "categoryId": 2,
+      "author": "Jane Smith",
+      "status": "Completed",
+      "coverUrl": "https://placehold.co/300x400",
+      "content": "They met at a coffee shop..."
+    }
+  ]
+}
