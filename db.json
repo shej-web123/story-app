@@ -73,6 +73,20 @@
       "name": "a",
       "role": "user",
       "id": 7
+    },
+    {
+      "email": "a1@gmail.com",
+      "password": "$2a$10$xvmd3N65uMnokLDtS3fNaeMx.GwEEaUhVNiSHQeWHKkkWJzcKNXhC",
+      "name": "Nguyễn Nhật Minh",
+      "role": "user",
+      "id": 8
+    },
+    {
+      "email": "a2@gmail.com",
+      "password": "$2a$10$gZRYyynq8dv7m2v57ze4B.6YxT4NXqhEnd5u6hNqA7YVm9QJPE27S",
+      "name": "Nguyễn Nhật Ánh",
+      "role": "user",
+      "id": 9
     }
   ],
   "categories": [
@@ -291,6 +305,20 @@
       "slug": "thuong-hoang-tro-ve",
       "externalId": "693395a8679e2c7ab94297c2",
       "id": 11
+    },
+    {
+      "title": "Vừa Chơi Đã Có Tài Khoản Vương Giả",
+      "author": "Đang cập nhật",
+      "categoryId": 1,
+      "status": "Ongoing",
+      "description": "Truyện tranh Vừa Chơi Đã Có Tài Khoản Vương Giả được cập nhật nhanh và đầy đủ nhất tại . Bạn đọc đừng quên để lại bình luận và chia sẻ, ủng hộ ra các chương mới nhất của truyện Vừa Chơi Đã Có Tài Khoản Vương Giả.",
+      "coverUrl": "https://otruyenapi.com/uploads/comics/vua-choi-da-co-tai-khoan-vuong-gia-thumb.jpg",
+      "createdAt": "2025-12-23T17:40:19.043Z",
+      "source": "otruyen",
+      "type": "comic",
+      "slug": "vua-choi-da-co-tai-khoan-vuong-gia",
+      "externalId": "6591216810dc9c0a7e2e56f1",
+      "id": 12
     }
   ],
   "comments": [
@@ -339,6 +367,16 @@
       "createdAt": "2025-12-23T17:22:34.765Z",
       "updatedAt": "2025-12-23T17:22:34.765Z",
       "id": 5
+    },
+    {
+      "storyId": 12,
+      "userId": 8,
+      "userName": "Nguyễn Nhật Minh",
+      "content": "6h50",
+      "chapterId": 1045,
+      "createdAt": "2025-12-23T17:42:41.674Z",
+      "updatedAt": "2025-12-23T17:45:04.561Z",
+      "id": 6
     }
   ],
   "replies": [
@@ -359,6 +397,15 @@
       "content": "Bạn không thích thì đi chỗ khác, đừng nói lời cay đắng.",
       "createdAt": "2024-12-21T15:30:00.000Z",
       "updatedAt": "2024-12-21T15:30:00.000Z"
+    },
+    {
+      "commentId": 6,
+      "userId": 9,
+      "userName": "Nguyễn Nhật Ánh",
+      "content": "Ý bro là 7 giờ kém 10",
+      "createdAt": "2025-12-23T17:45:28.432Z",
+      "updatedAt": "2025-12-23T17:45:28.432Z",
+      "id": 3
     }
   ],
   "notifications": [
@@ -372,6 +419,28 @@
       "link": "/story/1",
       "isRead": false,
       "createdAt": "2024-12-20T11:00:00.000Z"
+    },
+    {
+      "userId": 8,
+      "triggerUserId": 9,
+      "triggerUserName": "Nguyễn Nhật Ánh",
+      "type": "reply",
+      "message": "Nguyễn Nhật Ánh đã trả lời bình luận của bạn",
+      "link": "/story/12",
+      "isRead": true,
+      "createdAt": "2025-12-23T17:44:21.848Z",
+      "id": 2
+    },
+    {
+      "userId": 8,
+      "triggerUserId": 9,
+      "triggerUserName": "Nguyễn Nhật Ánh",
+      "type": "reply",
+      "message": "Nguyễn Nhật Ánh đã trả lời bình luận của bạn",
+      "link": "/story/12",
+      "isRead": true,
+      "createdAt": "2025-12-23T17:45:28.477Z",
+      "id": 3
     }
   ],
   "reading_history": [
@@ -514,6 +583,86 @@
       "chapterTitle": "Chương 1: ",
       "lastReadAt": "2025-12-23T17:19:22.064Z",
       "id": 14
+    },
+    {
+      "userId": 8,
+      "storyId": 12,
+      "storyTitle": "Vừa Chơi Đã Có Tài Khoản Vương Giả",
+      "storyCover": "https://otruyenapi.com/uploads/comics/vua-choi-da-co-tai-khoan-vuong-gia-thumb.jpg",
+      "chapterId": 1045,
+      "chapterTitle": "Chương 1: ",
+      "lastReadAt": "2025-12-23T17:45:38.484Z",
+      "id": 15
+    },
+    {
+      "userId": 8,
+      "storyId": 12,
+      "storyTitle": "Vừa Chơi Đã Có Tài Khoản Vương Giả",
+      "storyCover": "https://otruyenapi.com/uploads/comics/vua-choi-da-co-tai-khoan-vuong-gia-thumb.jpg",
+      "chapterId": 1045,
+      "chapterTitle": "Chương 1: ",
+      "lastReadAt": "2025-12-23T17:41:04.743Z",
+      "id": 16
+    },
+    {
+      "userId": 8,
+      "storyId": 7,
+      "storyTitle": "Vì Bị Coi Là Kẻ Ăn Bám, Tôi Quyết Định Chuyển Đến Đế Quốc Để Thăng Tiến Sự Nghiệp.",
+      "storyCover": "https://otruyenapi.com/uploads/comics/vi-bi-coi-la-ke-an-bam-toi-quyet-dinh-chuyen-den-de-quoc-de-thang-tien-su-nghiep-thumb.jpg",
+      "chapterId": 1588,
+      "chapterTitle": "Chương 1: ",
+      "lastReadAt": "2025-12-23T17:41:59.252Z",
+      "id": 17
+    },
+    {
+      "userId": 8,
+      "storyId": 7,
+      "storyTitle": "Vì Bị Coi Là Kẻ Ăn Bám, Tôi Quyết Định Chuyển Đến Đế Quốc Để Thăng Tiến Sự Nghiệp.",
+      "storyCover": "https://otruyenapi.com/uploads/comics/vi-bi-coi-la-ke-an-bam-toi-quyet-dinh-chuyen-den-de-quoc-de-thang-tien-su-nghiep-thumb.jpg",
+      "chapterId": 1588,
+      "chapterTitle": "Chương 1: ",
+      "lastReadAt": "2025-12-23T17:41:59.207Z",
+      "id": 18
+    },
+    {
+      "userId": 8,
+      "storyId": 4,
+      "storyTitle": "Vạn Giới Chi Lâm",
+      "storyCover": "https://otruyenapi.com/uploads/comics/van-gioi-chi-lam-thumb.jpg",
+      "chapterId": 1,
+      "chapterTitle": "Chương 1: ",
+      "lastReadAt": "2025-12-23T17:42:05.330Z",
+      "id": 19
+    },
+    {
+      "userId": 8,
+      "storyId": 4,
+      "storyTitle": "Vạn Giới Chi Lâm",
+      "storyCover": "https://otruyenapi.com/uploads/comics/van-gioi-chi-lam-thumb.jpg",
+      "chapterId": 1,
+      "chapterTitle": "Chương 1: ",
+      "lastReadAt": "2025-12-23T17:42:05.305Z",
+      "id": 20
+    },
+    {
+      "userId": 9,
+      "storyId": 12,
+      "storyTitle": "Vừa Chơi Đã Có Tài Khoản Vương Giả",
+      "storyCover": "https://otruyenapi.com/uploads/comics/vua-choi-da-co-tai-khoan-vuong-gia-thumb.jpg",
+      "chapterId": 1045,
+      "chapterTitle": "Chương 1: ",
+      "lastReadAt": "2025-12-23T17:45:09.337Z",
+      "id": 21
+    },
+    {
+      "userId": 9,
+      "storyId": 12,
+      "storyTitle": "Vừa Chơi Đã Có Tài Khoản Vương Giả",
+      "storyCover": "https://otruyenapi.com/uploads/comics/vua-choi-da-co-tai-khoan-vuong-gia-thumb.jpg",
+      "chapterId": 1045,
+      "chapterTitle": "Chương 1: ",
+      "lastReadAt": "2025-12-23T17:43:36.434Z",
+      "id": 22
     }
   ],
   "reports": [
@@ -10975,6 +11124,6056 @@
       "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/694a71e2e0d753f32e5015b4",
       "source": "otruyen",
       "id": 1043
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 7: ",
+      "content": "",
+      "order": 7,
+      "createdAt": "2025-12-23T17:40:19.084Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b55e120ddf21992ccb3",
+      "source": "otruyen",
+      "id": 1044
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 1: ",
+      "content": "",
+      "order": 1,
+      "createdAt": "2025-12-23T17:40:19.084Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b4ce120ddf21992cca1",
+      "source": "otruyen",
+      "id": 1045
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 6: ",
+      "content": "",
+      "order": 6,
+      "createdAt": "2025-12-23T17:40:19.084Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b54e120ddf21992ccb0",
+      "source": "otruyen",
+      "id": 1046
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 8: ",
+      "content": "",
+      "order": 8,
+      "createdAt": "2025-12-23T17:40:19.084Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b56e120ddf21992ccb6",
+      "source": "otruyen",
+      "id": 1047
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 9: ",
+      "content": "",
+      "order": 9,
+      "createdAt": "2025-12-23T17:40:19.084Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b57e120ddf21992ccb9",
+      "source": "otruyen",
+      "id": 1048
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 10: ",
+      "content": "",
+      "order": 10,
+      "createdAt": "2025-12-23T17:40:19.084Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b58e120ddf21992ccbc",
+      "source": "otruyen",
+      "id": 1049
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 11: ",
+      "content": "",
+      "order": 11,
+      "createdAt": "2025-12-23T17:40:19.084Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b59e120ddf21992ccbf",
+      "source": "otruyen",
+      "id": 1050
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 12: ",
+      "content": "",
+      "order": 12,
+      "createdAt": "2025-12-23T17:40:19.084Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b5be120ddf21992ccc2",
+      "source": "otruyen",
+      "id": 1051
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 13: ",
+      "content": "",
+      "order": 13,
+      "createdAt": "2025-12-23T17:40:19.084Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b5ce120ddf21992ccc5",
+      "source": "otruyen",
+      "id": 1052
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 14: ",
+      "content": "",
+      "order": 14,
+      "createdAt": "2025-12-23T17:40:19.084Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b5de120ddf21992ccc8",
+      "source": "otruyen",
+      "id": 1053
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 15: ",
+      "content": "",
+      "order": 15,
+      "createdAt": "2025-12-23T17:40:19.084Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b5ee120ddf21992cccb",
+      "source": "otruyen",
+      "id": 1054
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 16: ",
+      "content": "",
+      "order": 16,
+      "createdAt": "2025-12-23T17:40:19.084Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b60e120ddf21992ccce",
+      "source": "otruyen",
+      "id": 1055
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 17: ",
+      "content": "",
+      "order": 17,
+      "createdAt": "2025-12-23T17:40:19.084Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b61e120ddf21992ccd1",
+      "source": "otruyen",
+      "id": 1056
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 18: ",
+      "content": "",
+      "order": 18,
+      "createdAt": "2025-12-23T17:40:19.084Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b63e120ddf21992ccd4",
+      "source": "otruyen",
+      "id": 1057
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 19: ",
+      "content": "",
+      "order": 19,
+      "createdAt": "2025-12-23T17:40:19.084Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b64e120ddf21992ccd7",
+      "source": "otruyen",
+      "id": 1058
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 20: ",
+      "content": "",
+      "order": 20,
+      "createdAt": "2025-12-23T17:40:19.084Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b66e120ddf21992ccda",
+      "source": "otruyen",
+      "id": 1059
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 21: ",
+      "content": "",
+      "order": 21,
+      "createdAt": "2025-12-23T17:40:19.085Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b67e120ddf21992ccdd",
+      "source": "otruyen",
+      "id": 1060
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 22: ",
+      "content": "",
+      "order": 22,
+      "createdAt": "2025-12-23T17:40:19.085Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b68e120ddf21992cce0",
+      "source": "otruyen",
+      "id": 1061
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 23: ",
+      "content": "",
+      "order": 23,
+      "createdAt": "2025-12-23T17:40:19.085Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b6ae120ddf21992cce3",
+      "source": "otruyen",
+      "id": 1062
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 24: ",
+      "content": "",
+      "order": 24,
+      "createdAt": "2025-12-23T17:40:19.085Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b6be120ddf21992cce6",
+      "source": "otruyen",
+      "id": 1063
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 25: ",
+      "content": "",
+      "order": 25,
+      "createdAt": "2025-12-23T17:40:19.085Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b6ce120ddf21992cce9",
+      "source": "otruyen",
+      "id": 1064
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 26: ",
+      "content": "",
+      "order": 26,
+      "createdAt": "2025-12-23T17:40:19.086Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b6ee120ddf21992ccec",
+      "source": "otruyen",
+      "id": 1065
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 27: ",
+      "content": "",
+      "order": 27,
+      "createdAt": "2025-12-23T17:40:19.086Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b6fe120ddf21992ccef",
+      "source": "otruyen",
+      "id": 1066
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 2: ",
+      "content": "",
+      "order": 2,
+      "createdAt": "2025-12-23T17:40:19.084Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b4de120ddf21992cca4",
+      "source": "otruyen",
+      "id": 1067
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 28: ",
+      "content": "",
+      "order": 28,
+      "createdAt": "2025-12-23T17:40:19.086Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b70e120ddf21992ccf2",
+      "source": "otruyen",
+      "id": 1068
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 4: ",
+      "content": "",
+      "order": 4,
+      "createdAt": "2025-12-23T17:40:19.084Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b51e120ddf21992ccaa",
+      "source": "otruyen",
+      "id": 1069
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 29: ",
+      "content": "",
+      "order": 29,
+      "createdAt": "2025-12-23T17:40:19.086Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b72e120ddf21992ccf5",
+      "source": "otruyen",
+      "id": 1070
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 30: ",
+      "content": "",
+      "order": 30,
+      "createdAt": "2025-12-23T17:40:19.090Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b73e120ddf21992ccf8",
+      "source": "otruyen",
+      "id": 1071
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 31: ",
+      "content": "",
+      "order": 31,
+      "createdAt": "2025-12-23T17:40:19.090Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b74e120ddf21992ccfb",
+      "source": "otruyen",
+      "id": 1072
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 32: ",
+      "content": "",
+      "order": 32,
+      "createdAt": "2025-12-23T17:40:19.090Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b76e120ddf21992ccfe",
+      "source": "otruyen",
+      "id": 1073
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 33: ",
+      "content": "",
+      "order": 33,
+      "createdAt": "2025-12-23T17:40:19.090Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b77e120ddf21992cd01",
+      "source": "otruyen",
+      "id": 1074
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 34: ",
+      "content": "",
+      "order": 34,
+      "createdAt": "2025-12-23T17:40:19.090Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b78e120ddf21992cd04",
+      "source": "otruyen",
+      "id": 1075
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 35: ",
+      "content": "",
+      "order": 35,
+      "createdAt": "2025-12-23T17:40:19.090Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b7ae120ddf21992cd07",
+      "source": "otruyen",
+      "id": 1076
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 36: ",
+      "content": "",
+      "order": 36,
+      "createdAt": "2025-12-23T17:40:19.090Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b7ae120ddf21992cd0a",
+      "source": "otruyen",
+      "id": 1077
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 37: ",
+      "content": "",
+      "order": 37,
+      "createdAt": "2025-12-23T17:40:19.090Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b7ce120ddf21992cd10",
+      "source": "otruyen",
+      "id": 1078
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 37.1: ",
+      "content": "",
+      "order": 37.1,
+      "createdAt": "2025-12-23T17:40:19.090Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b7be120ddf21992cd0d",
+      "source": "otruyen",
+      "id": 1079
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 3: ",
+      "content": "",
+      "order": 3,
+      "createdAt": "2025-12-23T17:40:19.084Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b4fe120ddf21992cca7",
+      "source": "otruyen",
+      "id": 1080
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 38: ",
+      "content": "",
+      "order": 38,
+      "createdAt": "2025-12-23T17:40:19.090Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b7de120ddf21992cd13",
+      "source": "otruyen",
+      "id": 1081
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 39: ",
+      "content": "",
+      "order": 39,
+      "createdAt": "2025-12-23T17:40:19.090Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b7ee120ddf21992cd16",
+      "source": "otruyen",
+      "id": 1082
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 40: ",
+      "content": "",
+      "order": 40,
+      "createdAt": "2025-12-23T17:40:19.090Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b7fe120ddf21992cd19",
+      "source": "otruyen",
+      "id": 1083
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 41: ",
+      "content": "",
+      "order": 41,
+      "createdAt": "2025-12-23T17:40:19.090Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b80e120ddf21992cd1c",
+      "source": "otruyen",
+      "id": 1084
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 42: ",
+      "content": "",
+      "order": 42,
+      "createdAt": "2025-12-23T17:40:19.090Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b82e120ddf21992cd1f",
+      "source": "otruyen",
+      "id": 1085
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 43: ",
+      "content": "",
+      "order": 43,
+      "createdAt": "2025-12-23T17:40:19.090Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b83e120ddf21992cd22",
+      "source": "otruyen",
+      "id": 1086
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 44: ",
+      "content": "",
+      "order": 44,
+      "createdAt": "2025-12-23T17:40:19.091Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b84e120ddf21992cd25",
+      "source": "otruyen",
+      "id": 1087
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 5: ",
+      "content": "",
+      "order": 5,
+      "createdAt": "2025-12-23T17:40:19.084Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b52e120ddf21992ccad",
+      "source": "otruyen",
+      "id": 1088
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 45: ",
+      "content": "",
+      "order": 45,
+      "createdAt": "2025-12-23T17:40:19.091Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b85e120ddf21992cd28",
+      "source": "otruyen",
+      "id": 1089
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 46: ",
+      "content": "",
+      "order": 46,
+      "createdAt": "2025-12-23T17:40:19.091Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b86e120ddf21992cd2b",
+      "source": "otruyen",
+      "id": 1090
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 47: ",
+      "content": "",
+      "order": 47,
+      "createdAt": "2025-12-23T17:40:19.091Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b87e120ddf21992cd2e",
+      "source": "otruyen",
+      "id": 1091
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 48: 48 49",
+      "content": "",
+      "order": 48,
+      "createdAt": "2025-12-23T17:40:19.091Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b88e120ddf21992cd31",
+      "source": "otruyen",
+      "id": 1092
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 50: ",
+      "content": "",
+      "order": 50,
+      "createdAt": "2025-12-23T17:40:19.091Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b89e120ddf21992cd34",
+      "source": "otruyen",
+      "id": 1093
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 51: ",
+      "content": "",
+      "order": 51,
+      "createdAt": "2025-12-23T17:40:19.091Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b8ae120ddf21992cd37",
+      "source": "otruyen",
+      "id": 1094
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 52: ",
+      "content": "",
+      "order": 52,
+      "createdAt": "2025-12-23T17:40:19.091Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b8be120ddf21992cd3a",
+      "source": "otruyen",
+      "id": 1095
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 53: ",
+      "content": "",
+      "order": 53,
+      "createdAt": "2025-12-23T17:40:19.091Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b8ce120ddf21992cd3d",
+      "source": "otruyen",
+      "id": 1096
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 54: ",
+      "content": "",
+      "order": 54,
+      "createdAt": "2025-12-23T17:40:19.091Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b8de120ddf21992cd40",
+      "source": "otruyen",
+      "id": 1097
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 55: ",
+      "content": "",
+      "order": 55,
+      "createdAt": "2025-12-23T17:40:19.091Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b8ee120ddf21992cd43",
+      "source": "otruyen",
+      "id": 1098
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 56: ",
+      "content": "",
+      "order": 56,
+      "createdAt": "2025-12-23T17:40:19.091Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b8fe120ddf21992cd46",
+      "source": "otruyen",
+      "id": 1099
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 57: ",
+      "content": "",
+      "order": 57,
+      "createdAt": "2025-12-23T17:40:19.091Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b90e120ddf21992cd49",
+      "source": "otruyen",
+      "id": 1100
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 58: ",
+      "content": "",
+      "order": 58,
+      "createdAt": "2025-12-23T17:40:19.091Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b91e120ddf21992cd4c",
+      "source": "otruyen",
+      "id": 1101
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 59: ",
+      "content": "",
+      "order": 59,
+      "createdAt": "2025-12-23T17:40:19.091Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b92e120ddf21992cd4f",
+      "source": "otruyen",
+      "id": 1102
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 60: ",
+      "content": "",
+      "order": 60,
+      "createdAt": "2025-12-23T17:40:19.091Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b93e120ddf21992cd52",
+      "source": "otruyen",
+      "id": 1103
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 61: ",
+      "content": "",
+      "order": 61,
+      "createdAt": "2025-12-23T17:40:19.091Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b94e120ddf21992cd55",
+      "source": "otruyen",
+      "id": 1104
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 62: ",
+      "content": "",
+      "order": 62,
+      "createdAt": "2025-12-23T17:40:19.091Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b95e120ddf21992cd58",
+      "source": "otruyen",
+      "id": 1105
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 63: ",
+      "content": "",
+      "order": 63,
+      "createdAt": "2025-12-23T17:40:19.091Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b95e120ddf21992cd5b",
+      "source": "otruyen",
+      "id": 1106
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 64: ",
+      "content": "",
+      "order": 64,
+      "createdAt": "2025-12-23T17:40:19.091Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b96e120ddf21992cd5e",
+      "source": "otruyen",
+      "id": 1107
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 65: ",
+      "content": "",
+      "order": 65,
+      "createdAt": "2025-12-23T17:40:19.091Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b97e120ddf21992cd61",
+      "source": "otruyen",
+      "id": 1108
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 66: ",
+      "content": "",
+      "order": 66,
+      "createdAt": "2025-12-23T17:40:19.091Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b98e120ddf21992cd64",
+      "source": "otruyen",
+      "id": 1109
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 67: ",
+      "content": "",
+      "order": 67,
+      "createdAt": "2025-12-23T17:40:19.091Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b99e120ddf21992cd67",
+      "source": "otruyen",
+      "id": 1110
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 68: ",
+      "content": "",
+      "order": 68,
+      "createdAt": "2025-12-23T17:40:19.091Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b9ae120ddf21992cd6a",
+      "source": "otruyen",
+      "id": 1111
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 69: ",
+      "content": "",
+      "order": 69,
+      "createdAt": "2025-12-23T17:40:19.091Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b9be120ddf21992cd6d",
+      "source": "otruyen",
+      "id": 1112
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 70: ",
+      "content": "",
+      "order": 70,
+      "createdAt": "2025-12-23T17:40:19.091Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b9ce120ddf21992cd70",
+      "source": "otruyen",
+      "id": 1113
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 71: ",
+      "content": "",
+      "order": 71,
+      "createdAt": "2025-12-23T17:40:19.091Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b9de120ddf21992cd73",
+      "source": "otruyen",
+      "id": 1114
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 72: ",
+      "content": "",
+      "order": 72,
+      "createdAt": "2025-12-23T17:40:19.091Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b9ee120ddf21992cd76",
+      "source": "otruyen",
+      "id": 1115
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 73: ",
+      "content": "",
+      "order": 73,
+      "createdAt": "2025-12-23T17:40:19.091Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916b9fe120ddf21992cd79",
+      "source": "otruyen",
+      "id": 1116
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 74: ",
+      "content": "",
+      "order": 74,
+      "createdAt": "2025-12-23T17:40:19.091Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916ba0e120ddf21992cd7c",
+      "source": "otruyen",
+      "id": 1117
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 75: ",
+      "content": "",
+      "order": 75,
+      "createdAt": "2025-12-23T17:40:19.091Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916ba1e120ddf21992cd7f",
+      "source": "otruyen",
+      "id": 1118
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 76: ",
+      "content": "",
+      "order": 76,
+      "createdAt": "2025-12-23T17:40:19.091Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916ba2e120ddf21992cd82",
+      "source": "otruyen",
+      "id": 1119
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 77: ",
+      "content": "",
+      "order": 77,
+      "createdAt": "2025-12-23T17:40:19.091Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916ba3e120ddf21992cd85",
+      "source": "otruyen",
+      "id": 1120
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 78: ",
+      "content": "",
+      "order": 78,
+      "createdAt": "2025-12-23T17:40:19.091Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916ba4e120ddf21992cd88",
+      "source": "otruyen",
+      "id": 1121
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 79: ",
+      "content": "",
+      "order": 79,
+      "createdAt": "2025-12-23T17:40:19.091Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916ba5e120ddf21992cd8b",
+      "source": "otruyen",
+      "id": 1122
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 80: ",
+      "content": "",
+      "order": 80,
+      "createdAt": "2025-12-23T17:40:19.092Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916ba6e120ddf21992cd8e",
+      "source": "otruyen",
+      "id": 1123
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 81: ",
+      "content": "",
+      "order": 81,
+      "createdAt": "2025-12-23T17:40:19.092Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916ba7e120ddf21992cd91",
+      "source": "otruyen",
+      "id": 1124
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 82: ",
+      "content": "",
+      "order": 82,
+      "createdAt": "2025-12-23T17:40:19.092Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916ba8e120ddf21992cd94",
+      "source": "otruyen",
+      "id": 1125
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 83: ",
+      "content": "",
+      "order": 83,
+      "createdAt": "2025-12-23T17:40:19.092Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916ba9e120ddf21992cd97",
+      "source": "otruyen",
+      "id": 1126
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 84: ",
+      "content": "",
+      "order": 84,
+      "createdAt": "2025-12-23T17:40:19.092Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916baae120ddf21992cd9a",
+      "source": "otruyen",
+      "id": 1127
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 85: ",
+      "content": "",
+      "order": 85,
+      "createdAt": "2025-12-23T17:40:19.092Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916babe120ddf21992cd9d",
+      "source": "otruyen",
+      "id": 1128
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 86: ",
+      "content": "",
+      "order": 86,
+      "createdAt": "2025-12-23T17:40:19.092Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916babe120ddf21992cda0",
+      "source": "otruyen",
+      "id": 1129
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 87: ",
+      "content": "",
+      "order": 87,
+      "createdAt": "2025-12-23T17:40:19.092Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bace120ddf21992cda3",
+      "source": "otruyen",
+      "id": 1130
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 88: ",
+      "content": "",
+      "order": 88,
+      "createdAt": "2025-12-23T17:40:19.092Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bade120ddf21992cda6",
+      "source": "otruyen",
+      "id": 1131
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 89: ",
+      "content": "",
+      "order": 89,
+      "createdAt": "2025-12-23T17:40:19.092Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916baee120ddf21992cda9",
+      "source": "otruyen",
+      "id": 1132
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 90: ",
+      "content": "",
+      "order": 90,
+      "createdAt": "2025-12-23T17:40:19.092Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bafe120ddf21992cdac",
+      "source": "otruyen",
+      "id": 1133
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 91: ",
+      "content": "",
+      "order": 91,
+      "createdAt": "2025-12-23T17:40:19.092Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bb0e120ddf21992cdaf",
+      "source": "otruyen",
+      "id": 1134
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 92: ",
+      "content": "",
+      "order": 92,
+      "createdAt": "2025-12-23T17:40:19.092Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bb1e120ddf21992cdb2",
+      "source": "otruyen",
+      "id": 1135
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 93: ",
+      "content": "",
+      "order": 93,
+      "createdAt": "2025-12-23T17:40:19.092Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bb2e120ddf21992cdb5",
+      "source": "otruyen",
+      "id": 1136
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 94: ",
+      "content": "",
+      "order": 94,
+      "createdAt": "2025-12-23T17:40:19.092Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bb3e120ddf21992cdb8",
+      "source": "otruyen",
+      "id": 1137
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 95: ",
+      "content": "",
+      "order": 95,
+      "createdAt": "2025-12-23T17:40:19.092Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bb4e120ddf21992cdbb",
+      "source": "otruyen",
+      "id": 1138
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 96: ",
+      "content": "",
+      "order": 96,
+      "createdAt": "2025-12-23T17:40:19.092Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bb5e120ddf21992cdbe",
+      "source": "otruyen",
+      "id": 1139
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 97: ",
+      "content": "",
+      "order": 97,
+      "createdAt": "2025-12-23T17:40:19.092Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bb6e120ddf21992cdc1",
+      "source": "otruyen",
+      "id": 1140
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 98: ",
+      "content": "",
+      "order": 98,
+      "createdAt": "2025-12-23T17:40:19.092Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bb7e120ddf21992cdc4",
+      "source": "otruyen",
+      "id": 1141
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 99: ",
+      "content": "",
+      "order": 99,
+      "createdAt": "2025-12-23T17:40:19.092Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bb8e120ddf21992cdc7",
+      "source": "otruyen",
+      "id": 1142
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 100: ",
+      "content": "",
+      "order": 100,
+      "createdAt": "2025-12-23T17:40:19.092Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bb9e120ddf21992cdca",
+      "source": "otruyen",
+      "id": 1143
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 101: ",
+      "content": "",
+      "order": 101,
+      "createdAt": "2025-12-23T17:40:19.092Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bbae120ddf21992cdcd",
+      "source": "otruyen",
+      "id": 1144
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 102: ",
+      "content": "",
+      "order": 102,
+      "createdAt": "2025-12-23T17:40:19.092Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bbce120ddf21992cdd0",
+      "source": "otruyen",
+      "id": 1145
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 103: ",
+      "content": "",
+      "order": 103,
+      "createdAt": "2025-12-23T17:40:19.092Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bbde120ddf21992cdd3",
+      "source": "otruyen",
+      "id": 1146
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 104: ",
+      "content": "",
+      "order": 104,
+      "createdAt": "2025-12-23T17:40:19.093Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bbee120ddf21992cdd6",
+      "source": "otruyen",
+      "id": 1147
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 105: ",
+      "content": "",
+      "order": 105,
+      "createdAt": "2025-12-23T17:40:19.093Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bbfe120ddf21992cdd9",
+      "source": "otruyen",
+      "id": 1148
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 106: ",
+      "content": "",
+      "order": 106,
+      "createdAt": "2025-12-23T17:40:19.093Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bc0e120ddf21992cddc",
+      "source": "otruyen",
+      "id": 1149
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 107: ",
+      "content": "",
+      "order": 107,
+      "createdAt": "2025-12-23T17:40:19.093Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bc1e120ddf21992cddf",
+      "source": "otruyen",
+      "id": 1150
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 108: ",
+      "content": "",
+      "order": 108,
+      "createdAt": "2025-12-23T17:40:19.093Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bc3e120ddf21992cde2",
+      "source": "otruyen",
+      "id": 1151
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 109: ",
+      "content": "",
+      "order": 109,
+      "createdAt": "2025-12-23T17:40:19.093Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bc4e120ddf21992cde5",
+      "source": "otruyen",
+      "id": 1152
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 110: ",
+      "content": "",
+      "order": 110,
+      "createdAt": "2025-12-23T17:40:19.093Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bc5e120ddf21992cde8",
+      "source": "otruyen",
+      "id": 1153
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 111: ",
+      "content": "",
+      "order": 111,
+      "createdAt": "2025-12-23T17:40:19.093Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bc6e120ddf21992cdeb",
+      "source": "otruyen",
+      "id": 1154
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 112: ",
+      "content": "",
+      "order": 112,
+      "createdAt": "2025-12-23T17:40:19.093Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bc7e120ddf21992cdee",
+      "source": "otruyen",
+      "id": 1155
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 113: ",
+      "content": "",
+      "order": 113,
+      "createdAt": "2025-12-23T17:40:19.093Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bc8e120ddf21992cdf1",
+      "source": "otruyen",
+      "id": 1156
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 114: ",
+      "content": "",
+      "order": 114,
+      "createdAt": "2025-12-23T17:40:19.093Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bcae120ddf21992cdf4",
+      "source": "otruyen",
+      "id": 1157
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 115: ",
+      "content": "",
+      "order": 115,
+      "createdAt": "2025-12-23T17:40:19.093Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bcbe120ddf21992cdf7",
+      "source": "otruyen",
+      "id": 1158
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 116: ",
+      "content": "",
+      "order": 116,
+      "createdAt": "2025-12-23T17:40:19.093Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bcde120ddf21992cdfa",
+      "source": "otruyen",
+      "id": 1159
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 117: ",
+      "content": "",
+      "order": 117,
+      "createdAt": "2025-12-23T17:40:19.093Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bcee120ddf21992cdfd",
+      "source": "otruyen",
+      "id": 1160
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 118: ",
+      "content": "",
+      "order": 118,
+      "createdAt": "2025-12-23T17:40:19.093Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bcfe120ddf21992ce00",
+      "source": "otruyen",
+      "id": 1161
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 119: ",
+      "content": "",
+      "order": 119,
+      "createdAt": "2025-12-23T17:40:19.093Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bd0e120ddf21992ce03",
+      "source": "otruyen",
+      "id": 1162
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 120: ",
+      "content": "",
+      "order": 120,
+      "createdAt": "2025-12-23T17:40:19.093Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bd2e120ddf21992ce06",
+      "source": "otruyen",
+      "id": 1163
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 121: ",
+      "content": "",
+      "order": 121,
+      "createdAt": "2025-12-23T17:40:19.093Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bd3e120ddf21992ce09",
+      "source": "otruyen",
+      "id": 1164
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 122: ",
+      "content": "",
+      "order": 122,
+      "createdAt": "2025-12-23T17:40:19.093Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bd5e120ddf21992ce0c",
+      "source": "otruyen",
+      "id": 1165
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 123: ",
+      "content": "",
+      "order": 123,
+      "createdAt": "2025-12-23T17:40:19.094Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bd6e120ddf21992ce0f",
+      "source": "otruyen",
+      "id": 1166
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 124: ",
+      "content": "",
+      "order": 124,
+      "createdAt": "2025-12-23T17:40:19.094Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bd7e120ddf21992ce12",
+      "source": "otruyen",
+      "id": 1167
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 125: ",
+      "content": "",
+      "order": 125,
+      "createdAt": "2025-12-23T17:40:19.094Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bd8e120ddf21992ce15",
+      "source": "otruyen",
+      "id": 1168
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 126: ",
+      "content": "",
+      "order": 126,
+      "createdAt": "2025-12-23T17:40:19.094Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bdae120ddf21992ce18",
+      "source": "otruyen",
+      "id": 1169
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 127: ",
+      "content": "",
+      "order": 127,
+      "createdAt": "2025-12-23T17:40:19.094Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bdbe120ddf21992ce1b",
+      "source": "otruyen",
+      "id": 1170
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 128: ",
+      "content": "",
+      "order": 128,
+      "createdAt": "2025-12-23T17:40:19.094Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bdce120ddf21992ce1e",
+      "source": "otruyen",
+      "id": 1171
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 129: ",
+      "content": "",
+      "order": 129,
+      "createdAt": "2025-12-23T17:40:19.094Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bdde120ddf21992ce21",
+      "source": "otruyen",
+      "id": 1172
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 130: ",
+      "content": "",
+      "order": 130,
+      "createdAt": "2025-12-23T17:40:19.094Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bdee120ddf21992ce24",
+      "source": "otruyen",
+      "id": 1173
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 131: ",
+      "content": "",
+      "order": 131,
+      "createdAt": "2025-12-23T17:40:19.094Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916be0e120ddf21992ce27",
+      "source": "otruyen",
+      "id": 1174
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 132: ",
+      "content": "",
+      "order": 132,
+      "createdAt": "2025-12-23T17:40:19.094Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916be1e120ddf21992ce2a",
+      "source": "otruyen",
+      "id": 1175
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 133: ",
+      "content": "",
+      "order": 133,
+      "createdAt": "2025-12-23T17:40:19.094Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916be2e120ddf21992ce2d",
+      "source": "otruyen",
+      "id": 1176
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 134: ",
+      "content": "",
+      "order": 134,
+      "createdAt": "2025-12-23T17:40:19.095Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916be4e120ddf21992ce30",
+      "source": "otruyen",
+      "id": 1177
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 135: ",
+      "content": "",
+      "order": 135,
+      "createdAt": "2025-12-23T17:40:19.095Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916be5e120ddf21992ce33",
+      "source": "otruyen",
+      "id": 1178
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 136: ",
+      "content": "",
+      "order": 136,
+      "createdAt": "2025-12-23T17:40:19.095Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916be6e120ddf21992ce36",
+      "source": "otruyen",
+      "id": 1179
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 137: ",
+      "content": "",
+      "order": 137,
+      "createdAt": "2025-12-23T17:40:19.095Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916be7e120ddf21992ce39",
+      "source": "otruyen",
+      "id": 1180
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 138: ",
+      "content": "",
+      "order": 138,
+      "createdAt": "2025-12-23T17:40:19.095Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916be8e120ddf21992ce3c",
+      "source": "otruyen",
+      "id": 1181
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 139: ",
+      "content": "",
+      "order": 139,
+      "createdAt": "2025-12-23T17:40:19.095Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916be9e120ddf21992ce3f",
+      "source": "otruyen",
+      "id": 1182
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 140: ",
+      "content": "",
+      "order": 140,
+      "createdAt": "2025-12-23T17:40:19.095Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916beae120ddf21992ce42",
+      "source": "otruyen",
+      "id": 1183
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 141: ",
+      "content": "",
+      "order": 141,
+      "createdAt": "2025-12-23T17:40:19.095Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bebe120ddf21992ce45",
+      "source": "otruyen",
+      "id": 1184
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 142: ",
+      "content": "",
+      "order": 142,
+      "createdAt": "2025-12-23T17:40:19.095Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bede120ddf21992ce48",
+      "source": "otruyen",
+      "id": 1185
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 143: ",
+      "content": "",
+      "order": 143,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916beee120ddf21992ce4b",
+      "source": "otruyen",
+      "id": 1186
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 144: ",
+      "content": "",
+      "order": 144,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916befe120ddf21992ce4e",
+      "source": "otruyen",
+      "id": 1187
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 145: ",
+      "content": "",
+      "order": 145,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bf0e120ddf21992ce51",
+      "source": "otruyen",
+      "id": 1188
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 146: ",
+      "content": "",
+      "order": 146,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bf2e120ddf21992ce54",
+      "source": "otruyen",
+      "id": 1189
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 147: ",
+      "content": "",
+      "order": 147,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bf3e120ddf21992ce57",
+      "source": "otruyen",
+      "id": 1190
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 148: ",
+      "content": "",
+      "order": 148,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bf4e120ddf21992ce5a",
+      "source": "otruyen",
+      "id": 1191
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 149: ",
+      "content": "",
+      "order": 149,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bf5e120ddf21992ce5d",
+      "source": "otruyen",
+      "id": 1192
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 150: ",
+      "content": "",
+      "order": 150,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bf6e120ddf21992ce60",
+      "source": "otruyen",
+      "id": 1193
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 151: ",
+      "content": "",
+      "order": 151,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bf7e120ddf21992ce63",
+      "source": "otruyen",
+      "id": 1194
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 152: ",
+      "content": "",
+      "order": 152,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bf8e120ddf21992ce66",
+      "source": "otruyen",
+      "id": 1195
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 153: ",
+      "content": "",
+      "order": 153,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bf9e120ddf21992ce69",
+      "source": "otruyen",
+      "id": 1196
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 154: ",
+      "content": "",
+      "order": 154,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bfae120ddf21992ce6c",
+      "source": "otruyen",
+      "id": 1197
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 155: ",
+      "content": "",
+      "order": 155,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bfbe120ddf21992ce6f",
+      "source": "otruyen",
+      "id": 1198
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 156: ",
+      "content": "",
+      "order": 156,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bfde120ddf21992ce72",
+      "source": "otruyen",
+      "id": 1199
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 157: ",
+      "content": "",
+      "order": 157,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916bfee120ddf21992ce75",
+      "source": "otruyen",
+      "id": 1200
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 158: ",
+      "content": "",
+      "order": 158,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c00e120ddf21992ce78",
+      "source": "otruyen",
+      "id": 1201
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 159: ",
+      "content": "",
+      "order": 159,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c01e120ddf21992ce7b",
+      "source": "otruyen",
+      "id": 1202
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 160: ",
+      "content": "",
+      "order": 160,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c02e120ddf21992ce7e",
+      "source": "otruyen",
+      "id": 1203
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 161: ",
+      "content": "",
+      "order": 161,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c03e120ddf21992ce81",
+      "source": "otruyen",
+      "id": 1204
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 162: ",
+      "content": "",
+      "order": 162,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c04e120ddf21992ce84",
+      "source": "otruyen",
+      "id": 1205
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 163: ",
+      "content": "",
+      "order": 163,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c05e120ddf21992ce87",
+      "source": "otruyen",
+      "id": 1206
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 164: ",
+      "content": "",
+      "order": 164,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c06e120ddf21992ce8a",
+      "source": "otruyen",
+      "id": 1207
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 165: ",
+      "content": "",
+      "order": 165,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c08e120ddf21992ce8d",
+      "source": "otruyen",
+      "id": 1208
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 166: ",
+      "content": "",
+      "order": 166,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c09e120ddf21992ce90",
+      "source": "otruyen",
+      "id": 1209
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 167: ",
+      "content": "",
+      "order": 167,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c0be120ddf21992ce93",
+      "source": "otruyen",
+      "id": 1210
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 168: ",
+      "content": "",
+      "order": 168,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c0ce120ddf21992ce96",
+      "source": "otruyen",
+      "id": 1211
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 169: ",
+      "content": "",
+      "order": 169,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c0de120ddf21992ce99",
+      "source": "otruyen",
+      "id": 1212
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 170: ",
+      "content": "",
+      "order": 170,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c0ee120ddf21992ce9c",
+      "source": "otruyen",
+      "id": 1213
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 171: ",
+      "content": "",
+      "order": 171,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c10e120ddf21992ce9f",
+      "source": "otruyen",
+      "id": 1214
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 172: ",
+      "content": "",
+      "order": 172,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c11e120ddf21992cea2",
+      "source": "otruyen",
+      "id": 1215
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 173: ",
+      "content": "",
+      "order": 173,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c13e120ddf21992cea5",
+      "source": "otruyen",
+      "id": 1216
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 174: ",
+      "content": "",
+      "order": 174,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c14e120ddf21992cea8",
+      "source": "otruyen",
+      "id": 1217
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 175: ",
+      "content": "",
+      "order": 175,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c15e120ddf21992ceab",
+      "source": "otruyen",
+      "id": 1218
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 176: ",
+      "content": "",
+      "order": 176,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c17e120ddf21992ceae",
+      "source": "otruyen",
+      "id": 1219
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 177: ",
+      "content": "",
+      "order": 177,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c18e120ddf21992ceb1",
+      "source": "otruyen",
+      "id": 1220
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 178: ",
+      "content": "",
+      "order": 178,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c1ae120ddf21992ceb4",
+      "source": "otruyen",
+      "id": 1221
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 179: ",
+      "content": "",
+      "order": 179,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c1be120ddf21992ceb7",
+      "source": "otruyen",
+      "id": 1222
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 180: ",
+      "content": "",
+      "order": 180,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c1ce120ddf21992ceba",
+      "source": "otruyen",
+      "id": 1223
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 181: ",
+      "content": "",
+      "order": 181,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c1de120ddf21992cebd",
+      "source": "otruyen",
+      "id": 1224
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 182: ",
+      "content": "",
+      "order": 182,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c1fe120ddf21992cec0",
+      "source": "otruyen",
+      "id": 1225
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 183: ",
+      "content": "",
+      "order": 183,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c20e120ddf21992cec3",
+      "source": "otruyen",
+      "id": 1226
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 184: ",
+      "content": "",
+      "order": 184,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c22e120ddf21992cec6",
+      "source": "otruyen",
+      "id": 1227
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 185: ",
+      "content": "",
+      "order": 185,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c23e120ddf21992cec9",
+      "source": "otruyen",
+      "id": 1228
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 186: ",
+      "content": "",
+      "order": 186,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c24e120ddf21992cecc",
+      "source": "otruyen",
+      "id": 1229
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 187: ",
+      "content": "",
+      "order": 187,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c26e120ddf21992cecf",
+      "source": "otruyen",
+      "id": 1230
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 188: ",
+      "content": "",
+      "order": 188,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c27e120ddf21992ced2",
+      "source": "otruyen",
+      "id": 1231
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 189: ",
+      "content": "",
+      "order": 189,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c28e120ddf21992ced5",
+      "source": "otruyen",
+      "id": 1232
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 190: ",
+      "content": "",
+      "order": 190,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c2ae120ddf21992ced8",
+      "source": "otruyen",
+      "id": 1233
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 191: ",
+      "content": "",
+      "order": 191,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c2be120ddf21992cedb",
+      "source": "otruyen",
+      "id": 1234
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 192: ",
+      "content": "",
+      "order": 192,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c2ce120ddf21992cede",
+      "source": "otruyen",
+      "id": 1235
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 193: ",
+      "content": "",
+      "order": 193,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c2ee120ddf21992cee1",
+      "source": "otruyen",
+      "id": 1236
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 194: ",
+      "content": "",
+      "order": 194,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c30e120ddf21992cee4",
+      "source": "otruyen",
+      "id": 1237
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 195: ",
+      "content": "",
+      "order": 195,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c32e120ddf21992cee7",
+      "source": "otruyen",
+      "id": 1238
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 196: ",
+      "content": "",
+      "order": 196,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c34e120ddf21992ceea",
+      "source": "otruyen",
+      "id": 1239
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 197: ",
+      "content": "",
+      "order": 197,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c35e120ddf21992ceed",
+      "source": "otruyen",
+      "id": 1240
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 198: ",
+      "content": "",
+      "order": 198,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c36e120ddf21992cef0",
+      "source": "otruyen",
+      "id": 1241
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 199: ",
+      "content": "",
+      "order": 199,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c38e120ddf21992cef3",
+      "source": "otruyen",
+      "id": 1242
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 200: ",
+      "content": "",
+      "order": 200,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c39e120ddf21992cef6",
+      "source": "otruyen",
+      "id": 1243
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 201: ",
+      "content": "",
+      "order": 201,
+      "createdAt": "2025-12-23T17:40:19.096Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c3ae120ddf21992cef9",
+      "source": "otruyen",
+      "id": 1244
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 202: ",
+      "content": "",
+      "order": 202,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c3be120ddf21992cefc",
+      "source": "otruyen",
+      "id": 1245
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 203: ",
+      "content": "",
+      "order": 203,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c3ce120ddf21992ceff",
+      "source": "otruyen",
+      "id": 1246
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 204: ",
+      "content": "",
+      "order": 204,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c3ee120ddf21992cf02",
+      "source": "otruyen",
+      "id": 1247
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 205: ",
+      "content": "",
+      "order": 205,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c3ee120ddf21992cf05",
+      "source": "otruyen",
+      "id": 1248
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 206: ",
+      "content": "",
+      "order": 206,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c40e120ddf21992cf08",
+      "source": "otruyen",
+      "id": 1249
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 207: ",
+      "content": "",
+      "order": 207,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c41e120ddf21992cf0b",
+      "source": "otruyen",
+      "id": 1250
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 208: ",
+      "content": "",
+      "order": 208,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c43e120ddf21992cf0e",
+      "source": "otruyen",
+      "id": 1251
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 209: ",
+      "content": "",
+      "order": 209,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c44e120ddf21992cf11",
+      "source": "otruyen",
+      "id": 1252
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 210: ",
+      "content": "",
+      "order": 210,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c45e120ddf21992cf14",
+      "source": "otruyen",
+      "id": 1253
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 211: ",
+      "content": "",
+      "order": 211,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c47e120ddf21992cf17",
+      "source": "otruyen",
+      "id": 1254
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 212: ",
+      "content": "",
+      "order": 212,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c48e120ddf21992cf1a",
+      "source": "otruyen",
+      "id": 1255
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 213: ",
+      "content": "",
+      "order": 213,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c49e120ddf21992cf1d",
+      "source": "otruyen",
+      "id": 1256
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 214: ",
+      "content": "",
+      "order": 214,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c4ae120ddf21992cf20",
+      "source": "otruyen",
+      "id": 1257
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 215: ",
+      "content": "",
+      "order": 215,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c4be120ddf21992cf23",
+      "source": "otruyen",
+      "id": 1258
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 216: ",
+      "content": "",
+      "order": 216,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c4de120ddf21992cf26",
+      "source": "otruyen",
+      "id": 1259
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 217: ",
+      "content": "",
+      "order": 217,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c4ee120ddf21992cf29",
+      "source": "otruyen",
+      "id": 1260
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 218: ",
+      "content": "",
+      "order": 218,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c4fe120ddf21992cf2c",
+      "source": "otruyen",
+      "id": 1261
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 219: ",
+      "content": "",
+      "order": 219,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c50e120ddf21992cf2f",
+      "source": "otruyen",
+      "id": 1262
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 221: ",
+      "content": "",
+      "order": 221,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c51e120ddf21992cf32",
+      "source": "otruyen",
+      "id": 1263
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 222: ",
+      "content": "",
+      "order": 222,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c52e120ddf21992cf35",
+      "source": "otruyen",
+      "id": 1264
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 223: ",
+      "content": "",
+      "order": 223,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c53e120ddf21992cf38",
+      "source": "otruyen",
+      "id": 1265
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 224: ",
+      "content": "",
+      "order": 224,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c54e120ddf21992cf3b",
+      "source": "otruyen",
+      "id": 1266
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 225: ",
+      "content": "",
+      "order": 225,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c55e120ddf21992cf3e",
+      "source": "otruyen",
+      "id": 1267
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 226: ",
+      "content": "",
+      "order": 226,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c56e120ddf21992cf41",
+      "source": "otruyen",
+      "id": 1268
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 227: ",
+      "content": "",
+      "order": 227,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c57e120ddf21992cf44",
+      "source": "otruyen",
+      "id": 1269
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 228: ",
+      "content": "",
+      "order": 228,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c58e120ddf21992cf47",
+      "source": "otruyen",
+      "id": 1270
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 229: ",
+      "content": "",
+      "order": 229,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c5ae120ddf21992cf4a",
+      "source": "otruyen",
+      "id": 1271
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 231: ",
+      "content": "",
+      "order": 231,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c5be120ddf21992cf4d",
+      "source": "otruyen",
+      "id": 1272
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 232: ",
+      "content": "",
+      "order": 232,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c5ce120ddf21992cf50",
+      "source": "otruyen",
+      "id": 1273
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 233: ",
+      "content": "",
+      "order": 233,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c5ee120ddf21992cf53",
+      "source": "otruyen",
+      "id": 1274
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 234: ",
+      "content": "",
+      "order": 234,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c5fe120ddf21992cf56",
+      "source": "otruyen",
+      "id": 1275
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 235: ",
+      "content": "",
+      "order": 235,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c61e120ddf21992cf59",
+      "source": "otruyen",
+      "id": 1276
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 236: ",
+      "content": "",
+      "order": 236,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c62e120ddf21992cf5c",
+      "source": "otruyen",
+      "id": 1277
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 237: ",
+      "content": "",
+      "order": 237,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c63e120ddf21992cf5f",
+      "source": "otruyen",
+      "id": 1278
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 238: ",
+      "content": "",
+      "order": 238,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c64e120ddf21992cf62",
+      "source": "otruyen",
+      "id": 1279
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 239: ",
+      "content": "",
+      "order": 239,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c66e120ddf21992cf65",
+      "source": "otruyen",
+      "id": 1280
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 240: ",
+      "content": "",
+      "order": 240,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c67e120ddf21992cf68",
+      "source": "otruyen",
+      "id": 1281
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 241: ",
+      "content": "",
+      "order": 241,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c68e120ddf21992cf6b",
+      "source": "otruyen",
+      "id": 1282
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 242: ",
+      "content": "",
+      "order": 242,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c69e120ddf21992cf6e",
+      "source": "otruyen",
+      "id": 1283
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 243: ",
+      "content": "",
+      "order": 243,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c6ae120ddf21992cf71",
+      "source": "otruyen",
+      "id": 1284
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 244: ",
+      "content": "",
+      "order": 244,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c6ce120ddf21992cf74",
+      "source": "otruyen",
+      "id": 1285
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 245: ",
+      "content": "",
+      "order": 245,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c6de120ddf21992cf77",
+      "source": "otruyen",
+      "id": 1286
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 246: ",
+      "content": "",
+      "order": 246,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c6ee120ddf21992cf7a",
+      "source": "otruyen",
+      "id": 1287
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 247: ",
+      "content": "",
+      "order": 247,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c6fe120ddf21992cf7d",
+      "source": "otruyen",
+      "id": 1288
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 248: ",
+      "content": "",
+      "order": 248,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c70e120ddf21992cf80",
+      "source": "otruyen",
+      "id": 1289
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 249: ",
+      "content": "",
+      "order": 249,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c71e120ddf21992cf83",
+      "source": "otruyen",
+      "id": 1290
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 250: ",
+      "content": "",
+      "order": 250,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c72e120ddf21992cf86",
+      "source": "otruyen",
+      "id": 1291
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 252: ",
+      "content": "",
+      "order": 252,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c73e120ddf21992cf89",
+      "source": "otruyen",
+      "id": 1292
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 253: ",
+      "content": "",
+      "order": 253,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c74e120ddf21992cf8c",
+      "source": "otruyen",
+      "id": 1293
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 254: ",
+      "content": "",
+      "order": 254,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c76e120ddf21992cf8f",
+      "source": "otruyen",
+      "id": 1294
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 255: ",
+      "content": "",
+      "order": 255,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c77e120ddf21992cf92",
+      "source": "otruyen",
+      "id": 1295
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 256: ",
+      "content": "",
+      "order": 256,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c78e120ddf21992cf95",
+      "source": "otruyen",
+      "id": 1296
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 257: ",
+      "content": "",
+      "order": 257,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65916c79e120ddf21992cf98",
+      "source": "otruyen",
+      "id": 1297
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 258: ",
+      "content": "",
+      "order": 258,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65b1859144837bffed0ad2e5",
+      "source": "otruyen",
+      "id": 1298
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 259: ",
+      "content": "",
+      "order": 259,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65b1859244837bffed0ad2e8",
+      "source": "otruyen",
+      "id": 1299
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 260: ",
+      "content": "",
+      "order": 260,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65b1859344837bffed0ad2eb",
+      "source": "otruyen",
+      "id": 1300
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 261: ",
+      "content": "",
+      "order": 261,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65b1859544837bffed0ad2ee",
+      "source": "otruyen",
+      "id": 1301
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 262: ",
+      "content": "",
+      "order": 262,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65b1859644837bffed0ad2f1",
+      "source": "otruyen",
+      "id": 1302
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 263: ",
+      "content": "",
+      "order": 263,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65b1859744837bffed0ad2f4",
+      "source": "otruyen",
+      "id": 1303
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 264: ",
+      "content": "",
+      "order": 264,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65b1859944837bffed0ad2f7",
+      "source": "otruyen",
+      "id": 1304
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 265: ",
+      "content": "",
+      "order": 265,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65b1859a44837bffed0ad2fa",
+      "source": "otruyen",
+      "id": 1305
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 266: ",
+      "content": "",
+      "order": 266,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65b1859b44837bffed0ad2fd",
+      "source": "otruyen",
+      "id": 1306
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 267: ",
+      "content": "",
+      "order": 267,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65b1859c44837bffed0ad300",
+      "source": "otruyen",
+      "id": 1307
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 268: ",
+      "content": "",
+      "order": 268,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65b1859d44837bffed0ad303",
+      "source": "otruyen",
+      "id": 1308
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 269: ",
+      "content": "",
+      "order": 269,
+      "createdAt": "2025-12-23T17:40:19.097Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65b1859f44837bffed0ad306",
+      "source": "otruyen",
+      "id": 1309
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 270: ",
+      "content": "",
+      "order": 270,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65b185a044837bffed0ad309",
+      "source": "otruyen",
+      "id": 1310
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 271: ",
+      "content": "",
+      "order": 271,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65b185a244837bffed0ad30d",
+      "source": "otruyen",
+      "id": 1311
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 272: ",
+      "content": "",
+      "order": 272,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65b185a344837bffed0ad310",
+      "source": "otruyen",
+      "id": 1312
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 273: ",
+      "content": "",
+      "order": 273,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65b185a444837bffed0ad313",
+      "source": "otruyen",
+      "id": 1313
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 274: ",
+      "content": "",
+      "order": 274,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65b185a644837bffed0ad316",
+      "source": "otruyen",
+      "id": 1314
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 275: ",
+      "content": "",
+      "order": 275,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65b185a744837bffed0ad319",
+      "source": "otruyen",
+      "id": 1315
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 276: ",
+      "content": "",
+      "order": 276,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65b185a944837bffed0ad31c",
+      "source": "otruyen",
+      "id": 1316
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 277: ",
+      "content": "",
+      "order": 277,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65b185aa44837bffed0ad31f",
+      "source": "otruyen",
+      "id": 1317
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 278: ",
+      "content": "",
+      "order": 278,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65b185ab44837bffed0ad322",
+      "source": "otruyen",
+      "id": 1318
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 279: ",
+      "content": "",
+      "order": 279,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65b185ad44837bffed0ad325",
+      "source": "otruyen",
+      "id": 1319
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 280: ",
+      "content": "",
+      "order": 280,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65b185af44837bffed0ad328",
+      "source": "otruyen",
+      "id": 1320
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 281: ",
+      "content": "",
+      "order": 281,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65b185b044837bffed0ad32b",
+      "source": "otruyen",
+      "id": 1321
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 282: ",
+      "content": "",
+      "order": 282,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65b185b244837bffed0ad32e",
+      "source": "otruyen",
+      "id": 1322
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 283: ",
+      "content": "",
+      "order": 283,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65b185b444837bffed0ad331",
+      "source": "otruyen",
+      "id": 1323
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 284: ",
+      "content": "",
+      "order": 284,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65b185b544837bffed0ad335",
+      "source": "otruyen",
+      "id": 1324
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 285: ",
+      "content": "",
+      "order": 285,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65b185b744837bffed0ad338",
+      "source": "otruyen",
+      "id": 1325
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 286: ",
+      "content": "",
+      "order": 286,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65b5c2dd0b71e8bf0af7b56d",
+      "source": "otruyen",
+      "id": 1326
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 287: ",
+      "content": "",
+      "order": 287,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65b8c8add99f3dea41c70452",
+      "source": "otruyen",
+      "id": 1327
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 288: ",
+      "content": "",
+      "order": 288,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65bb3533d99f3dea41c73aaa",
+      "source": "otruyen",
+      "id": 1328
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 289: ",
+      "content": "",
+      "order": 289,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65c1c595d99f3dea41c785f0",
+      "source": "otruyen",
+      "id": 1329
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 290: ",
+      "content": "",
+      "order": 290,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65c2ead8d99f3dea41c79414",
+      "source": "otruyen",
+      "id": 1330
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 291: ",
+      "content": "",
+      "order": 291,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65d5cca7164c256eada75eb9",
+      "source": "otruyen",
+      "id": 1331
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 292: ",
+      "content": "",
+      "order": 292,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65d5cca8164c256eada75ebc",
+      "source": "otruyen",
+      "id": 1332
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 293: ",
+      "content": "",
+      "order": 293,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65d5cca8164c256eada75ebf",
+      "source": "otruyen",
+      "id": 1333
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 294: ",
+      "content": "",
+      "order": 294,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65d9d7e0164c256eada77f5b",
+      "source": "otruyen",
+      "id": 1334
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 295: ",
+      "content": "",
+      "order": 295,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65d9d7e1164c256eada77f5e",
+      "source": "otruyen",
+      "id": 1335
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 296: ",
+      "content": "",
+      "order": 296,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65dc2bb78d19104b9c734edb",
+      "source": "otruyen",
+      "id": 1336
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 297: ",
+      "content": "",
+      "order": 297,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65dc2bb88d19104b9c734ede",
+      "source": "otruyen",
+      "id": 1337
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 298: ",
+      "content": "",
+      "order": 298,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65dc2bb98d19104b9c734ee1",
+      "source": "otruyen",
+      "id": 1338
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 299: ",
+      "content": "",
+      "order": 299,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65dc2bba8d19104b9c734ee4",
+      "source": "otruyen",
+      "id": 1339
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 300: ",
+      "content": "",
+      "order": 300,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65dc2bbb8d19104b9c734ee7",
+      "source": "otruyen",
+      "id": 1340
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 301: ",
+      "content": "",
+      "order": 301,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65ddb86b8d19104b9c735b01",
+      "source": "otruyen",
+      "id": 1341
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 302: ",
+      "content": "",
+      "order": 302,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65ddb86d8d19104b9c735b04",
+      "source": "otruyen",
+      "id": 1342
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 303: ",
+      "content": "",
+      "order": 303,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65e81a4c8d19104b9c73b5d7",
+      "source": "otruyen",
+      "id": 1343
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 304: ",
+      "content": "",
+      "order": 304,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65e81a4d8d19104b9c73b5da",
+      "source": "otruyen",
+      "id": 1344
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 305: ",
+      "content": "",
+      "order": 305,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65e81a4f8d19104b9c73b5dd",
+      "source": "otruyen",
+      "id": 1345
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 306: ",
+      "content": "",
+      "order": 306,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65e81a508d19104b9c73b5e0",
+      "source": "otruyen",
+      "id": 1346
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 307: ",
+      "content": "",
+      "order": 307,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65e9540e164c256eada80541",
+      "source": "otruyen",
+      "id": 1347
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 308: ",
+      "content": "",
+      "order": 308,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65e9540f164c256eada80544",
+      "source": "otruyen",
+      "id": 1348
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 309: ",
+      "content": "",
+      "order": 309,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65f00d758d19104b9c73f97b",
+      "source": "otruyen",
+      "id": 1349
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 310: ",
+      "content": "",
+      "order": 310,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65f00d768d19104b9c73f97e",
+      "source": "otruyen",
+      "id": 1350
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 311: ",
+      "content": "",
+      "order": 311,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65f00d778d19104b9c73f981",
+      "source": "otruyen",
+      "id": 1351
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 312: ",
+      "content": "",
+      "order": 312,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65f00d798d19104b9c73f984",
+      "source": "otruyen",
+      "id": 1352
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 313: ",
+      "content": "",
+      "order": 313,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65f3f8b8164c256eada85ab5",
+      "source": "otruyen",
+      "id": 1353
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 314: ",
+      "content": "",
+      "order": 314,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65f3f8ba164c256eada85ab8",
+      "source": "otruyen",
+      "id": 1354
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 315: ",
+      "content": "",
+      "order": 315,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65f3f8bb164c256eada85abb",
+      "source": "otruyen",
+      "id": 1355
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 316: ",
+      "content": "",
+      "order": 316,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65f6c1998d19104b9c7431b6",
+      "source": "otruyen",
+      "id": 1356
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 317: ",
+      "content": "",
+      "order": 317,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/65f6c19a8d19104b9c7431bc",
+      "source": "otruyen",
+      "id": 1357
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 318: ",
+      "content": "",
+      "order": 318,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/6604fe7d8d19104b9c74aaab",
+      "source": "otruyen",
+      "id": 1358
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 319: ",
+      "content": "",
+      "order": 319,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/6604fe7e8d19104b9c74aaae",
+      "source": "otruyen",
+      "id": 1359
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 320: ",
+      "content": "",
+      "order": 320,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/6604fe7f8d19104b9c74aab1",
+      "source": "otruyen",
+      "id": 1360
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 321: ",
+      "content": "",
+      "order": 321,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/6604fe818d19104b9c74aab4",
+      "source": "otruyen",
+      "id": 1361
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 322: ",
+      "content": "",
+      "order": 322,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/6604fe838d19104b9c74aab7",
+      "source": "otruyen",
+      "id": 1362
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 323: ",
+      "content": "",
+      "order": 323,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/6604fe848d19104b9c74aaba",
+      "source": "otruyen",
+      "id": 1363
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 324: ",
+      "content": "",
+      "order": 324,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/6604fe858d19104b9c74aabd",
+      "source": "otruyen",
+      "id": 1364
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 325: ",
+      "content": "",
+      "order": 325,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/6604fe878d19104b9c74aac0",
+      "source": "otruyen",
+      "id": 1365
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 326: ",
+      "content": "",
+      "order": 326,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/66091760164c256eada90ad3",
+      "source": "otruyen",
+      "id": 1366
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 327: ",
+      "content": "",
+      "order": 327,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/66091762164c256eada90ad6",
+      "source": "otruyen",
+      "id": 1367
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 328: ",
+      "content": "",
+      "order": 328,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/66091764164c256eada90ad9",
+      "source": "otruyen",
+      "id": 1368
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 329: ",
+      "content": "",
+      "order": 329,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/66091765164c256eada90adc",
+      "source": "otruyen",
+      "id": 1369
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 331: ",
+      "content": "",
+      "order": 331,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/660f783a8d19104b9c7503b2",
+      "source": "otruyen",
+      "id": 1370
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 332: ",
+      "content": "",
+      "order": 332,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/660f783c8d19104b9c7503b5",
+      "source": "otruyen",
+      "id": 1371
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 333: ",
+      "content": "",
+      "order": 333,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/660f783d8d19104b9c7503b8",
+      "source": "otruyen",
+      "id": 1372
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 334: ",
+      "content": "",
+      "order": 334,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/660f783f8d19104b9c7503bb",
+      "source": "otruyen",
+      "id": 1373
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 335: ",
+      "content": "",
+      "order": 335,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/661a2d718d19104b9c755054",
+      "source": "otruyen",
+      "id": 1374
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 336: ",
+      "content": "",
+      "order": 336,
+      "createdAt": "2025-12-23T17:40:19.098Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/661cd718164c256eada9a5ee",
+      "source": "otruyen",
+      "id": 1375
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 337: ",
+      "content": "",
+      "order": 337,
+      "createdAt": "2025-12-23T17:40:19.099Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/661cd71a164c256eada9a5f1",
+      "source": "otruyen",
+      "id": 1376
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 338: ",
+      "content": "",
+      "order": 338,
+      "createdAt": "2025-12-23T17:40:19.099Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/662f9b768d19104b9c75e64b",
+      "source": "otruyen",
+      "id": 1377
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 339: ",
+      "content": "",
+      "order": 339,
+      "createdAt": "2025-12-23T17:40:19.099Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/6646ffcea4468f0e0dd1c9ea",
+      "source": "otruyen",
+      "id": 1378
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 340: ",
+      "content": "",
+      "order": 340,
+      "createdAt": "2025-12-23T17:40:19.099Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/6646ffd0a4468f0e0dd1c9f1",
+      "source": "otruyen",
+      "id": 1379
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 341: ",
+      "content": "",
+      "order": 341,
+      "createdAt": "2025-12-23T17:40:19.099Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/665450c1a833720746734bfa",
+      "source": "otruyen",
+      "id": 1380
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 342: ",
+      "content": "",
+      "order": 342,
+      "createdAt": "2025-12-23T17:40:19.099Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/665450c3a833720746734bfd",
+      "source": "otruyen",
+      "id": 1381
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 343: ",
+      "content": "",
+      "order": 343,
+      "createdAt": "2025-12-23T17:40:19.099Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/6658a4c5a4468f0e0dd28e0f",
+      "source": "otruyen",
+      "id": 1382
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 344: ",
+      "content": "",
+      "order": 344,
+      "createdAt": "2025-12-23T17:40:19.099Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/665997d7a83372074674def9",
+      "source": "otruyen",
+      "id": 1383
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 345: ",
+      "content": "",
+      "order": 345,
+      "createdAt": "2025-12-23T17:40:19.099Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/665997d8a83372074674defc",
+      "source": "otruyen",
+      "id": 1384
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 346: ",
+      "content": "",
+      "order": 346,
+      "createdAt": "2025-12-23T17:40:19.099Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/666fcb6da4468f0e0ddfc5cc",
+      "source": "otruyen",
+      "id": 1385
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 347: ",
+      "content": "",
+      "order": 347,
+      "createdAt": "2025-12-23T17:40:19.099Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/6675535da83372074681176c",
+      "source": "otruyen",
+      "id": 1386
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 348: ",
+      "content": "",
+      "order": 348,
+      "createdAt": "2025-12-23T17:40:19.099Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/6675535fa833720746811770",
+      "source": "otruyen",
+      "id": 1387
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 349: ",
+      "content": "",
+      "order": 349,
+      "createdAt": "2025-12-23T17:40:19.099Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/667d0537a4468f0e0de02357",
+      "source": "otruyen",
+      "id": 1388
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 350: ",
+      "content": "",
+      "order": 350,
+      "createdAt": "2025-12-23T17:40:19.099Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/667d0539a4468f0e0de0235a",
+      "source": "otruyen",
+      "id": 1389
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 351: ",
+      "content": "",
+      "order": 351,
+      "createdAt": "2025-12-23T17:40:19.099Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/667e48eba4468f0e0de02ce7",
+      "source": "otruyen",
+      "id": 1390
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 352: ",
+      "content": "",
+      "order": 352,
+      "createdAt": "2025-12-23T17:40:19.099Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/66810c99a833720746816a9d",
+      "source": "otruyen",
+      "id": 1391
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 353: ",
+      "content": "",
+      "order": 353,
+      "createdAt": "2025-12-23T17:40:19.099Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/66810c9ba833720746816aa0",
+      "source": "otruyen",
+      "id": 1392
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 354: ",
+      "content": "",
+      "order": 354,
+      "createdAt": "2025-12-23T17:40:19.099Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/66810c9ea833720746816aa3",
+      "source": "otruyen",
+      "id": 1393
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 355: ",
+      "content": "",
+      "order": 355,
+      "createdAt": "2025-12-23T17:40:19.100Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/66823d72a4468f0e0de04734",
+      "source": "otruyen",
+      "id": 1394
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 356: ",
+      "content": "",
+      "order": 356,
+      "createdAt": "2025-12-23T17:40:19.100Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/66823d74a4468f0e0de04738",
+      "source": "otruyen",
+      "id": 1395
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 357: ",
+      "content": "",
+      "order": 357,
+      "createdAt": "2025-12-23T17:40:19.101Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/6687734dc705a578a7f56abd",
+      "source": "otruyen",
+      "id": 1396
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 358: ",
+      "content": "",
+      "order": 358,
+      "createdAt": "2025-12-23T17:40:19.101Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/668a2032c926626890a1451f",
+      "source": "otruyen",
+      "id": 1397
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 359: ",
+      "content": "",
+      "order": 359,
+      "createdAt": "2025-12-23T17:40:19.101Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/668cd2edc926626890a15728",
+      "source": "otruyen",
+      "id": 1398
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 360: ",
+      "content": "",
+      "order": 360,
+      "createdAt": "2025-12-23T17:40:19.101Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/668cd2eec926626890a1572b",
+      "source": "otruyen",
+      "id": 1399
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 361: ",
+      "content": "",
+      "order": 361,
+      "createdAt": "2025-12-23T17:40:19.101Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/668e2870c926626890a1604b",
+      "source": "otruyen",
+      "id": 1400
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 362: ",
+      "content": "",
+      "order": 362,
+      "createdAt": "2025-12-23T17:40:19.101Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/66912c8ac705a578a7f5aa45",
+      "source": "otruyen",
+      "id": 1401
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 363: ",
+      "content": "",
+      "order": 363,
+      "createdAt": "2025-12-23T17:40:19.101Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/66979b15c705a578a7f5d264",
+      "source": "otruyen",
+      "id": 1402
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 364: ",
+      "content": "",
+      "order": 364,
+      "createdAt": "2025-12-23T17:40:19.101Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/66b5ebfec926626890a1f7ee",
+      "source": "otruyen",
+      "id": 1403
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 365: ",
+      "content": "",
+      "order": 365,
+      "createdAt": "2025-12-23T17:40:19.101Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/66b5ec00c926626890a1f7f1",
+      "source": "otruyen",
+      "id": 1404
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 366: ",
+      "content": "",
+      "order": 366,
+      "createdAt": "2025-12-23T17:40:19.101Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/66b5ec01c926626890a1f7f4",
+      "source": "otruyen",
+      "id": 1405
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 367: ",
+      "content": "",
+      "order": 367,
+      "createdAt": "2025-12-23T17:40:19.101Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/66d99bf9c926626890a2aa50",
+      "source": "otruyen",
+      "id": 1406
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 368: ",
+      "content": "",
+      "order": 368,
+      "createdAt": "2025-12-23T17:40:19.101Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/66d99bfac926626890a2aa53",
+      "source": "otruyen",
+      "id": 1407
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 369: ",
+      "content": "",
+      "order": 369,
+      "createdAt": "2025-12-23T17:40:19.102Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/66d99bfcc926626890a2aa56",
+      "source": "otruyen",
+      "id": 1408
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 370: ",
+      "content": "",
+      "order": 370,
+      "createdAt": "2025-12-23T17:40:19.102Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93aa1fe60dafb6edc0a4f",
+      "source": "otruyen",
+      "id": 1409
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 371: ",
+      "content": "",
+      "order": 371,
+      "createdAt": "2025-12-23T17:40:19.102Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93aa2fe60dafb6edc0a52",
+      "source": "otruyen",
+      "id": 1410
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 372: ",
+      "content": "",
+      "order": 372,
+      "createdAt": "2025-12-23T17:40:19.102Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93aa4fe60dafb6edc0a55",
+      "source": "otruyen",
+      "id": 1411
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 373: ",
+      "content": "",
+      "order": 373,
+      "createdAt": "2025-12-23T17:40:19.102Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93aa5fe60dafb6edc0a58",
+      "source": "otruyen",
+      "id": 1412
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 374: ",
+      "content": "",
+      "order": 374,
+      "createdAt": "2025-12-23T17:40:19.103Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93aa7fe60dafb6edc0a5b",
+      "source": "otruyen",
+      "id": 1413
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 375: ",
+      "content": "",
+      "order": 375,
+      "createdAt": "2025-12-23T17:40:19.103Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93aa8fe60dafb6edc0a5e",
+      "source": "otruyen",
+      "id": 1414
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 376: ",
+      "content": "",
+      "order": 376,
+      "createdAt": "2025-12-23T17:40:19.103Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93aaafe60dafb6edc0a61",
+      "source": "otruyen",
+      "id": 1415
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 377: ",
+      "content": "",
+      "order": 377,
+      "createdAt": "2025-12-23T17:40:19.103Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93aaafe60dafb6edc0a64",
+      "source": "otruyen",
+      "id": 1416
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 378: ",
+      "content": "",
+      "order": 378,
+      "createdAt": "2025-12-23T17:40:19.103Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93aabfe60dafb6edc0a67",
+      "source": "otruyen",
+      "id": 1417
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 379: ",
+      "content": "",
+      "order": 379,
+      "createdAt": "2025-12-23T17:40:19.103Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93aadfe60dafb6edc0a6a",
+      "source": "otruyen",
+      "id": 1418
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 380: ",
+      "content": "",
+      "order": 380,
+      "createdAt": "2025-12-23T17:40:19.103Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93aaefe60dafb6edc0a6d",
+      "source": "otruyen",
+      "id": 1419
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 381: ",
+      "content": "",
+      "order": 381,
+      "createdAt": "2025-12-23T17:40:19.103Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93aaffe60dafb6edc0a70",
+      "source": "otruyen",
+      "id": 1420
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 382: ",
+      "content": "",
+      "order": 382,
+      "createdAt": "2025-12-23T17:40:19.103Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93ab1fe60dafb6edc0a73",
+      "source": "otruyen",
+      "id": 1421
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 383: ",
+      "content": "",
+      "order": 383,
+      "createdAt": "2025-12-23T17:40:19.103Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93ab2fe60dafb6edc0a76",
+      "source": "otruyen",
+      "id": 1422
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 384: ",
+      "content": "",
+      "order": 384,
+      "createdAt": "2025-12-23T17:40:19.103Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93ab3fe60dafb6edc0a79",
+      "source": "otruyen",
+      "id": 1423
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 385: ",
+      "content": "",
+      "order": 385,
+      "createdAt": "2025-12-23T17:40:19.103Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93ab5fe60dafb6edc0a7c",
+      "source": "otruyen",
+      "id": 1424
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 386: ",
+      "content": "",
+      "order": 386,
+      "createdAt": "2025-12-23T17:40:19.103Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93ab6fe60dafb6edc0a7f",
+      "source": "otruyen",
+      "id": 1425
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 387: ",
+      "content": "",
+      "order": 387,
+      "createdAt": "2025-12-23T17:40:19.103Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93ab8fe60dafb6edc0a82",
+      "source": "otruyen",
+      "id": 1426
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 388: ",
+      "content": "",
+      "order": 388,
+      "createdAt": "2025-12-23T17:40:19.104Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93ab9fe60dafb6edc0a87",
+      "source": "otruyen",
+      "id": 1427
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 389: ",
+      "content": "",
+      "order": 389,
+      "createdAt": "2025-12-23T17:40:19.104Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93abafe60dafb6edc0a8e",
+      "source": "otruyen",
+      "id": 1428
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 390: ",
+      "content": "",
+      "order": 390,
+      "createdAt": "2025-12-23T17:40:19.104Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93abcfe60dafb6edc0a93",
+      "source": "otruyen",
+      "id": 1429
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 391: ",
+      "content": "",
+      "order": 391,
+      "createdAt": "2025-12-23T17:40:19.105Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93abdfe60dafb6edc0a9a",
+      "source": "otruyen",
+      "id": 1430
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 392: ",
+      "content": "",
+      "order": 392,
+      "createdAt": "2025-12-23T17:40:19.105Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93abffe60dafb6edc0aa1",
+      "source": "otruyen",
+      "id": 1431
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 393: ",
+      "content": "",
+      "order": 393,
+      "createdAt": "2025-12-23T17:40:19.105Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93ac0fe60dafb6edc0aa6",
+      "source": "otruyen",
+      "id": 1432
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 394: ",
+      "content": "",
+      "order": 394,
+      "createdAt": "2025-12-23T17:40:19.105Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93ac2fe60dafb6edc0aad",
+      "source": "otruyen",
+      "id": 1433
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 395: ",
+      "content": "",
+      "order": 395,
+      "createdAt": "2025-12-23T17:40:19.105Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93ac3fe60dafb6edc0ab0",
+      "source": "otruyen",
+      "id": 1434
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 396: ",
+      "content": "",
+      "order": 396,
+      "createdAt": "2025-12-23T17:40:19.105Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93ac5fe60dafb6edc0ab3",
+      "source": "otruyen",
+      "id": 1435
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 397: ",
+      "content": "",
+      "order": 397,
+      "createdAt": "2025-12-23T17:40:19.105Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93ac6fe60dafb6edc0ab8",
+      "source": "otruyen",
+      "id": 1436
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 398: ",
+      "content": "",
+      "order": 398,
+      "createdAt": "2025-12-23T17:40:19.105Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93ac7fe60dafb6edc0abb",
+      "source": "otruyen",
+      "id": 1437
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 399: ",
+      "content": "",
+      "order": 399,
+      "createdAt": "2025-12-23T17:40:19.105Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93ac9fe60dafb6edc0abe",
+      "source": "otruyen",
+      "id": 1438
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 400: ",
+      "content": "",
+      "order": 400,
+      "createdAt": "2025-12-23T17:40:19.105Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93acafe60dafb6edc0ac3",
+      "source": "otruyen",
+      "id": 1439
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 401: ",
+      "content": "",
+      "order": 401,
+      "createdAt": "2025-12-23T17:40:19.105Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93acbfe60dafb6edc0ac8",
+      "source": "otruyen",
+      "id": 1440
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 402: ",
+      "content": "",
+      "order": 402,
+      "createdAt": "2025-12-23T17:40:19.105Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93acdfe60dafb6edc0acd",
+      "source": "otruyen",
+      "id": 1441
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 403: ",
+      "content": "",
+      "order": 403,
+      "createdAt": "2025-12-23T17:40:19.105Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93acefe60dafb6edc0ad4",
+      "source": "otruyen",
+      "id": 1442
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 404: ",
+      "content": "",
+      "order": 404,
+      "createdAt": "2025-12-23T17:40:19.105Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93ad0fe60dafb6edc0ad9",
+      "source": "otruyen",
+      "id": 1443
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 405: ",
+      "content": "",
+      "order": 405,
+      "createdAt": "2025-12-23T17:40:19.106Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93ad1fe60dafb6edc0ae1",
+      "source": "otruyen",
+      "id": 1444
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 406: ",
+      "content": "",
+      "order": 406,
+      "createdAt": "2025-12-23T17:40:19.106Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93ad2fe60dafb6edc0ae8",
+      "source": "otruyen",
+      "id": 1445
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 407: ",
+      "content": "",
+      "order": 407,
+      "createdAt": "2025-12-23T17:40:19.106Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93ad3fe60dafb6edc0aed",
+      "source": "otruyen",
+      "id": 1446
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 408: ",
+      "content": "",
+      "order": 408,
+      "createdAt": "2025-12-23T17:40:19.106Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93ad5fe60dafb6edc0af4",
+      "source": "otruyen",
+      "id": 1447
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 409: ",
+      "content": "",
+      "order": 409,
+      "createdAt": "2025-12-23T17:40:19.106Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93ad7fe60dafb6edc0af7",
+      "source": "otruyen",
+      "id": 1448
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 410: ",
+      "content": "",
+      "order": 410,
+      "createdAt": "2025-12-23T17:40:19.106Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93ad8fe60dafb6edc0afe",
+      "source": "otruyen",
+      "id": 1449
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 411: ",
+      "content": "",
+      "order": 411,
+      "createdAt": "2025-12-23T17:40:19.106Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93adafe60dafb6edc0b05",
+      "source": "otruyen",
+      "id": 1450
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 412: ",
+      "content": "",
+      "order": 412,
+      "createdAt": "2025-12-23T17:40:19.106Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93adbfe60dafb6edc0b0c",
+      "source": "otruyen",
+      "id": 1451
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 413: ",
+      "content": "",
+      "order": 413,
+      "createdAt": "2025-12-23T17:40:19.106Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93adcfe60dafb6edc0b11",
+      "source": "otruyen",
+      "id": 1452
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 414: ",
+      "content": "",
+      "order": 414,
+      "createdAt": "2025-12-23T17:40:19.106Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93adefe60dafb6edc0b18",
+      "source": "otruyen",
+      "id": 1453
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 415: ",
+      "content": "",
+      "order": 415,
+      "createdAt": "2025-12-23T17:40:19.106Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93adffe60dafb6edc0b1b",
+      "source": "otruyen",
+      "id": 1454
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 416: ",
+      "content": "",
+      "order": 416,
+      "createdAt": "2025-12-23T17:40:19.106Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93ae1fe60dafb6edc0b20",
+      "source": "otruyen",
+      "id": 1455
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 417: ",
+      "content": "",
+      "order": 417,
+      "createdAt": "2025-12-23T17:40:19.106Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93ae2fe60dafb6edc0b23",
+      "source": "otruyen",
+      "id": 1456
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 418: ",
+      "content": "",
+      "order": 418,
+      "createdAt": "2025-12-23T17:40:19.106Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93ae3fe60dafb6edc0b2a",
+      "source": "otruyen",
+      "id": 1457
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 419: ",
+      "content": "",
+      "order": 419,
+      "createdAt": "2025-12-23T17:40:19.106Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93ae5fe60dafb6edc0b33",
+      "source": "otruyen",
+      "id": 1458
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 420: ",
+      "content": "",
+      "order": 420,
+      "createdAt": "2025-12-23T17:40:19.106Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93ae6fe60dafb6edc0b38",
+      "source": "otruyen",
+      "id": 1459
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 421: ",
+      "content": "",
+      "order": 421,
+      "createdAt": "2025-12-23T17:40:19.106Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93ae7fe60dafb6edc0b3b",
+      "source": "otruyen",
+      "id": 1460
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 422: ",
+      "content": "",
+      "order": 422,
+      "createdAt": "2025-12-23T17:40:19.106Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93ae7fe60dafb6edc0b40",
+      "source": "otruyen",
+      "id": 1461
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 423: ",
+      "content": "",
+      "order": 423,
+      "createdAt": "2025-12-23T17:40:19.106Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93ae8fe60dafb6edc0b45",
+      "source": "otruyen",
+      "id": 1462
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 424: ",
+      "content": "",
+      "order": 424,
+      "createdAt": "2025-12-23T17:40:19.106Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93ae9fe60dafb6edc0b4a",
+      "source": "otruyen",
+      "id": 1463
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 425: ",
+      "content": "",
+      "order": 425,
+      "createdAt": "2025-12-23T17:40:19.106Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93aeafe60dafb6edc0b4d",
+      "source": "otruyen",
+      "id": 1464
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 426: ",
+      "content": "",
+      "order": 426,
+      "createdAt": "2025-12-23T17:40:19.107Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93aeafe60dafb6edc0b54",
+      "source": "otruyen",
+      "id": 1465
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 427: ",
+      "content": "",
+      "order": 427,
+      "createdAt": "2025-12-23T17:40:19.107Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93aebfe60dafb6edc0b59",
+      "source": "otruyen",
+      "id": 1466
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 428: ",
+      "content": "",
+      "order": 428,
+      "createdAt": "2025-12-23T17:40:19.107Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93aecfe60dafb6edc0b5e",
+      "source": "otruyen",
+      "id": 1467
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 429: ",
+      "content": "",
+      "order": 429,
+      "createdAt": "2025-12-23T17:40:19.107Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93aecfe60dafb6edc0b63",
+      "source": "otruyen",
+      "id": 1468
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 430: ",
+      "content": "",
+      "order": 430,
+      "createdAt": "2025-12-23T17:40:19.107Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93aedfe60dafb6edc0b66",
+      "source": "otruyen",
+      "id": 1469
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 431: ",
+      "content": "",
+      "order": 431,
+      "createdAt": "2025-12-23T17:40:19.107Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93aeefe60dafb6edc0b6b",
+      "source": "otruyen",
+      "id": 1470
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 432: ",
+      "content": "",
+      "order": 432,
+      "createdAt": "2025-12-23T17:40:19.107Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93aeefe60dafb6edc0b6e",
+      "source": "otruyen",
+      "id": 1471
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 433: ",
+      "content": "",
+      "order": 433,
+      "createdAt": "2025-12-23T17:40:19.107Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93aeffe60dafb6edc0b71",
+      "source": "otruyen",
+      "id": 1472
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 434: ",
+      "content": "",
+      "order": 434,
+      "createdAt": "2025-12-23T17:40:19.107Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93aeffe60dafb6edc0b74",
+      "source": "otruyen",
+      "id": 1473
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 435: ",
+      "content": "",
+      "order": 435,
+      "createdAt": "2025-12-23T17:40:19.107Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93af0fe60dafb6edc0b77",
+      "source": "otruyen",
+      "id": 1474
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 436: ",
+      "content": "",
+      "order": 436,
+      "createdAt": "2025-12-23T17:40:19.107Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93af0fe60dafb6edc0b7a",
+      "source": "otruyen",
+      "id": 1475
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 437: ",
+      "content": "",
+      "order": 437,
+      "createdAt": "2025-12-23T17:40:19.107Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93af1fe60dafb6edc0b7d",
+      "source": "otruyen",
+      "id": 1476
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 438: ",
+      "content": "",
+      "order": 438,
+      "createdAt": "2025-12-23T17:40:19.107Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93af1fe60dafb6edc0b80",
+      "source": "otruyen",
+      "id": 1477
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 439: ",
+      "content": "",
+      "order": 439,
+      "createdAt": "2025-12-23T17:40:19.107Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93af2fe60dafb6edc0b83",
+      "source": "otruyen",
+      "id": 1478
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 440: ",
+      "content": "",
+      "order": 440,
+      "createdAt": "2025-12-23T17:40:19.107Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93af2fe60dafb6edc0b86",
+      "source": "otruyen",
+      "id": 1479
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 441: ",
+      "content": "",
+      "order": 441,
+      "createdAt": "2025-12-23T17:40:19.107Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93af3fe60dafb6edc0b89",
+      "source": "otruyen",
+      "id": 1480
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 442: ",
+      "content": "",
+      "order": 442,
+      "createdAt": "2025-12-23T17:40:19.107Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93af3fe60dafb6edc0b8c",
+      "source": "otruyen",
+      "id": 1481
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 443: ",
+      "content": "",
+      "order": 443,
+      "createdAt": "2025-12-23T17:40:19.107Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93af4fe60dafb6edc0b91",
+      "source": "otruyen",
+      "id": 1482
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 444: ",
+      "content": "",
+      "order": 444,
+      "createdAt": "2025-12-23T17:40:19.107Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93af4fe60dafb6edc0b94",
+      "source": "otruyen",
+      "id": 1483
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 445: ",
+      "content": "",
+      "order": 445,
+      "createdAt": "2025-12-23T17:40:19.107Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93af5fe60dafb6edc0b97",
+      "source": "otruyen",
+      "id": 1484
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 446: ",
+      "content": "",
+      "order": 446,
+      "createdAt": "2025-12-23T17:40:19.107Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93af5fe60dafb6edc0b9a",
+      "source": "otruyen",
+      "id": 1485
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 447: ",
+      "content": "",
+      "order": 447,
+      "createdAt": "2025-12-23T17:40:19.107Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93af6fe60dafb6edc0b9d",
+      "source": "otruyen",
+      "id": 1486
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 448: ",
+      "content": "",
+      "order": 448,
+      "createdAt": "2025-12-23T17:40:19.108Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93af7fe60dafb6edc0ba0",
+      "source": "otruyen",
+      "id": 1487
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 449: ",
+      "content": "",
+      "order": 449,
+      "createdAt": "2025-12-23T17:40:19.108Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93af7fe60dafb6edc0ba3",
+      "source": "otruyen",
+      "id": 1488
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 450: ",
+      "content": "",
+      "order": 450,
+      "createdAt": "2025-12-23T17:40:19.108Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93af8fe60dafb6edc0ba6",
+      "source": "otruyen",
+      "id": 1489
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 451: ",
+      "content": "",
+      "order": 451,
+      "createdAt": "2025-12-23T17:40:19.108Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93af8fe60dafb6edc0ba9",
+      "source": "otruyen",
+      "id": 1490
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 452: ",
+      "content": "",
+      "order": 452,
+      "createdAt": "2025-12-23T17:40:19.108Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93af9fe60dafb6edc0bac",
+      "source": "otruyen",
+      "id": 1491
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 453: ",
+      "content": "",
+      "order": 453,
+      "createdAt": "2025-12-23T17:40:19.108Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93af9fe60dafb6edc0baf",
+      "source": "otruyen",
+      "id": 1492
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 454: ",
+      "content": "",
+      "order": 454,
+      "createdAt": "2025-12-23T17:40:19.108Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93afafe60dafb6edc0bb2",
+      "source": "otruyen",
+      "id": 1493
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 455: ",
+      "content": "",
+      "order": 455,
+      "createdAt": "2025-12-23T17:40:19.108Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93afafe60dafb6edc0bb5",
+      "source": "otruyen",
+      "id": 1494
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 456: ",
+      "content": "",
+      "order": 456,
+      "createdAt": "2025-12-23T17:40:19.108Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93afbfe60dafb6edc0bb8",
+      "source": "otruyen",
+      "id": 1495
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 457: ",
+      "content": "",
+      "order": 457,
+      "createdAt": "2025-12-23T17:40:19.108Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93afcfe60dafb6edc0bbb",
+      "source": "otruyen",
+      "id": 1496
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 458: ",
+      "content": "",
+      "order": 458,
+      "createdAt": "2025-12-23T17:40:19.108Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93afcfe60dafb6edc0bbe",
+      "source": "otruyen",
+      "id": 1497
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 459: ",
+      "content": "",
+      "order": 459,
+      "createdAt": "2025-12-23T17:40:19.108Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93afdfe60dafb6edc0bc1",
+      "source": "otruyen",
+      "id": 1498
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 460: ",
+      "content": "",
+      "order": 460,
+      "createdAt": "2025-12-23T17:40:19.108Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93afdfe60dafb6edc0bc4",
+      "source": "otruyen",
+      "id": 1499
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 461: ",
+      "content": "",
+      "order": 461,
+      "createdAt": "2025-12-23T17:40:19.109Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93afdfe60dafb6edc0bc7",
+      "source": "otruyen",
+      "id": 1500
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 462: ",
+      "content": "",
+      "order": 462,
+      "createdAt": "2025-12-23T17:40:19.109Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93afefe60dafb6edc0bca",
+      "source": "otruyen",
+      "id": 1501
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 463: ",
+      "content": "",
+      "order": 463,
+      "createdAt": "2025-12-23T17:40:19.109Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93afefe60dafb6edc0bcd",
+      "source": "otruyen",
+      "id": 1502
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 464: ",
+      "content": "",
+      "order": 464,
+      "createdAt": "2025-12-23T17:40:19.109Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93afffe60dafb6edc0bd0",
+      "source": "otruyen",
+      "id": 1503
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 465: ",
+      "content": "",
+      "order": 465,
+      "createdAt": "2025-12-23T17:40:19.109Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b00fe60dafb6edc0bd3",
+      "source": "otruyen",
+      "id": 1504
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 466: ",
+      "content": "",
+      "order": 466,
+      "createdAt": "2025-12-23T17:40:19.109Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b01fe60dafb6edc0bd6",
+      "source": "otruyen",
+      "id": 1505
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 467: ",
+      "content": "",
+      "order": 467,
+      "createdAt": "2025-12-23T17:40:19.109Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b02fe60dafb6edc0bd9",
+      "source": "otruyen",
+      "id": 1506
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 468: ",
+      "content": "",
+      "order": 468,
+      "createdAt": "2025-12-23T17:40:19.109Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b02fe60dafb6edc0bdc",
+      "source": "otruyen",
+      "id": 1507
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 469: ",
+      "content": "",
+      "order": 469,
+      "createdAt": "2025-12-23T17:40:19.109Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b03fe60dafb6edc0bdf",
+      "source": "otruyen",
+      "id": 1508
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 470: ",
+      "content": "",
+      "order": 470,
+      "createdAt": "2025-12-23T17:40:19.109Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b04fe60dafb6edc0be4",
+      "source": "otruyen",
+      "id": 1509
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 471: ",
+      "content": "",
+      "order": 471,
+      "createdAt": "2025-12-23T17:40:19.109Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b06fe60dafb6edc0be7",
+      "source": "otruyen",
+      "id": 1510
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 472: ",
+      "content": "",
+      "order": 472,
+      "createdAt": "2025-12-23T17:40:19.109Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b07fe60dafb6edc0bea",
+      "source": "otruyen",
+      "id": 1511
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 473: ",
+      "content": "",
+      "order": 473,
+      "createdAt": "2025-12-23T17:40:19.109Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b08fe60dafb6edc0bed",
+      "source": "otruyen",
+      "id": 1512
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 474: ",
+      "content": "",
+      "order": 474,
+      "createdAt": "2025-12-23T17:40:19.109Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b09fe60dafb6edc0bf0",
+      "source": "otruyen",
+      "id": 1513
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 475: ",
+      "content": "",
+      "order": 475,
+      "createdAt": "2025-12-23T17:40:19.109Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b0afe60dafb6edc0bf3",
+      "source": "otruyen",
+      "id": 1514
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 476: ",
+      "content": "",
+      "order": 476,
+      "createdAt": "2025-12-23T17:40:19.109Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b0bfe60dafb6edc0bf6",
+      "source": "otruyen",
+      "id": 1515
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 477: ",
+      "content": "",
+      "order": 477,
+      "createdAt": "2025-12-23T17:40:19.109Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b0bfe60dafb6edc0bf9",
+      "source": "otruyen",
+      "id": 1516
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 478: ",
+      "content": "",
+      "order": 478,
+      "createdAt": "2025-12-23T17:40:19.109Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b0cfe60dafb6edc0bfc",
+      "source": "otruyen",
+      "id": 1517
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 479: ",
+      "content": "",
+      "order": 479,
+      "createdAt": "2025-12-23T17:40:19.109Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b0dfe60dafb6edc0bff",
+      "source": "otruyen",
+      "id": 1518
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 480: ",
+      "content": "",
+      "order": 480,
+      "createdAt": "2025-12-23T17:40:19.109Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b0efe60dafb6edc0c02",
+      "source": "otruyen",
+      "id": 1519
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 481: ",
+      "content": "",
+      "order": 481,
+      "createdAt": "2025-12-23T17:40:19.109Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b0ffe60dafb6edc0c05",
+      "source": "otruyen",
+      "id": 1520
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 482: ",
+      "content": "",
+      "order": 482,
+      "createdAt": "2025-12-23T17:40:19.109Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b10fe60dafb6edc0c0a",
+      "source": "otruyen",
+      "id": 1521
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 483: ",
+      "content": "",
+      "order": 483,
+      "createdAt": "2025-12-23T17:40:19.109Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b11fe60dafb6edc0c0d",
+      "source": "otruyen",
+      "id": 1522
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 484: ",
+      "content": "",
+      "order": 484,
+      "createdAt": "2025-12-23T17:40:19.109Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b12fe60dafb6edc0c12",
+      "source": "otruyen",
+      "id": 1523
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 485: ",
+      "content": "",
+      "order": 485,
+      "createdAt": "2025-12-23T17:40:19.109Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b13fe60dafb6edc0c15",
+      "source": "otruyen",
+      "id": 1524
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 486: ",
+      "content": "",
+      "order": 486,
+      "createdAt": "2025-12-23T17:40:19.109Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b15fe60dafb6edc0c1a",
+      "source": "otruyen",
+      "id": 1525
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 487: ",
+      "content": "",
+      "order": 487,
+      "createdAt": "2025-12-23T17:40:19.109Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b16fe60dafb6edc0c1d",
+      "source": "otruyen",
+      "id": 1526
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 488: ",
+      "content": "",
+      "order": 488,
+      "createdAt": "2025-12-23T17:40:19.109Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b18fe60dafb6edc0c20",
+      "source": "otruyen",
+      "id": 1527
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 489: ",
+      "content": "",
+      "order": 489,
+      "createdAt": "2025-12-23T17:40:19.110Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b1afe60dafb6edc0c23",
+      "source": "otruyen",
+      "id": 1528
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 490: ",
+      "content": "",
+      "order": 490,
+      "createdAt": "2025-12-23T17:40:19.110Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b1cfe60dafb6edc0c26",
+      "source": "otruyen",
+      "id": 1529
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 491: ",
+      "content": "",
+      "order": 491,
+      "createdAt": "2025-12-23T17:40:19.110Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b1dfe60dafb6edc0c29",
+      "source": "otruyen",
+      "id": 1530
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 492: ",
+      "content": "",
+      "order": 492,
+      "createdAt": "2025-12-23T17:40:19.110Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b1ffe60dafb6edc0c2c",
+      "source": "otruyen",
+      "id": 1531
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 493: ",
+      "content": "",
+      "order": 493,
+      "createdAt": "2025-12-23T17:40:19.110Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b20fe60dafb6edc0c2f",
+      "source": "otruyen",
+      "id": 1532
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 494: ",
+      "content": "",
+      "order": 494,
+      "createdAt": "2025-12-23T17:40:19.110Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b21fe60dafb6edc0c32",
+      "source": "otruyen",
+      "id": 1533
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 495: ",
+      "content": "",
+      "order": 495,
+      "createdAt": "2025-12-23T17:40:19.110Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b23fe60dafb6edc0c35",
+      "source": "otruyen",
+      "id": 1534
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 496: ",
+      "content": "",
+      "order": 496,
+      "createdAt": "2025-12-23T17:40:19.110Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b24fe60dafb6edc0c38",
+      "source": "otruyen",
+      "id": 1535
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 497: ",
+      "content": "",
+      "order": 497,
+      "createdAt": "2025-12-23T17:40:19.110Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b26fe60dafb6edc0c3b",
+      "source": "otruyen",
+      "id": 1536
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 498: ",
+      "content": "",
+      "order": 498,
+      "createdAt": "2025-12-23T17:40:19.110Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b26fe60dafb6edc0c3e",
+      "source": "otruyen",
+      "id": 1537
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 499: ",
+      "content": "",
+      "order": 499,
+      "createdAt": "2025-12-23T17:40:19.110Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b27fe60dafb6edc0c41",
+      "source": "otruyen",
+      "id": 1538
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 500: ",
+      "content": "",
+      "order": 500,
+      "createdAt": "2025-12-23T17:40:19.110Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b29fe60dafb6edc0c44",
+      "source": "otruyen",
+      "id": 1539
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 501: ",
+      "content": "",
+      "order": 501,
+      "createdAt": "2025-12-23T17:40:19.110Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b2bfe60dafb6edc0c47",
+      "source": "otruyen",
+      "id": 1540
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 502: ",
+      "content": "",
+      "order": 502,
+      "createdAt": "2025-12-23T17:40:19.110Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b2cfe60dafb6edc0c4a",
+      "source": "otruyen",
+      "id": 1541
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 503: ",
+      "content": "",
+      "order": 503,
+      "createdAt": "2025-12-23T17:40:19.110Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b2efe60dafb6edc0c4d",
+      "source": "otruyen",
+      "id": 1542
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 504: ",
+      "content": "",
+      "order": 504,
+      "createdAt": "2025-12-23T17:40:19.110Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b2ffe60dafb6edc0c50",
+      "source": "otruyen",
+      "id": 1543
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 505: ",
+      "content": "",
+      "order": 505,
+      "createdAt": "2025-12-23T17:40:19.110Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b30fe60dafb6edc0c53",
+      "source": "otruyen",
+      "id": 1544
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 506: ",
+      "content": "",
+      "order": 506,
+      "createdAt": "2025-12-23T17:40:19.110Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b31fe60dafb6edc0c56",
+      "source": "otruyen",
+      "id": 1545
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 507: ",
+      "content": "",
+      "order": 507,
+      "createdAt": "2025-12-23T17:40:19.110Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b31fe60dafb6edc0c59",
+      "source": "otruyen",
+      "id": 1546
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 508: ",
+      "content": "",
+      "order": 508,
+      "createdAt": "2025-12-23T17:40:19.110Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b32fe60dafb6edc0c5c",
+      "source": "otruyen",
+      "id": 1547
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 509: ",
+      "content": "",
+      "order": 509,
+      "createdAt": "2025-12-23T17:40:19.110Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b32fe60dafb6edc0c5f",
+      "source": "otruyen",
+      "id": 1548
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 510: ",
+      "content": "",
+      "order": 510,
+      "createdAt": "2025-12-23T17:40:19.110Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b32fe60dafb6edc0c62",
+      "source": "otruyen",
+      "id": 1549
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 511: ",
+      "content": "",
+      "order": 511,
+      "createdAt": "2025-12-23T17:40:19.110Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b32fe60dafb6edc0c65",
+      "source": "otruyen",
+      "id": 1550
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 512: ",
+      "content": "",
+      "order": 512,
+      "createdAt": "2025-12-23T17:40:19.111Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b32fe60dafb6edc0c68",
+      "source": "otruyen",
+      "id": 1551
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 513: ",
+      "content": "",
+      "order": 513,
+      "createdAt": "2025-12-23T17:40:19.111Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b32fe60dafb6edc0c6b",
+      "source": "otruyen",
+      "id": 1552
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 514: ",
+      "content": "",
+      "order": 514,
+      "createdAt": "2025-12-23T17:40:19.111Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b32fe60dafb6edc0c6e",
+      "source": "otruyen",
+      "id": 1553
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 515: ",
+      "content": "",
+      "order": 515,
+      "createdAt": "2025-12-23T17:40:19.111Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b33fe60dafb6edc0c71",
+      "source": "otruyen",
+      "id": 1554
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 516: ",
+      "content": "",
+      "order": 516,
+      "createdAt": "2025-12-23T17:40:19.111Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b34fe60dafb6edc0c74",
+      "source": "otruyen",
+      "id": 1555
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 517: ",
+      "content": "",
+      "order": 517,
+      "createdAt": "2025-12-23T17:40:19.111Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b35fe60dafb6edc0c77",
+      "source": "otruyen",
+      "id": 1556
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 518: ",
+      "content": "",
+      "order": 518,
+      "createdAt": "2025-12-23T17:40:19.111Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b35fe60dafb6edc0c7a",
+      "source": "otruyen",
+      "id": 1557
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 519: ",
+      "content": "",
+      "order": 519,
+      "createdAt": "2025-12-23T17:40:19.111Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b35fe60dafb6edc0c7d",
+      "source": "otruyen",
+      "id": 1558
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 520: ",
+      "content": "",
+      "order": 520,
+      "createdAt": "2025-12-23T17:40:19.111Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b37fe60dafb6edc0c80",
+      "source": "otruyen",
+      "id": 1559
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 521: ",
+      "content": "",
+      "order": 521,
+      "createdAt": "2025-12-23T17:40:19.111Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b37fe60dafb6edc0c83",
+      "source": "otruyen",
+      "id": 1560
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 522: ",
+      "content": "",
+      "order": 522,
+      "createdAt": "2025-12-23T17:40:19.111Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b38fe60dafb6edc0c86",
+      "source": "otruyen",
+      "id": 1561
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 523: ",
+      "content": "",
+      "order": 523,
+      "createdAt": "2025-12-23T17:40:19.111Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b38fe60dafb6edc0c89",
+      "source": "otruyen",
+      "id": 1562
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 524: ",
+      "content": "",
+      "order": 524,
+      "createdAt": "2025-12-23T17:40:19.111Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b39fe60dafb6edc0c8c",
+      "source": "otruyen",
+      "id": 1563
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 525: ",
+      "content": "",
+      "order": 525,
+      "createdAt": "2025-12-23T17:40:19.111Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b3afe60dafb6edc0c8f",
+      "source": "otruyen",
+      "id": 1564
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 526: ",
+      "content": "",
+      "order": 526,
+      "createdAt": "2025-12-23T17:40:19.111Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b3bfe60dafb6edc0c92",
+      "source": "otruyen",
+      "id": 1565
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 527: ",
+      "content": "",
+      "order": 527,
+      "createdAt": "2025-12-23T17:40:19.111Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b3cfe60dafb6edc0c95",
+      "source": "otruyen",
+      "id": 1566
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 528: ",
+      "content": "",
+      "order": 528,
+      "createdAt": "2025-12-23T17:40:19.111Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b3dfe60dafb6edc0c98",
+      "source": "otruyen",
+      "id": 1567
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 529: ",
+      "content": "",
+      "order": 529,
+      "createdAt": "2025-12-23T17:40:19.111Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b3ffe60dafb6edc0c9b",
+      "source": "otruyen",
+      "id": 1568
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 530: ",
+      "content": "",
+      "order": 530,
+      "createdAt": "2025-12-23T17:40:19.111Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b42fe60dafb6edc0c9e",
+      "source": "otruyen",
+      "id": 1569
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 531: ",
+      "content": "",
+      "order": 531,
+      "createdAt": "2025-12-23T17:40:19.111Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b43fe60dafb6edc0ca1",
+      "source": "otruyen",
+      "id": 1570
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 532: ",
+      "content": "",
+      "order": 532,
+      "createdAt": "2025-12-23T17:40:19.111Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b45fe60dafb6edc0ca4",
+      "source": "otruyen",
+      "id": 1571
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 533: ",
+      "content": "",
+      "order": 533,
+      "createdAt": "2025-12-23T17:40:19.111Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b47fe60dafb6edc0ca7",
+      "source": "otruyen",
+      "id": 1572
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 534: ",
+      "content": "",
+      "order": 534,
+      "createdAt": "2025-12-23T17:40:19.111Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b49fe60dafb6edc0caa",
+      "source": "otruyen",
+      "id": 1573
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 535: ",
+      "content": "",
+      "order": 535,
+      "createdAt": "2025-12-23T17:40:19.111Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b4cfe60dafb6edc0cad",
+      "source": "otruyen",
+      "id": 1574
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 536: ",
+      "content": "",
+      "order": 536,
+      "createdAt": "2025-12-23T17:40:19.111Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b4dfe60dafb6edc0cb0",
+      "source": "otruyen",
+      "id": 1575
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 537: ",
+      "content": "",
+      "order": 537,
+      "createdAt": "2025-12-23T17:40:19.111Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b4ffe60dafb6edc0cb3",
+      "source": "otruyen",
+      "id": 1576
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 538: ",
+      "content": "",
+      "order": 538,
+      "createdAt": "2025-12-23T17:40:19.111Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b51fe60dafb6edc0cb6",
+      "source": "otruyen",
+      "id": 1577
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 539: ",
+      "content": "",
+      "order": 539,
+      "createdAt": "2025-12-23T17:40:19.111Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b53fe60dafb6edc0cb9",
+      "source": "otruyen",
+      "id": 1578
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 540: ",
+      "content": "",
+      "order": 540,
+      "createdAt": "2025-12-23T17:40:19.111Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b53fe60dafb6edc0cbc",
+      "source": "otruyen",
+      "id": 1579
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 541: ",
+      "content": "",
+      "order": 541,
+      "createdAt": "2025-12-23T17:40:19.111Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d93b56fe60dafb6edc0cbf",
+      "source": "otruyen",
+      "id": 1580
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 542: ",
+      "content": "",
+      "order": 542,
+      "createdAt": "2025-12-23T17:40:19.111Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68e4c771441192426c8a66a1",
+      "source": "otruyen",
+      "id": 1581
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 543: ",
+      "content": "",
+      "order": 543,
+      "createdAt": "2025-12-23T17:40:19.111Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68f4811bfe60dafb6edd634f",
+      "source": "otruyen",
+      "id": 1582
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 544: ",
+      "content": "",
+      "order": 544,
+      "createdAt": "2025-12-23T17:40:19.111Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68f4811dfe60dafb6edd6352",
+      "source": "otruyen",
+      "id": 1583
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 545: ",
+      "content": "",
+      "order": 545,
+      "createdAt": "2025-12-23T17:40:19.111Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/6906dfa62cb678d7b1ce6550",
+      "source": "otruyen",
+      "id": 1584
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 546: ",
+      "content": "",
+      "order": 546,
+      "createdAt": "2025-12-23T17:40:19.111Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/691c12f3a2ca9f8cba59f2fc",
+      "source": "otruyen",
+      "id": 1585
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 547: ",
+      "content": "",
+      "order": 547,
+      "createdAt": "2025-12-23T17:40:19.111Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/694a733be0d753f32e5016cb",
+      "source": "otruyen",
+      "id": 1586
+    },
+    {
+      "storyId": 12,
+      "title": "Chương 548: ",
+      "content": "",
+      "order": 548,
+      "createdAt": "2025-12-23T17:40:19.111Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/694a733be0d753f32e5016ce",
+      "source": "otruyen",
+      "id": 1587
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 1: ",
+      "content": "",
+      "order": 1,
+      "createdAt": "2025-12-23T17:41:58.601Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/687b0fc6c926626890ab6f34",
+      "source": "otruyen",
+      "id": 1588
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 2: ",
+      "content": "",
+      "order": 2,
+      "createdAt": "2025-12-23T17:41:58.601Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/687b0fc7c926626890ab6f37",
+      "source": "otruyen",
+      "id": 1589
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 3: ",
+      "content": "",
+      "order": 3,
+      "createdAt": "2025-12-23T17:41:58.601Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/687b0fc7c926626890ab6f3a",
+      "source": "otruyen",
+      "id": 1590
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 7: ",
+      "content": "",
+      "order": 7,
+      "createdAt": "2025-12-23T17:41:58.601Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/687b0fcbc926626890ab6f46",
+      "source": "otruyen",
+      "id": 1591
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 5: ",
+      "content": "",
+      "order": 5,
+      "createdAt": "2025-12-23T17:41:58.601Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/687b0fc9c926626890ab6f40",
+      "source": "otruyen",
+      "id": 1592
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 6: ",
+      "content": "",
+      "order": 6,
+      "createdAt": "2025-12-23T17:41:58.601Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/687b0fcac926626890ab6f43",
+      "source": "otruyen",
+      "id": 1593
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 8: ",
+      "content": "",
+      "order": 8,
+      "createdAt": "2025-12-23T17:41:58.601Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/687b0fcdc926626890ab6f4c",
+      "source": "otruyen",
+      "id": 1594
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 8.5: ",
+      "content": "",
+      "order": 8.5,
+      "createdAt": "2025-12-23T17:41:58.601Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/687b0fccc926626890ab6f49",
+      "source": "otruyen",
+      "id": 1595
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 9: ",
+      "content": "",
+      "order": 9,
+      "createdAt": "2025-12-23T17:41:58.601Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/687b0fcdc926626890ab6f4f",
+      "source": "otruyen",
+      "id": 1596
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 10: ",
+      "content": "",
+      "order": 10,
+      "createdAt": "2025-12-23T17:41:58.601Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/687b0fcec926626890ab6f52",
+      "source": "otruyen",
+      "id": 1597
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 4: ",
+      "content": "",
+      "order": 4,
+      "createdAt": "2025-12-23T17:41:58.601Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/687b0fc8c926626890ab6f3d",
+      "source": "otruyen",
+      "id": 1598
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 11: ",
+      "content": "",
+      "order": 11,
+      "createdAt": "2025-12-23T17:41:58.601Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/6880ab69c705a578a7ffc4ad",
+      "source": "otruyen",
+      "id": 1599
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 12: ",
+      "content": "",
+      "order": 12,
+      "createdAt": "2025-12-23T17:41:58.601Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68897806c705a578a7fff4a7",
+      "source": "otruyen",
+      "id": 1600
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 13: ",
+      "content": "",
+      "order": 13,
+      "createdAt": "2025-12-23T17:41:58.601Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68897807c705a578a7fff4aa",
+      "source": "otruyen",
+      "id": 1601
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 14: ",
+      "content": "",
+      "order": 14,
+      "createdAt": "2025-12-23T17:41:58.601Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68897808c705a578a7fff4ad",
+      "source": "otruyen",
+      "id": 1602
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 15: ",
+      "content": "",
+      "order": 15,
+      "createdAt": "2025-12-23T17:41:58.601Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68897809c705a578a7fff4b0",
+      "source": "otruyen",
+      "id": 1603
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 16: ",
+      "content": "",
+      "order": 16,
+      "createdAt": "2025-12-23T17:41:58.601Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/689418c8c926626890ac51a0",
+      "source": "otruyen",
+      "id": 1604
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 17: ",
+      "content": "",
+      "order": 17,
+      "createdAt": "2025-12-23T17:41:58.601Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/689418c8c926626890ac51a3",
+      "source": "otruyen",
+      "id": 1605
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 18: ",
+      "content": "",
+      "order": 18,
+      "createdAt": "2025-12-23T17:41:58.601Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/689418c9c926626890ac51a6",
+      "source": "otruyen",
+      "id": 1606
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 19: ",
+      "content": "",
+      "order": 19,
+      "createdAt": "2025-12-23T17:41:58.601Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/689418cac926626890ac51a9",
+      "source": "otruyen",
+      "id": 1607
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 20: ",
+      "content": "",
+      "order": 20,
+      "createdAt": "2025-12-23T17:41:58.601Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68a9472fc926626890ad787e",
+      "source": "otruyen",
+      "id": 1608
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 21: ",
+      "content": "",
+      "order": 21,
+      "createdAt": "2025-12-23T17:41:58.601Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68a94730c926626890ad7881",
+      "source": "otruyen",
+      "id": 1609
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 22: ",
+      "content": "",
+      "order": 22,
+      "createdAt": "2025-12-23T17:41:58.601Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68a94731c926626890ad7884",
+      "source": "otruyen",
+      "id": 1610
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 23: ",
+      "content": "",
+      "order": 23,
+      "createdAt": "2025-12-23T17:41:58.601Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68a94731c926626890ad7887",
+      "source": "otruyen",
+      "id": 1611
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 24: ",
+      "content": "",
+      "order": 24,
+      "createdAt": "2025-12-23T17:41:58.601Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68a94732c926626890ad788a",
+      "source": "otruyen",
+      "id": 1612
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 25: ",
+      "content": "",
+      "order": 25,
+      "createdAt": "2025-12-23T17:41:58.601Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68a94733c926626890ad788d",
+      "source": "otruyen",
+      "id": 1613
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 26: ",
+      "content": "",
+      "order": 26,
+      "createdAt": "2025-12-23T17:41:58.601Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68a94733c926626890ad7890",
+      "source": "otruyen",
+      "id": 1614
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 27: ",
+      "content": "",
+      "order": 27,
+      "createdAt": "2025-12-23T17:41:58.601Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68a94734c926626890ad7893",
+      "source": "otruyen",
+      "id": 1615
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 28: ",
+      "content": "",
+      "order": 28,
+      "createdAt": "2025-12-23T17:41:58.601Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68c6c342c705a578a70375ff",
+      "source": "otruyen",
+      "id": 1616
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 29: ",
+      "content": "",
+      "order": 29,
+      "createdAt": "2025-12-23T17:41:58.601Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68c6c343c705a578a7037602",
+      "source": "otruyen",
+      "id": 1617
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 30: ",
+      "content": "",
+      "order": 30,
+      "createdAt": "2025-12-23T17:41:58.601Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68c6c344c705a578a7037605",
+      "source": "otruyen",
+      "id": 1618
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 31: ",
+      "content": "",
+      "order": 31,
+      "createdAt": "2025-12-23T17:41:58.601Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68c6c344c705a578a7037608",
+      "source": "otruyen",
+      "id": 1619
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 32: ",
+      "content": "",
+      "order": 32,
+      "createdAt": "2025-12-23T17:41:58.601Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68c6c345c705a578a703760b",
+      "source": "otruyen",
+      "id": 1620
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 33: ",
+      "content": "",
+      "order": 33,
+      "createdAt": "2025-12-23T17:41:58.601Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68c6c346c705a578a703760e",
+      "source": "otruyen",
+      "id": 1621
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 34: ",
+      "content": "",
+      "order": 34,
+      "createdAt": "2025-12-23T17:41:58.601Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68c6c346c705a578a7037611",
+      "source": "otruyen",
+      "id": 1622
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 35: ",
+      "content": "",
+      "order": 35,
+      "createdAt": "2025-12-23T17:41:58.601Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68c6c347c705a578a7037615",
+      "source": "otruyen",
+      "id": 1623
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 36: ",
+      "content": "",
+      "order": 36,
+      "createdAt": "2025-12-23T17:41:58.601Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68c6c347c705a578a7037618",
+      "source": "otruyen",
+      "id": 1624
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 37: ",
+      "content": "",
+      "order": 37,
+      "createdAt": "2025-12-23T17:41:58.601Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d612ecfe60dafb6edb96ee",
+      "source": "otruyen",
+      "id": 1625
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 37.5: ",
+      "content": "",
+      "order": 37.5,
+      "createdAt": "2025-12-23T17:41:58.601Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d612ebfe60dafb6edb96eb",
+      "source": "otruyen",
+      "id": 1626
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 38: ",
+      "content": "",
+      "order": 38,
+      "createdAt": "2025-12-23T17:41:58.601Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/68d612edfe60dafb6edb96f1",
+      "source": "otruyen",
+      "id": 1627
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 39: ",
+      "content": "",
+      "order": 39,
+      "createdAt": "2025-12-23T17:41:58.602Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/691591c6a2ca9f8cba59a587",
+      "source": "otruyen",
+      "id": 1628
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 40: ",
+      "content": "",
+      "order": 40,
+      "createdAt": "2025-12-23T17:41:58.602Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/691591c6a2ca9f8cba59a58a",
+      "source": "otruyen",
+      "id": 1629
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 41: ",
+      "content": "",
+      "order": 41,
+      "createdAt": "2025-12-23T17:41:58.602Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/691591c8a2ca9f8cba59a58d",
+      "source": "otruyen",
+      "id": 1630
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 43: ",
+      "content": "",
+      "order": 43,
+      "createdAt": "2025-12-23T17:41:58.602Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/691591c8a2ca9f8cba59a593",
+      "source": "otruyen",
+      "id": 1631
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 43.5: ",
+      "content": "",
+      "order": 43.5,
+      "createdAt": "2025-12-23T17:41:58.602Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/691591c8a2ca9f8cba59a590",
+      "source": "otruyen",
+      "id": 1632
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 44: ",
+      "content": "",
+      "order": 44,
+      "createdAt": "2025-12-23T17:41:58.602Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/691591c8a2ca9f8cba59a596",
+      "source": "otruyen",
+      "id": 1633
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 45: ",
+      "content": "",
+      "order": 45,
+      "createdAt": "2025-12-23T17:41:58.602Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/691591c8a2ca9f8cba59a599",
+      "source": "otruyen",
+      "id": 1634
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 46: ",
+      "content": "",
+      "order": 46,
+      "createdAt": "2025-12-23T17:41:58.602Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/691591c8a2ca9f8cba59a59c",
+      "source": "otruyen",
+      "id": 1635
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 47: ",
+      "content": "",
+      "order": 47,
+      "createdAt": "2025-12-23T17:41:58.602Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/69229c25dee12c04272f3252",
+      "source": "otruyen",
+      "id": 1636
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 48: ",
+      "content": "",
+      "order": 48,
+      "createdAt": "2025-12-23T17:41:58.602Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/69229c25dee12c04272f3255",
+      "source": "otruyen",
+      "id": 1637
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 49: ",
+      "content": "",
+      "order": 49,
+      "createdAt": "2025-12-23T17:41:58.602Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/69229c25dee12c04272f3258",
+      "source": "otruyen",
+      "id": 1638
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 50: ",
+      "content": "",
+      "order": 50,
+      "createdAt": "2025-12-23T17:41:58.602Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/69259f77dee12c04272f5ae4",
+      "source": "otruyen",
+      "id": 1639
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 51: ",
+      "content": "",
+      "order": 51,
+      "createdAt": "2025-12-23T17:41:58.602Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/692911b47a48932b83d691cf",
+      "source": "otruyen",
+      "id": 1640
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 52: ",
+      "content": "",
+      "order": 52,
+      "createdAt": "2025-12-23T17:41:58.602Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/692d209c7a48932b83d6c552",
+      "source": "otruyen",
+      "id": 1641
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 53: ",
+      "content": "",
+      "order": 53,
+      "createdAt": "2025-12-23T17:41:58.602Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/692d209c7a48932b83d6c555",
+      "source": "otruyen",
+      "id": 1642
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 54: ",
+      "content": "",
+      "order": 54,
+      "createdAt": "2025-12-23T17:41:58.602Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/69350c1a7a48932b83d73077",
+      "source": "otruyen",
+      "id": 1643
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 55: ",
+      "content": "",
+      "order": 55,
+      "createdAt": "2025-12-23T17:41:58.602Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/693944b17b89b5b257fe0e46",
+      "source": "otruyen",
+      "id": 1644
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 56: ",
+      "content": "",
+      "order": 56,
+      "createdAt": "2025-12-23T17:41:58.602Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/693fb6f67b89b5b257042557",
+      "source": "otruyen",
+      "id": 1645
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 57: ",
+      "content": "",
+      "order": 57,
+      "createdAt": "2025-12-23T17:41:58.602Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/693fb6f87b89b5b25704255a",
+      "source": "otruyen",
+      "id": 1646
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 58: ",
+      "content": "",
+      "order": 58,
+      "createdAt": "2025-12-23T17:41:58.602Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/69466980e0d753f32e4fe89a",
+      "source": "otruyen",
+      "id": 1647
+    },
+    {
+      "storyId": 7,
+      "title": "Chương 59: ",
+      "content": "",
+      "order": 59,
+      "createdAt": "2025-12-23T17:41:58.602Z",
+      "externalId": "https://sv1.otruyencdn.com/v1/api/chapter/694a7336e0d753f32e5016c4",
+      "source": "otruyen",
+      "id": 1648
     }
   ]
 }
