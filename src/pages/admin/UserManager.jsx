@@ -3,8 +3,12 @@ import { useForm } from 'react-hook-form';
 import api from '../../services/api';
 import { toast } from 'react-toastify';
 import { Pencil, Trash2, Plus, X, User, Shield, ShieldCheck, Eye } from 'lucide-react';
+import { logAdminAction } from '../../services/adminService';
+import { MODERATION_ACTIONS } from '../../utils/moderation';
+import { useAuth } from '../../context/AuthContext';
 
 const UserManager = () => {
+    const { user: currentUser } = useAuth();
     const [users, setUsers] = useState([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [editingUser, setEditingUser] = useState(null);
@@ -54,9 +58,11 @@ const UserManager = () => {
             if (editingUser) {
                 await api.put(`/users/${editingUser.id}`, { ...editingUser, ...data });
                 toast.success("Cập nhật người dùng thành công");
+                logAdminAction(MODERATION_ACTIONS.UPDATE_STORY, `User: ${editingUser.email}`, `Updated info`, currentUser.id, currentUser.name);
             } else {
                 await api.post('/register', data);
                 toast.success("Thêm người dùng thành công");
+                logAdminAction(MODERATION_ACTIONS.UPDATE_STORY, `User: ${data.email}`, `Created new user`, currentUser.id, currentUser.name);
             }
             fetchUsers();
             closeModal();
@@ -70,6 +76,7 @@ const UserManager = () => {
             try {
                 await api.delete(`/users/${id}`);
                 toast.success("Xóa người dùng thành công");
+                logAdminAction(MODERATION_ACTIONS.BAN_USER, `User ID: ${id}`, `Deleted user`, currentUser.id, currentUser.name);
                 fetchUsers();
             } catch (error) {
                 toast.error("Có lỗi xảy ra khi xóa");

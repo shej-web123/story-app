@@ -3,6 +3,7 @@ import { AuthProvider } from './context/AuthContext'
 import ClientLayout from './layouts/ClientLayout'
 import AdminLayout from './layouts/AdminLayout'
 import ProtectedRoute from './components/ProtectedRoute'
+import ErrorBoundary from './components/ErrorBoundary'
 
 // Auth Pages
 import Login from './pages/auth/Login'
@@ -26,43 +27,56 @@ import CategoryManager from './pages/admin/CategoryManager'
 import UserManager from './pages/admin/UserManager'
 import ReportsManager from './pages/admin/ReportsManager';
 import AdminLogin from './pages/admin/AdminLogin';
+import Analytics from './pages/admin/Analytics';
+import AuditLog from './pages/admin/AuditLog';
+import SystemSettings from './pages/admin/SystemSettings';
 
 function App() {
     return (
         <AuthProvider>
-            <Routes>
-                {/* Auth Routes */}
-                <Route path="/login" element={<Login />} />
-                <Route path="/admin/login" element={<AdminLogin />} />
-                <Route path="/register" element={<Register />} />
+            <ErrorBoundary>
+                <Routes>
+                    {/* Auth Routes */}
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/admin/login" element={<AdminLogin />} />
+                    <Route path="/register" element={<Register />} />
 
 
-                {/* Client Routes */}
-                <Route element={<ClientLayout />}>
-                    <Route index element={<Home />} />
-                    <Route path="/story/:storyId" element={<StoryDetail />} />
-                    <Route path="/library" element={<Library />} />
-                    <Route path="/external-library" element={<ExternalLibrary />} />
-                    <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
-                    <Route path="/write" element={<WriteStory />} />
-                    <Route path="/history" element={<History />} />
-                </Route>
+                    {/* Client Routes */}
+                    <Route element={<ClientLayout />}>
+                        <Route index element={<Home />} />
+                        <Route path="/story/:storyId" element={<StoryDetail />} />
+                        <Route path="/library" element={<Library />} />
+                        <Route path="/external-library" element={<ExternalLibrary />} />
+                        <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
+                        <Route path="/write" element={<WriteStory />} />
+                        <Route path="/history" element={<History />} />
+                    </Route>
 
-                {/* Standalone Routes (Reader) */}
-                <Route path="/story/:storyId/chapter/:chapterId" element={<ChapterReader />} />
+                    {/* Standalone Routes (Reader) */}
+                    <Route path="/story/:storyId/chapter/:chapterId" element={<ChapterReader />} />
 
-                {/* Admin Routes */}
-                <Route path="/admin" element={<ProtectedRoute allowedRoles={['admin']}><AdminLayout /></ProtectedRoute>}>
-                    {/* Note: In real app better to separate AdminGuard */}
-                    <Route index element={<AdminDashboard />} />
-                    <Route path="stories" element={<StoryManager />} />
-                    <Route path="categories" element={<CategoryManager />} />
-                    <Route path="users" element={<UserManager />} />
-                    <Route path="reports" element={<ReportsManager />} />
-                </Route>
+                    {/* Admin Routes */}
+                    <Route path="/admin" element={
+                        <ProtectedRoute allowedRoles={['admin']}>
+                            <AdminLayout />
+                        </ProtectedRoute>
+                    }>
+                        {/* Note: In real app better to separate AdminGuard */}
+                        <Route index element={<AdminDashboard />} />
+                        <Route path="analytics" element={<Analytics />} />
+                        <Route path="audit-logs" element={<AuditLog />} />
+                        <Route path="stories" element={<StoryManager />} />
+                        <Route path="categories" element={<CategoryManager />} />
+                        <Route path="users" element={<UserManager />} />
+                        <Route path="users" element={<UserManager />} />
+                        <Route path="reports" element={<ReportsManager />} />
+                        <Route path="settings" element={<SystemSettings />} />
+                    </Route>
 
-                <Route path="*" element={<NotFound />} />
-            </Routes>
+                    <Route path="*" element={<NotFound />} />
+                </Routes>
+            </ErrorBoundary>
         </AuthProvider>
     );
 }

@@ -8,6 +8,9 @@ import ComicDetailModal from '../../components/ComicDetailModal';
 const Home = () => {
     const navigate = useNavigate();
     const [searchParams, setSearchParams] = useSearchParams();
+    const [banners, setBanners] = useState([]);
+
+    // Missing states restored
     const [stories, setStories] = useState([]);
     const [categories, setCategories] = useState([]);
 
@@ -15,6 +18,7 @@ const Home = () => {
     const selectedCategory = searchParams.get('category') ? Number(searchParams.get('category')) : null;
 
     const [search, setSearch] = useState('');
+    const [sortBy, setSortBy] = useState('newest'); // 'newest', 'views', 'rating', 'az'
     const [currentSlide, setCurrentSlide] = useState(0);
     const [featuredStories, setFeaturedStories] = useState([]);
     const [readingHistory, setReadingHistory] = useState([]);
@@ -26,6 +30,7 @@ const Home = () => {
     const IMAGE_CDN = 'https://otruyenapi.com/uploads/comics';
 
     useEffect(() => {
+        fetchBanners();
         fetchCategories();
         fetchStories();
         fetchHomeOnlineStories();
@@ -33,23 +38,52 @@ const Home = () => {
         setReadingHistory(history);
     }, []);
 
-    useEffect(() => {
-        fetchStories();
-        if (search) {
-            searchOnlineStories(search);
-        } else {
-            setOnlineStories([]);
+    const fetchBanners = async () => {
+        try {
+            const res = await api.get('/banners?isActive=true&_sort=order&_order=asc');
+            setBanners(res.data);
+        } catch (error) {
+            console.error("Failed to fetch banners", error);
         }
-    }, [selectedCategory, search]);
+    };
 
-    // Auto-play slider
+    const fetchStories = async () => {
+        try {
+            let cx = '';
+            if (search) cx += `&q=${search}`;
+            if (selectedCategory) cx += `&categoryId=${selectedCategory}`;
+
+            let sortQuery = '';
+            switch (sortBy) {
+                case 'views': sortQuery = '&_sort=viewCount&_order=desc'; break;
+                case 'rating': sortQuery = '&_sort=rating&_order=desc'; break;
+                case 'az': sortQuery = '&_sort=title&_order=asc'; break;
+                default: sortQuery = '&_sort=id&_order=desc'; // Newest
+            }
+
+            const res = await api.get(`/stories?${cx}${sortQuery}`);
+            setStories(res.data);
+
+            // Also update featured stories if not searching
+            if (!search && !selectedCategory) {
+                const featuredRes = await api.get('/stories?_sort=viewCount&_order=desc&_limit=5');
+                setFeaturedStories(featuredRes.data);
+            }
+
+        } catch (error) {
+            console.error("Failed to fetch stories", error);
+        }
+    };
+
+    // Debounce search
     useEffect(() => {
-        if (featuredStories.length === 0) return;
-        const timer = setInterval(() => {
-            setCurrentSlide((prev) => (prev + 1) % featuredStories.length);
-        }, 5000);
-        return () => clearInterval(timer);
-    }, [featuredStories]);
+        const timer = setTimeout(() => {
+            fetchStories();
+            if (search) fetchOnlineStories();
+        }, 500);
+        return () => clearTimeout(timer);
+    }, [search, selectedCategory, sortBy]);
+
 
     const fetchCategories = async () => {
         try {
@@ -60,154 +94,147 @@ const Home = () => {
         }
     };
 
-    const fetchStories = async () => {
+    const fetchOnlineStories = async () => {
+        if (!search) {
+            setOnlineStories([]);
+            return;
+        }
         try {
-            let url = '/stories';
-            const params = [];
-            if (selectedCategory) params.push(`categoryId=${selectedCategory}`);
-            if (search) params.push(`q=${search}`);
-
-            if (params.length > 0) {
-                url += `?${params.join('&')}`;
-            }
-
-            const res = await api.get(url);
-            setStories(res.data);
-
-            // Set featured stories (just taking first 3 for demo)
-            if (!selectedCategory && !search && res.data.length > 0) {
-                setFeaturedStories(res.data.slice(0, 3));
+            const res = await axios.get(`https://otruyenapi.com/v1/api/tim-kiem?keyword=${search}`);
+            if (res.data.status === 'success') {
+                setOnlineStories(res.data.data.items);
             }
         } catch (error) {
-            console.error("Failed to fetch stories", error);
+            console.error("Failed to search online stories", error);
         }
     };
 
     const fetchHomeOnlineStories = async () => {
         try {
-            const res = await axios.get('https://otruyenapi.com/v1/api/danh-sach/truyen-moi?page=1');
-            setHomeOnlineStories(res.data.data.items || []);
+            const res = await axios.get(`https://otruyenapi.com/v1/api/danh-sach/truyen-moi`);
+            if (res.data.status === 'success') {
+                setHomeOnlineStories(res.data.data.items.slice(0, 10));
+            }
         } catch (error) {
             console.error("Failed to fetch home online stories", error);
         }
     };
 
-    const searchOnlineStories = async (keyword) => {
-        try {
-            const res = await axios.get(`https://otruyenapi.com/v1/api/tim-kiem?keyword=${encodeURIComponent(keyword)}`);
-            setOnlineStories(res.data.data.items || []);
-        } catch (error) {
-            console.error("Failed to search online", error);
-            setOnlineStories([]);
-        }
-    };
-
-    const nextSlide = () => {
-        setCurrentSlide((prev) => (prev + 1) % featuredStories.length);
-    };
-
-    const prevSlide = () => {
-        setCurrentSlide((prev) => (prev - 1 + featuredStories.length) % featuredStories.length);
-    };
-
-    const handleSurpriseMe = async () => {
-        try {
-            const res = await api.get('/stories');
-            const allStories = res.data;
-            if (allStories.length > 0) {
-                const randomStory = allStories[Math.floor(Math.random() * allStories.length)];
-                navigate(`/story/${randomStory.id}`);
-            }
-        } catch (error) {
-            console.error("Failed to surprise", error);
-        }
-    };
-
     const handleCategorySelect = (id) => {
-        setSearchParams(prev => {
-            const newParams = new URLSearchParams(prev);
-            if (id) newParams.set('category', id);
-            else newParams.delete('category');
-            return newParams;
-        });
+        setSearchParams(id ? { category: id } : {});
+    };
+
+    const handleSurpriseMe = () => {
+        if (stories.length > 0) {
+            const random = stories[Math.floor(Math.random() * stories.length)];
+            navigate(`/story/${random.id}`);
+        }
     };
 
     const moods = [
-        { id: 'happy', label: 'Vui vẻ', icon: <Smile size={20} />, categoryId: 4, color: 'bg-yellow-100 text-yellow-600 hover:bg-yellow-200' },
-        { id: 'thrilling', label: 'Hồi hộp', icon: <Zap size={20} />, categoryId: 1, color: 'bg-amber-100 text-amber-600 hover:bg-amber-200' },
-        { id: 'dreamy', label: 'Mơ mộng', icon: <Moon size={20} />, categoryId: 3, color: 'bg-indigo-100 text-indigo-600 hover:bg-indigo-200' },
-        { id: 'scared', label: 'Sợ hãi', icon: <Ghost size={20} />, categoryId: 5, color: 'bg-gray-100 text-gray-600 hover:bg-gray-200' },
-        { id: 'sad', label: 'Buồn', icon: <CloudRain size={20} />, categoryId: 6, color: 'bg-blue-100 text-blue-600 hover:bg-blue-200' },
-        { id: 'love', label: 'Yêu đời', icon: <Heart size={20} />, categoryId: 2, color: 'bg-pink-100 text-pink-600 hover:bg-pink-200' },
+        { id: 1, label: 'Vui vẻ', icon: <Smile size={16} />, color: 'bg-yellow-100 text-yellow-700 hover:bg-yellow-200', categoryId: 2 }, // Ngôn tình
+        { id: 2, label: 'Hồi hộp', icon: <Ghost size={16} />, color: 'bg-purple-100 text-purple-700 hover:bg-purple-200', categoryId: 6 }, // Kinh dị
+        { id: 3, label: 'Phiêu lưu', icon: <Globe size={16} />, color: 'bg-green-100 text-green-700 hover:bg-green-200', categoryId: 1 }, // Tiên hiệp
+        { id: 4, label: 'Buồn', icon: <CloudRain size={16} />, color: 'bg-blue-100 text-blue-700 hover:bg-blue-200', categoryId: 2 }, // Ngôn tình (ngược)
     ];
+
+    // displayedSlides will be banners if available, otherwise featuredStories
+    const displayedSlides = banners.length > 0 ? banners : featuredStories;
+
+    const nextSlide = () => {
+        setCurrentSlide((prev) => (prev + 1) % displayedSlides.length);
+    };
+
+    const prevSlide = () => {
+        setCurrentSlide((prev) => (prev - 1 + displayedSlides.length) % displayedSlides.length);
+    };
+
+    // Auto-play slider
+    useEffect(() => {
+        if (displayedSlides.length === 0) return;
+        const timer = setInterval(() => {
+            setCurrentSlide((prev) => (prev + 1) % displayedSlides.length);
+        }, 5000);
+        return () => clearInterval(timer);
+    }, [displayedSlides]);
 
     return (
         <div className="space-y-12 pb-12">
-            {/* Hero Slider */}
-            {featuredStories.length > 0 && (
-                <div className="relative rounded-3xl overflow-hidden bg-gray-900 shadow-2xl animate-fade-in h-[400px] md:h-[500px] group">
-                    {featuredStories.map((story, index) => (
+            {/* Premium Hero Slider */}
+            {displayedSlides.length > 0 && (
+                <div className="relative rounded-[2.5rem] overflow-hidden bg-gray-900 shadow-2xl animate-fade-in h-[500px] md:h-[650px] group ring-1 ring-white/10">
+                    {displayedSlides.map((item, index) => (
                         <div
-                            key={story.id}
+                            key={item.id}
                             className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
                                 }`}
                         >
-                            <div className="absolute inset-0">
+                            {/* Background Parallax Image */}
+                            <div className="absolute inset-0 overflow-hidden">
                                 <img
-                                    src={story.coverUrl}
-                                    alt={story.title}
-                                    className="w-full h-full object-cover opacity-50"
+                                    src={item.imageUrl || item.coverUrl}
+                                    alt={item.title}
+                                    className={`w-full h-full object-cover transform transition-transform duration-[10s] ease-linear ${index === currentSlide ? 'scale-110' : 'scale-100'}`}
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/60 to-transparent"></div>
+                                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent"></div>
+                                <div className="absolute inset-0 bg-gradient-to-r from-gray-900/80 via-transparent to-transparent"></div>
                             </div>
 
-                            <div className="relative z-10 h-full flex flex-col justify-center px-6 md:px-16 max-w-4xl">
-                                <span className="inline-block py-1 px-3 rounded-full bg-indigo-500/30 border border-indigo-400/30 text-indigo-200 text-xs md:text-sm font-medium mb-4 md:mb-6 backdrop-blur-sm w-fit animate-slide-up">
-                                    Truyện nổi bật
+                            {/* Content */}
+                            <div className="relative z-10 h-full flex flex-col justify-end md:justify-center px-8 md:px-20 max-w-5xl pb-20 md:pb-0">
+                                <span className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-indigo-300 text-xs md:text-sm font-bold uppercase tracking-widest mb-6 animate-slide-up w-fit">
+                                    <Zap size={14} className="fill-current" />
+                                    {item.imageUrl ? 'Tin nổi bật' : 'Truyện đặc sắc'}
                                 </span>
-                                <h1 className="text-3xl md:text-6xl font-bold mb-3 md:mb-4 text-white leading-tight tracking-tight animate-slide-up" style={{ animationDelay: '0.1s' }}>
-                                    {story.title}
+
+                                <h1 className="text-4xl md:text-7xl font-extrabold mb-4 text-white leading-tight tracking-tight drop-shadow-lg animate-slide-up" style={{ animationDelay: '0.1s' }}>
+                                    {item.title}
                                 </h1>
-                                <p className="mb-6 md:mb-8 text-gray-200 text-base md:text-xl max-w-2xl line-clamp-2 animate-slide-up" style={{ animationDelay: '0.2s' }}>
-                                    {story.description}
+
+                                <p className="mb-8 text-gray-200 text-lg md:text-xl max-w-2xl line-clamp-2 leading-relaxed animate-slide-up drop-shadow-md opacity-90" style={{ animationDelay: '0.2s' }}>
+                                    {item.description}
                                 </p>
-                                <div className="flex gap-3 md:gap-4 animate-slide-up" style={{ animationDelay: '0.3s' }}>
+
+                                <div className="flex flex-wrap gap-4 animate-slide-up" style={{ animationDelay: '0.3s' }}>
                                     <Link
-                                        to={`/story/${story.id}`}
-                                        className="btn btn-primary px-8 py-3 text-lg shadow-lg shadow-indigo-500/30"
+                                        to={item.link || `/story/${item.id}`}
+                                        className="btn btn-primary px-10 py-4 text-lg rounded-2xl"
                                     >
-                                        Đọc ngay
+                                        {item.imageUrl ? 'Xem Ngay' : 'Đọc ngay'}
                                     </Link>
-                                    <button className="px-8 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white backdrop-blur-sm transition-colors font-medium">
-                                        Thêm vào tủ
-                                    </button>
+                                    {!item.imageUrl && (
+                                        <button className="px-10 py-4 rounded-2xl bg-white/5 hover:bg-white/10 text-white backdrop-blur-md border border-white/20 transition-all font-bold text-lg hover:-translate-y-0.5">
+                                            + Thêm vào tủ
+                                        </button>
+                                    )}
                                 </div>
                             </div>
                         </div>
                     ))}
 
-                    {/* Slider Controls */}
-                    <button
-                        onClick={prevSlide}
-                        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white backdrop-blur-md transition-all opacity-0 group-hover:opacity-100 hover:scale-110"
-                    >
-                        <ChevronLeft size={24} />
-                    </button>
-                    <button
-                        onClick={nextSlide}
-                        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white backdrop-blur-md transition-all opacity-0 group-hover:opacity-100 hover:scale-110"
-                    >
-                        <ChevronRight size={24} />
-                    </button>
+                    {/* Navigation Controls */}
+                    <div className="absolute right-8 bottom-8 z-30 flex gap-4">
+                        <button
+                            onClick={prevSlide}
+                            className="p-4 rounded-full bg-black/20 hover:bg-black/40 text-white backdrop-blur-md border border-white/10 transition-all hover:scale-110"
+                        >
+                            <ChevronLeft size={24} />
+                        </button>
+                        <button
+                            onClick={nextSlide}
+                            className="p-4 rounded-full bg-black/20 hover:bg-black/40 text-white backdrop-blur-md border border-white/10 transition-all hover:scale-110"
+                        >
+                            <ChevronRight size={24} />
+                        </button>
+                    </div>
 
-                    {/* Dots */}
-                    <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2">
-                        {featuredStories.map((_, index) => (
+                    {/* Progress Dots */}
+                    <div className="absolute top-8 right-8 z-30 flex gap-2">
+                        {displayedSlides.map((_, index) => (
                             <button
                                 key={index}
                                 onClick={() => setCurrentSlide(index)}
-                                className={`w-2.5 h-2.5 rounded-full transition-all ${index === currentSlide ? 'bg-white w-8' : 'bg-white/40 hover:bg-white/60'
-                                    }`}
+                                className={`h-1.5 rounded-full transition-all duration-300 ${index === currentSlide ? 'bg-white w-8' : 'bg-white/30 w-4 hover:bg-white/50'}`}
                             />
                         ))}
                     </div>
@@ -270,7 +297,7 @@ const Home = () => {
                 </div>
 
                 {/* Mood Selector */}
-                <div className="flex flex-wrap gap-4">
+                <div className="flex flex-wrap gap-4 items-center">
                     <span className="flex items-center text-gray-500 font-medium mr-2">Tâm trạng hôm nay:</span>
                     {moods.map(mood => (
                         <button
@@ -283,28 +310,44 @@ const Home = () => {
                     ))}
                 </div>
 
-                <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide border-t border-gray-100 pt-6">
-                    <button
-                        onClick={() => handleCategorySelect(null)}
-                        className={`px-6 py-2.5 rounded-xl whitespace-nowrap transition-all font-medium ${!selectedCategory
-                            ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-500/30'
-                            : 'bg-white text-gray-600 hover:bg-gray-50 border border-gray-200'
-                            }`}
-                    >
-                        Tất cả
-                    </button>
-                    {categories.map(cat => (
+                <div className="flex flex-col md:flex-row justify-between items-center gap-4 border-t border-gray-100 pt-6">
+                    <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide w-full md:w-auto">
                         <button
-                            key={cat.id}
-                            onClick={() => handleCategorySelect(cat.id)}
-                            className={`px-6 py-2.5 rounded-xl whitespace-nowrap transition-all font-medium ${selectedCategory === cat.id
+                            onClick={() => handleCategorySelect(null)}
+                            className={`px-6 py-2.5 rounded-xl whitespace-nowrap transition-all font-medium ${!selectedCategory
                                 ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-500/30'
                                 : 'bg-white text-gray-600 hover:bg-gray-50 border border-gray-200'
                                 }`}
                         >
-                            {cat.name}
+                            Tất cả
                         </button>
-                    ))}
+                        {categories.map(cat => (
+                            <button
+                                key={cat.id}
+                                onClick={() => handleCategorySelect(cat.id)}
+                                className={`px-6 py-2.5 rounded-xl whitespace-nowrap transition-all font-medium ${selectedCategory === cat.id
+                                    ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-500/30'
+                                    : 'bg-white text-gray-600 hover:bg-gray-50 border border-gray-200'
+                                    }`}
+                            >
+                                {cat.name}
+                            </button>
+                        ))}
+                    </div>
+
+                    <div className="flex items-center gap-2 w-full md:w-auto overflow-x-auto">
+                        <span className="text-sm font-medium text-gray-500 whitespace-nowrap">Sắp xếp:</span>
+                        <select
+                            value={sortBy}
+                            onChange={(e) => setSortBy(e.target.value)}
+                            className="px-4 py-2.5 rounded-xl border border-gray-200 bg-white text-gray-700 font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500 hover:border-gray-300 transition-colors cursor-pointer"
+                        >
+                            <option value="newest">Mới nhất</option>
+                            <option value="views">Xem nhiều</option>
+                            <option value="rating">Đánh giá cao</option>
+                            <option value="az">Tên A-Z</option>
+                        </select>
+                    </div>
                 </div>
             </div>
 
@@ -367,38 +410,54 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* Stories Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Premium Stories Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
                 {stories.map((story) => (
                     <Link
                         key={story.id}
                         to={`/story/${story.id}`}
-                        className="group bg-white rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col h-full"
+                        className="group relative flex flex-col"
                     >
-                        <div className="aspect-[2/3] overflow-hidden relative">
+                        {/* Card Image */}
+                        <div className="relative aspect-[2/3] rounded-3xl overflow-hidden mb-5 shadow-lg group-hover:shadow-2xl group-hover:shadow-indigo-500/20 transition-all duration-500 transform group-hover:-translate-y-2">
                             <img
                                 src={story.coverUrl}
                                 alt={story.title}
-                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                            <div className="absolute top-3 right-3">
-                                <span className={`px-3 py-1 rounded-lg text-xs font-bold backdrop-blur-md shadow-sm ${story.status === 'Completed'
-                                    ? 'bg-green-500/90 text-white'
-                                    : 'bg-amber-500/90 text-white'
+                            {/* Overlay Gradient */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300"></div>
+
+                            {/* Floating Action Badge */}
+                            <div className="absolute top-4 right-4 translate-x-10 group-hover:translate-x-0 transition-transform duration-300 opacity-0 group-hover:opacity-100">
+                                <span className="bg-white/20 backdrop-blur-md text-white p-2 rounded-full flex items-center justify-center border border-white/30 shadow-lg">
+                                    <Heart size={20} className="fill-transparent group-hover:fill-pink-500 transition-colors" />
+                                </span>
+                            </div>
+
+                            {/* Status Badge */}
+                            <div className="absolute bottom-4 left-4">
+                                <span className={`px-3 py-1.5 rounded-lg text-xs font-bold backdrop-blur-md shadow-sm border border-white/10 ${story.status === 'Completed'
+                                    ? 'bg-green-500/20 text-green-300'
+                                    : 'bg-amber-500/20 text-amber-300'
                                     }`}>
                                     {story.status}
                                 </span>
                             </div>
                         </div>
-                        <div className="p-5 flex-1 flex flex-col">
-                            <h3 className="font-bold text-xl text-gray-900 line-clamp-1 mb-1 group-hover:text-indigo-600 transition-colors">{story.title}</h3>
-                            <p className="text-sm text-indigo-500 font-medium mb-3">{story.author}</p>
-                            <p className="text-sm text-gray-500 line-clamp-3 mb-4 flex-1">{story.description}</p>
-                            <div className="pt-4 border-t border-gray-50 flex items-center justify-between text-sm text-gray-400">
-                                <span>Đọc ngay</span>
-                                <span className="group-hover:translate-x-1 transition-transform">→</span>
+
+                        {/* Card Meta */}
+                        <div className="flex-1 flex flex-col">
+                            <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 line-clamp-1 mb-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                                {story.title}
+                            </h3>
+                            <div className="flex items-center gap-2 mb-3">
+                                <div className="h-px w-6 bg-indigo-500/50"></div>
+                                <p className="text-sm text-indigo-500 font-bold uppercase tracking-wider text-[10px]">{story.author}</p>
                             </div>
+                            <p className="text-sm text-gray-500 dark:text-gray-400 line-clamp-2 md:line-clamp-3 leading-relaxed opacity-80 group-hover:opacity-100 transition-opacity">
+                                {story.description}
+                            </p>
                         </div>
                     </Link>
                 ))}

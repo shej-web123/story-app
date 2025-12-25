@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { LayoutDashboard, BookOpen, Layers, Users, LogOut, Menu, X, Flag, Home, Bell, Search } from 'lucide-react';
+import { LayoutDashboard, BookOpen, Layers, Users, LogOut, Menu, X, Flag, Home, Bell, Search, Activity, ClipboardList, Settings } from 'lucide-react';
 import api from '../services/api';
 import clsx from 'clsx';
 
@@ -61,15 +61,17 @@ const AdminLayout = () => {
 
     const navItems = [
         { path: '/admin', label: 'Tổng quan', icon: LayoutDashboard },
+        { path: '/admin/analytics', label: 'Thống kê', icon: Activity },
+        { path: '/admin/audit-logs', label: 'Nhật ký', icon: ClipboardList },
         { path: '/admin/stories', label: 'Quản lý Truyện', icon: BookOpen },
         { path: '/admin/categories', label: 'Quản lý Thể loại', icon: Layers },
         { path: '/admin/users', label: 'Quản lý Tài khoản', icon: Users },
         {
-            path: '/admin/reports',
             label: 'Báo cáo & Kiểm duyệt',
             icon: Flag,
             badge: pendingReportsCount > 0 ? pendingReportsCount : null
         },
+        { path: '/admin/settings', label: 'Cấu hình hệ thống', icon: Settings },
     ];
 
     return (

@@ -4,8 +4,12 @@ import api from '../../services/api';
 import { toast } from 'react-toastify';
 import { Pencil, Trash2, Plus, X, Search, Filter, Eye, Download, Loader, List, ChevronRight, Globe, Database } from 'lucide-react';
 import axios from 'axios';
+import { logAdminAction } from '../../services/adminService';
+import { MODERATION_ACTIONS } from '../../utils/moderation';
+import { useAuth } from '../../context/AuthContext';
 
 const StoryManager = () => {
+    const { user: currentUser } = useAuth();
     const [stories, setStories] = useState([]);
     const [filteredStories, setFilteredStories] = useState([]);
     const [categories, setCategories] = useState([]);
@@ -212,9 +216,11 @@ const StoryManager = () => {
             if (editingStory) {
                 await api.put(`/stories/${editingStory.id}`, data);
                 toast.success("Cập nhật truyện thành công");
+                logAdminAction(MODERATION_ACTIONS.UPDATE_STORY, `Story: ${data.title}`, "Updated story details", currentUser.id, currentUser.name);
             } else {
                 await api.post('/stories', data);
                 toast.success("Thêm truyện thành công");
+                logAdminAction(MODERATION_ACTIONS.UPDATE_STORY, `Story: ${data.title}`, "Created new story", currentUser.id, currentUser.name);
             }
             fetchStories();
             closeModal();
@@ -232,6 +238,7 @@ const StoryManager = () => {
                 // With json-server, we might leave orphans or need to delete manually. 
                 // For simplicity here, we just delete the story.
                 toast.success("Xóa truyện thành công");
+                logAdminAction(MODERATION_ACTIONS.DELETE_STORY, `Story ID: ${id}`, "Deleted story", currentUser.id, currentUser.name);
                 fetchStories();
             } catch (error) {
                 toast.error("Có lỗi xảy ra khi xóa");
@@ -569,8 +576,8 @@ const StoryManager = () => {
                                         <div
                                             key={chapter.id}
                                             className={`p-3 rounded-lg border transition-all cursor-pointer group ${editingChapter?.id === chapter.id
-                                                    ? 'bg-indigo-50 border-indigo-200 shadow-sm'
-                                                    : 'bg-white border-gray-200 hover:border-indigo-300'
+                                                ? 'bg-indigo-50 border-indigo-200 shadow-sm'
+                                                : 'bg-white border-gray-200 hover:border-indigo-300'
                                                 }`}
                                             onClick={() => editChapter(chapter)}
                                         >

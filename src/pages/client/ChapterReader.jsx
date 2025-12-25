@@ -15,6 +15,8 @@ const ChapterReader = () => {
     const [chapters, setChapters] = useState([]);
     const [showSettings, setShowSettings] = useState(false);
     const [showToc, setShowToc] = useState(false);
+    const [isHeaderVisible, setIsHeaderVisible] = useState(true);
+    const [lastScrollY, setLastScrollY] = useState(0);
 
     // Comic State
     const [comicImages, setComicImages] = useState([]);
@@ -38,7 +40,24 @@ const ChapterReader = () => {
         setLoadingImages(false);
         fetchData();
         window.scrollTo(0, 0);
+        setIsHeaderVisible(true);
     }, [storyId, chapterId]);
+
+    // Immersive Scroll Effect
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY;
+            if (currentScrollY > 100) {
+                setIsHeaderVisible(currentScrollY < lastScrollY);
+            } else {
+                setIsHeaderVisible(true);
+            }
+            setLastScrollY(currentScrollY);
+        };
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [lastScrollY]);
 
     const fetchData = async () => {
         try {
@@ -52,9 +71,6 @@ const ChapterReader = () => {
             setChapter(chapterRes.data);
 
             setChapter(chapterRes.data);
-
-            // Update reading history
-            addToHistory(storyRes.data, chapterRes.data);
 
             // Update reading history
             addToHistory(storyRes.data, chapterRes.data);
@@ -170,10 +186,12 @@ const ChapterReader = () => {
     return (
         <div className={`min-h-screen flex flex-col transition-colors duration-300 ${themeClasses[theme]}`}>
             {/* Header */}
-            <header className={`sticky top-0 z-50 border-b shadow-sm transition-colors duration-300 ${theme === 'dark' ? 'bg-[#1a1a1a] border-gray-800' :
-                theme === 'sepia' ? 'bg-[#f4ecd8] border-[#e6dcc5]' : 'bg-white border-gray-100'
+            <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 transform ${isHeaderVisible ? 'translate-y-0' : '-translate-y-full'
+                } ${isComic ? 'bg-black/80 backdrop-blur-md text-white border-none' :
+                    theme === 'dark' ? 'bg-[#1a1a1a]/90 backdrop-blur-md border-gray-800' :
+                        theme === 'sepia' ? 'bg-[#f4ecd8]/90 backdrop-blur-md border-[#e6dcc5]' : 'bg-white/90 backdrop-blur-md border-gray-100'
                 }`}>
-                <div className="container mx-auto px-4 h-14 flex items-center justify-between">
+                <div className="container mx-auto px-4 h-16 flex items-center justify-between">
                     <div className="flex items-center gap-4">
                         <Link to={`/story/${storyId}`} className="p-2 hover:bg-black/5 dark:hover:bg-white/10 rounded-full transition-colors">
                             <ArrowLeft size={20} />
@@ -204,36 +222,37 @@ const ChapterReader = () => {
                     </div>
                 </div>
 
-                {/* Settings Panel (Text Only) */}
+                {/* Settings Panel (Glassmorphism) */}
                 {showSettings && !isComic && (
-                    <div className={`absolute top-full right-0 w-full md:w-80 p-6 border-b shadow-lg animate-fade-in ${theme === 'dark' ? 'bg-[#252525] border-gray-700' :
-                        theme === 'sepia' ? 'bg-[#fdf6e3] border-[#e6dcc5]' : 'bg-white border-gray-100'
-                        }`}>
+                    <div className="absolute top-full right-4 mt-2 w-80 p-6 rounded-2xl animate-fade-in glass-card">
                         <div className="space-y-6">
                             <div>
-                                <label className="block text-sm font-bold mb-2 opacity-70">Cỡ chữ: {fontSize}px</label>
+                                <label className="block text-sm font-bold mb-3 opacity-70 flex justify-between">
+                                    <span>Cỡ chữ</span>
+                                    <span>{fontSize}px</span>
+                                </label>
                                 <input
                                     type="range"
                                     min="14"
                                     max="32"
                                     value={fontSize}
                                     onChange={(e) => setFontSize(Number(e.target.value))}
-                                    className="w-full accent-indigo-600"
+                                    className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
                                 />
                             </div>
                             <div>
-                                <label className="block text-sm font-bold mb-2 opacity-70">Font chữ</label>
-                                <div className="flex gap-2">
-                                    <button onClick={() => setFontFamily('font-serif')} className={`flex-1 py-1.5 px-2 rounded border text-sm font-medium transition-all ${fontFamily === 'font-serif' ? 'bg-indigo-600 text-white border-indigo-600' : 'border-current opacity-60 hover:opacity-100'}`}>Serif</button>
-                                    <button onClick={() => setFontFamily('font-sans')} className={`flex-1 py-1.5 px-2 rounded border text-sm font-medium transition-all ${fontFamily === 'font-sans' ? 'bg-indigo-600 text-white border-indigo-600' : 'border-current opacity-60 hover:opacity-100'}`}>Sans</button>
+                                <label className="block text-sm font-bold mb-3 opacity-70">Font chữ</label>
+                                <div className="grid grid-cols-2 gap-3">
+                                    <button onClick={() => setFontFamily('font-serif')} className={`py-2 px-3 rounded-xl border text-sm font-medium transition-all ${fontFamily === 'font-serif' ? 'bg-indigo-600 text-white border-indigo-600 shadow-lg shadow-indigo-500/30' : 'border-gray-200 hover:bg-black/5 dark:hover:bg-white/10'}`}>Serif</button>
+                                    <button onClick={() => setFontFamily('font-sans')} className={`py-2 px-3 rounded-xl border text-sm font-medium transition-all ${fontFamily === 'font-sans' ? 'bg-indigo-600 text-white border-indigo-600 shadow-lg shadow-indigo-500/30' : 'border-gray-200 hover:bg-black/5 dark:hover:bg-white/10'}`}>Sans</button>
                                 </div>
                             </div>
                             <div>
-                                <label className="block text-sm font-bold mb-2 opacity-70">Giao diện</label>
-                                <div className="flex gap-2">
-                                    <button onClick={() => setTheme('light')} className={`flex-1 py-2 rounded border transition-all ${theme === 'light' ? 'ring-2 ring-indigo-600 border-transparent' : 'border-gray-300 bg-white text-gray-800'}`}>Sáng</button>
-                                    <button onClick={() => setTheme('sepia')} className={`flex-1 py-2 rounded border transition-all ${theme === 'sepia' ? 'ring-2 ring-indigo-600 border-transparent' : 'border-[#e6dcc5] bg-[#f4ecd8] text-[#5b4636]'}`}>Vàng</button>
-                                    <button onClick={() => setTheme('dark')} className={`flex-1 py-2 rounded border transition-all ${theme === 'dark' ? 'ring-2 ring-indigo-600 border-transparent' : 'border-gray-700 bg-[#1a1a1a] text-gray-300'}`}>Tối</button>
+                                <label className="block text-sm font-bold mb-3 opacity-70">Giao diện</label>
+                                <div className="flex gap-2 bg-gray-100 dark:bg-gray-800 p-1 rounded-xl">
+                                    <button onClick={() => setTheme('light')} className={`flex-1 py-2 rounded-lg transition-all text-sm font-medium ${theme === 'light' ? 'bg-white shadow-sm text-gray-900' : 'text-gray-500 hover:text-gray-900'}`}>Sáng</button>
+                                    <button onClick={() => setTheme('sepia')} className={`flex-1 py-2 rounded-lg transition-all text-sm font-medium ${theme === 'sepia' ? 'bg-[#f4ecd8] shadow-sm text-[#5b4636]' : 'text-gray-500 hover:text-[#5b4636]'}`}>Vàng</button>
+                                    <button onClick={() => setTheme('dark')} className={`flex-1 py-2 rounded-lg transition-all text-sm font-medium ${theme === 'dark' ? 'bg-[#1a1a1a] shadow-sm text-white' : 'text-gray-500 hover:text-white'}`}>Tối</button>
                                 </div>
                             </div>
                         </div>

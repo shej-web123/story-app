@@ -4,16 +4,10 @@ import api from '../services/api';
 import { toast } from 'react-toastify';
 import { Trash2, Edit2, Save, X, MessageCircle, MessageSquare, Reply, Flag, AlertTriangle } from 'lucide-react';
 
-const BAD_WORDS = ['cmn', 'đm', 'vcl', 'đéo', 'ngu', 'chó', 'dm', 'con mẹ', 'chết', 'giết'];
+import { checkContent } from '../utils/moderation';
 
-const filterContent = (text) => {
-    let filtered = text;
-    BAD_WORDS.forEach(word => {
-        const regex = new RegExp(word, 'gi');
-        filtered = filtered.replace(regex, '***');
-    });
-    return filtered;
-};
+// Local filter removed in favor of centralized utility
+
 
 const CommentSection = ({ storyId, chapterId = null }) => {
     const { user } = useAuth();
@@ -71,7 +65,7 @@ const CommentSection = ({ storyId, chapterId = null }) => {
                 storyId: parseInt(storyId),
                 userId: user.id,
                 userName: user.name,
-                content: filterContent(newComment.trim()),
+                content: checkContent(newComment.trim()).cleanText,
                 chapterId: chapterId ? parseInt(chapterId) : null,
                 createdAt: new Date().toISOString(),
                 updatedAt: new Date().toISOString()
@@ -105,7 +99,7 @@ const CommentSection = ({ storyId, chapterId = null }) => {
                 commentId: commentId,
                 userId: user.id,
                 userName: user.name,
-                content: filterContent(replyContent.trim()),
+                content: checkContent(replyContent.trim()).cleanText,
                 createdAt: new Date().toISOString(),
                 updatedAt: new Date().toISOString()
             };

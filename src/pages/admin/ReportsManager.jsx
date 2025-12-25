@@ -3,8 +3,12 @@ import api from '../../services/api';
 import { toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
 import { AlertTriangle, Check, X, Shield, Trash2, UserX, MessageSquare, ArrowUpRight } from 'lucide-react';
+import { logAdminAction } from '../../services/adminService';
+import { MODERATION_ACTIONS } from '../../utils/moderation';
+import { useAuth } from '../../context/AuthContext';
 
 const ReportsManager = () => {
+    const { user: currentUser } = useAuth();
     const [reports, setReports] = useState([]);
     const [loading, setLoading] = useState(true);
     const [filter, setFilter] = useState('pending'); // pending, resolved, dismissed
@@ -33,18 +37,21 @@ const ReportsManager = () => {
             if (action === 'dismiss') {
                 await api.patch(`/reports/${report.id}`, { status: 'dismissed' });
                 toast.info('Đã bỏ qua báo cáo');
+                logAdminAction(MODERATION_ACTIONS.RESOLVE_REPORT, `Report ID: ${report.id}`, "Dismissed report", currentUser.id, currentUser.name);
             } else if (action === 'delete_content') {
                 // Determine endpoint
                 const endpoint = report.targetType === 'reply' ? '/replies' : '/comments';
                 await api.delete(`${endpoint}/${report.targetId}`);
                 await api.patch(`/reports/${report.id}`, { status: 'resolved', resolution: 'Content Deleted' });
                 toast.success('Đã xóa nội dung vi phạm');
+                logAdminAction(MODERATION_ACTIONS.DELETE_COMMENT, `Comment ID: ${report.targetId}`, "Deleted reported content", currentUser.id, currentUser.name);
             } else if (action === 'ban_user') {
                 if (report.targetUserId) {
                     await api.patch(`/users/${report.targetUserId}`, { isBanned: true });
                     // Also delete content likely? Optional. Let's just ban for now.
                     await api.patch(`/reports/${report.id}`, { status: 'resolved', resolution: 'User Banned' });
                     toast.success(`Đã khóa tài khoản ${report.targetUserName || report.targetUserId}`);
+                    logAdminAction(MODERATION_ACTIONS.BAN_USER, `User ID: ${report.targetUserId}`, "Banned user from report", currentUser.id, currentUser.name);
                 } else {
                     toast.error('Không tìm thấy ID người dùng để Ban');
                 }

@@ -8,7 +8,7 @@ import CommentSection from '../../components/CommentSection';
 import { useAuth } from '../../context/AuthContext';
 
 const StoryDetail = () => {
-  const { id } = useParams();
+  const { storyId: id } = useParams();
   const navigate = useNavigate();
   const { user } = useAuth();
   const [story, setStory] = useState(null);
@@ -18,14 +18,86 @@ const StoryDetail = () => {
   const [readingProgress, setReadingProgress] = useState(null);
   const [isSaved, setIsSaved] = useState(false);
   const [favoriteId, setFavoriteId] = useState(null);
+  const [userRating, setUserRating] = useState(0);
+  const [averageRating, setAverageRating] = useState(0);
+  const [totalRatings, setTotalRatings] = useState(0);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
+    if (!id || id === 'undefined') {
+      setError("ID truyện không hợp lệ");
+      return;
+    }
+    // Reset states
+    setStory(null);
+    setError(null);
+
     fetchStory();
     fetchChapters();
     checkReadingProgress();
     checkIfSaved();
+    fetchRatings();
     window.scrollTo(0, 0);
   }, [id, user]);
+
+  const fetchRatings = async () => {
+    try {
+      const res = await api.get(`/ratings?storyId=${id}`);
+      const ratings = res.data;
+
+      if (user) {
+        const userRatingData = ratings.find(r => r.userId === user.id);
+        if (userRatingData) {
+          setUserRating(userRatingData.value);
+        } else {
+          setUserRating(0);
+        }
+      } else {
+        setUserRating(0);
+      }
+
+      if (ratings.length > 0) {
+        const total = ratings.reduce((sum, r) => sum + r.value, 0);
+        setAverageRating(total / ratings.length);
+        setTotalRatings(ratings.length);
+      } else {
+        setAverageRating(0);
+        setTotalRatings(0);
+      }
+    } catch (error) {
+      console.error("Failed to fetch ratings", error);
+    }
+  };
+
+  // Re-implement handleRate
+  const handleRate = async (value) => {
+    if (!user) return;
+    try {
+      // Check if user already rated
+      const existingRating = await api.get(`/ratings?userId=${user.id}&storyId=${id}`);
+
+      if (existingRating.data.length > 0) {
+        // Update
+        await api.patch(`/ratings/${existingRating.data[0].id}`, { value });
+        toast.success("Đã cập nhật đánh giá!");
+      } else {
+        // Create new
+        await api.post('/ratings', {
+          userId: user.id,
+          storyId: Number(id),
+          value,
+          createdAt: new Date().toISOString()
+        });
+        toast.success("Cảm ơn bạn đã đánh giá!");
+      }
+      // Refresh ratings
+      fetchRatings();
+      setUserRating(value);
+    } catch (error) {
+      console.error("Rate error:", error);
+      toast.error("Không thể gửi đánh giá");
+    }
+  };
 
   const checkReadingProgress = async () => {
     // 1. Check LocalStorage (Fast check)
@@ -40,7 +112,12 @@ const StoryDetail = () => {
       try {
         const res = await api.get(`/reading_history?userId=${user.id}&storyId=${id}`);
         if (res.data.length > 0) {
-          setReadingProgress(res.data[0]);
+          const data = res.data[0];
+          setReadingProgress({
+            ...data,
+            lastReadChapterId: data.chapterId,
+            lastReadChapterTitle: data.chapterTitle
+          });
         }
       } catch (error) {
         console.error("Failed to sync reading progress", error);
@@ -58,6 +135,7 @@ const StoryDetail = () => {
       }
     } catch (error) {
       console.error("Failed to fetch story", error);
+      setError("Không tìm thấy thông tin truyện hoặc truyện đã bị xóa.");
     }
   };
 
@@ -143,7 +221,18 @@ const StoryDetail = () => {
     }
   };
 
-  if (!story) return <div className="text-center py-12">Đang tải...</div>;
+  if (error) return (
+    <div className="min-h-screen flex flex-col items-center justify-center p-4">
+      <p className="text-xl text-red-500 font-bold mb-4">{error}</p>
+      <button onClick={() => navigate('/')} className="text-indigo-600 hover:underline">Quay về trang chủ</button>
+    </div>
+  );
+
+  if (!story) return (
+    <div className="min-h-screen flex items-center justify-center">
+      <div className="text-xl text-gray-500 dark:text-gray-400 animate-pulse">Đang tải thông tin truyện...</div>
+    </div>
+  );
 
   return (
     <div className="max-w-5xl mx-auto animate-fade-in pb-20">
@@ -296,8 +385,10 @@ const StoryDetail = () => {
               <div className="flex justify-between py-3 border-b border-gray-50 dark:border-gray-700">
                 <span className="text-gray-500 dark:text-gray-400">Đánh giá</span>
                 <div className="flex flex-col items-end">
-                  <Rating initialRating={4} readonly />
-                  <span className="text-xs text-gray-400 mt-1">(128 lượt)</span>
+                  <div className="flex flex-col items-end">
+                    <Rating initialRating={averageRating} readonly />
+                    <span className="text-xs text-gray-400 mt-1">({totalRatings} lượt)</span>
+                  </div>
                 </div>
               </div>
               <div className="flex justify-between py-3 border-b border-gray-50 dark:border-gray-700">
@@ -312,7 +403,13 @@ const StoryDetail = () => {
               <div className="pt-4">
                 <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Đánh giá của bạn:</p>
                 <div className="flex justify-center p-3 bg-gray-50 dark:bg-gray-700/50 rounded-xl">
-                  <Rating onRate={(val) => console.log('Rated:', val)} />
+                  <div className="flex justify-center p-3 bg-gray-50 dark:bg-gray-700/50 rounded-xl">
+                    {user ? (
+                      <Rating initialRating={userRating} onRate={handleRate} />
+                    ) : (
+                      <span className="text-xs text-gray-400 cursor-pointer hover:text-indigo-500 transition-colors" onClick={() => navigate('/login')}>Đăng nhập để đánh giá</span>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
